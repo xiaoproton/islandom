@@ -1,26 +1,34 @@
-$HIY$
-        _        _______  _______   _________ _______  _______ _________
-       ( \      (  ____ )(  ____ \  \__   __/(  ____ \(  ____ \\__   __/
-       | (      | (    )|| (    \/     ) (   | (    \/| (    \/   ) (
-       | |      | (____)|| |           | |   | (__    | (_____    | |
-       | |      |  _____)| |           | |   |  __)   (_____  )   | |
-       | |      | (      | |           | |   | (            ) |   | |
-       | (____/\| )      | (____/\     | |   | (____/\/\____) |   | |
-       (_______/|/       (_______/     )_(   (_______/\_______)   )_($NOR$
-                                 _\\|//_
-                                (' . . ')
+$HBMAG$
+MMMMMMMMMMMWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMWOcckXMMMMWOooONMMMMMMMMMMMMMMMMMMMKxxOXMMMMMMMMMMMMMMMMMMMMMMWkccxXMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMK,  cKMMMMWo  lNMMMMMMMMMMMMMMMMMMNc  ,OWMMMMMMMMMMMMMMMMWKO00k, .cO00000000NMMMMMMMMMMMMMM
+MMMMMMMMX: .lNMMMMMWd .dMMMMMMMMMMMMMMMMMMWk. .kWMMMMMMMMMMMMMMMMMNc...'...''''''.. ;0MMMMMMMMMMMMMM
+MMMMMMMXc  cXWXKXNMWd .dMMWKKXWMMMWMMMMMMMK, .dWMMMMMMMMMMMWMMMMMMWl .okc:x0KKKKKd. :XMMMMMMMMMMMMMM
+MMMMMW0;  .dWX:.'kWWd .dMM0,.;0MMKl;::::::'  .;:::::::::::::xWMMMMWl .xO, .cOXWWNd. lWMMMMMMMMMMMMMM
+MMMWXo.   .dMX: .OMWd .dMM0' ;KMMKocllll:.  ,llll:,.  ;lllcckWMMMMWl .kWXx;.;xl,,. ,0MMMMMMMMMMMMMMM
+MMMNd..;; .dMX: '0MWd .dMM0' ;XMMMMMMMMNo. ;KMMMWx;. ;XMMMMMMMMMMMWl .dXXX0kO0l'':oOKXKXWMMMMMMMMMMM
+MMMMWK0Xo .dWX: '0MWd .dWM0' ;XMMMMMMMNl. .xNMMWO'  'OMMMMMMMMMMMMNl...''''''''''''''..cXMMMMMMMMMMM
+MMMMMMMWo .dMX: '0MWd .dWM0' ;XMMMMMMMXd;...,lxo.  'OWMMMMMMMMMMNXKOkOk:..:k0OkxkOOOl. lNMMMMMMMMMMM
+MMMMMMMWo .dMX: '0MWo .dWM0' ;XMMMMMMMMMWXOd;.    .cKWMMMMMMMMMMk,.lXMWl .oWMNl.,xWWd. oWMMMMMMMMMMM
+MMMMMMMWo .dMX: '0MWo .dMM0' ;XMMMMMMMMMMN0d, .',.  .:xKWMMMMMMMk. cKNXl .dNNK: .kMWo .xMMMMMMMMMMMM
+MMMMMMMWo .dWX: .lxd,  'cc;. ;XMMMMWNKOdc,..'lONN0ko,. .:xXWMMMMx. .'''.  .'''. .kMX: .OMMMMMMMMMMMM
+MMMMMMMWo  dWXc..',,,;::cc;. ;KMMMWk;.  .;oOXMMMMMMMN0l. .oNMMMMKkxkkkkkkkkkkkx;.:o;. :XMMMMMMMMMMMM
+MMMMMMMWk;;kWWXXXNNWWWMMMMKo:dXMMMMNklokXWMMMMMMMMMMMMMXxkXMMMMMMMMMMMMMMMMMMMWk,.';cxXMMMMMMMMMMMMM
+MMMMMMMMWWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXXNWMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM$NOR$
+\
 ┌-----------------------------ooO-(_)-Ooo-----------------------------------┐
-|  ★ 欢迎光临,旅行者。
+|  ★ 茫茫东海之外，西太平洋的某个偏远海域，藏在水面下一米多深的地方的隐藏传送门。
 |  ★
-|  ★ LPMUD 启动文件加载顺序：
-|  ★ 1. simul_efun (运行时配置文件中指定)
-|  ★ 2. master (运行时配置文件中指定)
-|  ★ 注意：所有文件都会自动#include <globals.h> (运行时配置文件中指定)
+|  ★ 任何人都可以穿过这个半米见方的传送门来到一个异空间碎片。
+|  ★ 穿过传送门时，除了身体本体之外，任何衣物，义肢甚至内置医疗装置都无法通过。
+|  ★ 这个碎片异次元空间里有蓝天但没有白云和日月星辰。
+|  ★ 单调无风浪的大海中央有个荒凉的小岛，岛上只有沙石。
 |  ★
-|  ★ 玩家连线流程：
-|  ★ 1. 调用 MASTER 对象的 object connect(int port) 方法
-|  ★ 2. 调用 object connect(int port) 方法传回对象的 object logon(void) 方法
+|  ★ 但是，来到这里的人却可以修炼灵力，嗯，只有年轻的女人才可以。
+|  ★ 虽然灵力无法带回地球，但每天都会有新的旅行者来到这里。
 |  ★
-|  ★ 所有对象加载时都会调用对象本身的 void create(void) 方法（如果有）
+|  ★ 这里的女人因为有灵力都很强大，所以叫$HBMAG$仙女岛$NOR$。
+|  ★ 男人们当然只能想办法调戏和凌辱强大的仙女们了。
+|  ★
 └---------------------------------------------------------------------------┘
-$HIG$本项目为 LPMUD 开发学习用，配套教程：https://bbs.mud.ren/threads/3$NOR$
