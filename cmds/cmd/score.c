@@ -14,7 +14,7 @@ int main(object me, string arg)
                     +"[战力  %s   性技  %s   魅惑  %s  ]\n"
                     +"\n"
                     ,
-                    me->geteuid(),me->getuid(),
+                    me->query("name"),me->query("id"),
                     HIG + me->query("hp") + NOR, WHT + "100" + NOR,
                     HIG + me->query("food") + NOR, WHT + "100" + NOR,
                     HIG + me->query("desire") + NOR, WHT + "100" + NOR,
