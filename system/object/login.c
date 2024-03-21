@@ -20,8 +20,8 @@ void setup(string arg)
     else
     {
         // log
-        debug_message(ctime() + " " + query_ip_number(to) + " " + arg);
         checkuser = new(USER_OB, arg);
+        debug_message(ctime() + " " + query_ip_number(checkuser) + " " + arg);
         if(checkuser->load(arg))
         {
             //existing
@@ -47,7 +47,7 @@ void password(string arg)
     }
     else
     {
-        if（arg=="1234"）
+        if( arg=="1234" )
         {
             cecho("密码正确。");
         }else
