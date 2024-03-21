@@ -14,11 +14,11 @@ int main(object me, string arg)
                     +"[战力  %s   性技  %s   魅惑  %s  ]\n"
                     +"\n"
                     ,
-                    geteuid(),getuid(),
-                    WHT + me->query("hp") + NOR, HIG + "100" + NOR,
-                    WHT + me->query("food") + NOR, HIG + "100" + NOR,
-                    WHT + me->query("desire") + NOR, HIG + "100" + NOR,
-                    WHT + me->query("power") + NOR,WHT + me->query("tech") + NOR,WHT + me->query("glamour") + NOR
+                    me->geteuid(),me->getuid(),
+                    HIG + me->query("hp") + NOR, WHT + "100" + NOR,
+                    HIG + me->query("food") + NOR, WHT + "100" + NOR,
+                    HIG + me->query("desire") + NOR, WHT + "100" + NOR,
+                    HIG + me->query("power") + NOR,HIG + me->query("tech") + NOR,HIG + me->query("glamour") + NOR
                 );
     write(str);
 }

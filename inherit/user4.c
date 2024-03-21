@@ -34,10 +34,12 @@ varargs void create(string arg)
 
 void write_prompt()
 {
+    /*
     write(sprintf("[命 %s/%s 食 %s/%s 欲 %s/%s]\n",
                     HIG + query("hp") + NOR, WHT + "100" + NOR,
                     HIG + query("food") + NOR, WHT + "100" + NOR,
                     HIG + query("desire") + NOR, WHT + "100" + NOR
                   )
           );
+          */
 }
