@@ -7,6 +7,8 @@ Version: v1.0
 Date: 2019-04-18
 *****************************************************************************/
 #define WELCOME "/system/etc/motd"
+#include "ansi.h"
+
 object loginuser;
 
 void setup(string arg)
@@ -123,8 +125,10 @@ void landing()
     cuurentme = this_object();
     exec(loginuser, cuurentme);
     destruct(cuurentme);
-    write("前一秒钟你还在地球上的西太平洋某处, 在工作人员的指示下, 赤身裸体游向那海面下的不可见的传送门之后, 下一秒中你就奇迹般的出现在了仙女岛这个异次元碎片空间里。");
-    loginuser->move_object(START_ROOM);
+    write(YEL+"前一秒钟你还在地球上的西太平洋某处, 在工作人员的指示下, 赤身裸体游向那海面下的不可见的传送门..."+NOR);
+    write(YEL+"眼前一晃，下一秒中你就奇迹般的出现在了"+HBMAG+"仙女岛"+YEL+"这个异次元碎片空间里。 "+NOR);
+    write(WHT+"(提示: 你可以用键盘输入"+GRN+"look"+NOR+"或"+GRN+"l"+WHT+"四处看看。输入help获取更多帮助信息。) "+NOR);
+        loginuser->move_object(START_ROOM);
     debug_message(ctime() + " " + query_ip_number(loginuser) + " " + START_ROOM);
     loginuser->look_room();
 }

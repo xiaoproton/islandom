@@ -64,6 +64,7 @@ void msp_oob(string req)
 #if efun_defined(telnet_msp_oob)
     efun::telnet_msp_oob(req);
 #else
-    receive("当前驱动不支持efun telnet_msp_oob\n");
+    //receive("当前驱动不支持efun telnet_msp_oob\n");
+    receive("当前设置不支持音乐播放。\n");
 #endif
 }
