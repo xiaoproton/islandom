@@ -83,11 +83,11 @@ void setgender(string arg)
     {
         loginuser->set("gender", "女");
     }
-    else if (|| arg == "f" || arg == "F" || arg == "female" || arg == "Female")
+    else if (arg == "f" || arg == "F" || arg == "female" || arg == "Female")
     {
         loginuser->set("gender", "女");
     }
-    else if (|| arg == "m" || arg == "M" || arg == "male" || arg == "Male")
+    else if (arg == "m" || arg == "M" || arg == "male" || arg == "Male")
     {
         loginuser->set("gender", "男");
     }
