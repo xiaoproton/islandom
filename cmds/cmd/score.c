@@ -21,4 +21,5 @@ int main(object me, string arg)
                     HIG + me->query("power") + NOR,HIG + me->query("tech") + NOR,HIG + me->query("glamour") + NOR
                 );
     write(str);
+    return 1;
 }

@@ -123,8 +123,9 @@ void landing()
     cuurentme = this_object();
     exec(loginuser, cuurentme);
     destruct(cuurentme);
-
+    write("前一秒钟你还在地球上的西太平洋某处, 在工作人员的指示下, 赤身裸体游向那海面下的不可见的传送门之后, 下一秒中你就奇迹般的出现在了仙女岛这个异次元碎片空间里。");
     loginuser->move_object(START_ROOM);
+    debug_message(ctime() + " " + query_ip_number(loginuser) + " " + START_ROOM);
     loginuser->look_room();
 }
 

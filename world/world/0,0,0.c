@@ -1,43 +1,39 @@
 // 0,0,0.c
 inherit DBASE;
 
-string look_door();
+string look_shiban();
 
 void create()
 {
-    set("short", "下午镇营地");
+    set("short", "传送门出口-海水湾");
     set("long", @LONG
-    这里是白银城冒险者清理过的下午镇营地，微弱的篝火照亮了黑暗。远处篝火无法照亮的黑暗里潜藏着无尽的危险。
-这里还有一个传送门(door)，使用它可以传送到一个特别的世界。
+    海水湾很浅, 海水只没到你的腰腹。东北西三面都是嶙峋的海水冲刷的岩石峭壁, 岩石上也没有任何植物的样子。南面则是灰蓝色的大海。
+    没有云也没有太阳的纯蓝天空昭示着这里已经不是地球了, 而是一个异次元空间碎片。如果想回到地球, 似乎只需要下潜水下 (输入quit指令) 就可以。
+    海水湾中间是一块突起露出水面的岩石，岩石上有块简陋不规则的石板(shiban)和一些棕灰色的织物。
+    东面的岩石比较平缓, 似乎可以走上去。
 LONG );
     set("exits", ([
-        "east":__DIR__ "1,0,0",
-        "north":__DIR__ "0,1,0",
-        "south":__DIR__ "0,-1,0",
-        "west":__DIR__ "-1,0,0",
+        "up":__DIR__ "0,0,1",
     ]));
     set("items", ([
-        "door" : (: look_door :),
+        "shiban" : (: look_shiban :),
     ]));
 }
 
 void init()
 {
+
     add_action(function(string arg) {
         object me = this_player();
-        if (me->query_temp("step") < 3)
-            return notify_fail("你当前状态无法传送，输入 tutorial 3 后方可使用此传送门。\n");
-        me->msp_oob("!!MUSIC(1001.mp3 L=1 V=100 U=https://mud.ren/storage/wav/)");
-        return me->move("/world/area");
-    }, ({"in", "enter"}));
+        me->msp_oob("!!MUSIC(ocean-waves.mp3 L=1 V=100 U=http://islandom.space/music/)");
+        return 1;
+        //return me->move("/world/area");
+    }, ({"listen", "ting"}));
+
 }
 
-string look_door()
+string look_shiban()
 {
     object me = this_player();
-
-    if (me->query_temp("step") < 3)
-        return "这个传送门闪着微光，还在蓄积能量中，暂时无法传送(in)。";
-    else
-        return "这个传送门闪着耀眼的光芒，你可以试试传送(in)功能。";
+    return "一块就地取材的不规则形状的岩石板, 上面有似乎是用砖红色的石头草草刻画出的向东的箭头, 还有个隐隐约约的听(listen)字？";
 }
