@@ -28,6 +28,11 @@ mixed can_go_str(string dir, string str)
     mapping exits;
     mixed exit;
 
+    if(classp(me))
+    {
+        me->save();
+    }
+
     if (!me->query("area_info") && (!mapp(exits = env->query("exits")) || undefinedp(exit = exits[dir])))
     {
         return RED "这个方向没有出路。" NOR;

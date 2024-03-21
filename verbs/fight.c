@@ -14,6 +14,10 @@ protected void create()
 mixed can_fight_liv(mixed *data...)
 {
     object me = this_player();
+    if(classp(me))
+    {
+        me->save();
+    }
     // cecho(data);
     if (file_name(environment(me)) == START_ROOM)
     {

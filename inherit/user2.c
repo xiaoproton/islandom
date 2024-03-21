@@ -27,6 +27,7 @@ mixed process_input(string verb)
      "chat":"shout",
       "who":"users",
         "i":"all_inventory",
+        "shuxing":"score",
       // "ls":"get_dir",
       // "sa":"area_set",
     ]);

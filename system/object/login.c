@@ -46,12 +46,13 @@ void password(string arg)
     }
     else
     {
-        if( arg==loginuser->query("password",1) )
+        if( arg==loginuser->query("password") )
         {
-            cecho("密码正确。");
+            cecho("登录成功。");
+            this_object()->landing();
         }else
         {
-            notify_fail("密码错误！请重新输入：");
+            write("密码错误！请重新输入：");
             input_to("password");
         }
     }
@@ -101,7 +102,6 @@ void setgender(string arg)
 
 void setpassword(string arg)
 {
-    object me;
     if (!arg || arg == "")
     {
         write("密码不能为空，请重新输入：");
@@ -111,12 +111,20 @@ void setpassword(string arg)
     {
         loginuser->set("password", arg);
         loginuser->save();
-        write("恭喜！注册完成！");
-        //use the user
-        me = this_object();
-        exec(loginuser, me);
-        destruct(me);
+        cecho("恭喜！注册完成！");
+        this_object()->landing();
     }
+}
+
+void landing()
+{
+    object me;
+    //use the user
+    me = this_object();
+    exec(loginuser, me);
+    destruct(me);
+    move_object(START_ROOM);
+
 }
 
 void logon()

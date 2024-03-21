@@ -9,13 +9,24 @@ varargs void create(string arg)
     ::create(arg);
     if (clonep())
     {
-        int lv = random(100) + 1;
-        set("lv", lv);
-        set("max_hp", 10 * lv + random(10));
-        set("hp", query("max_hp"));
-        set("str", 4 * lv + random(10));
-        set("def", 3 * lv + random(10));
-        set("agi", 2 * lv + random(10));
+        //spirit
+        //hp,food,desire  //max always 100
+        //power,tech,glamour
+        int spirit;
+        if(query("gender")=="男")
+        {
+            spirit = 0;
+        }else
+        {
+            spirit = 1 + random(2);
+        }
+        set("spirit",spirit);
+        set("hp", 90+random(10));
+        set("food", 90+random(10));
+        set("desire", spirit*5+random(10));
+        set("power", spirit*7+random(10));
+        set("tech", random(10));
+        set("glamour", spirit*2+random(10));
 
         set_heart_beat(1);
     }
@@ -23,5 +34,10 @@ varargs void create(string arg)
 
 void write_prompt()
 {
-    write(sprintf("[%s|%s]", GRN + query("hp") + NOR, HIG + query("max_hp") + NOR));
+    write(sprintf("[命 %s/%s 食 %s/%s 欲 %s/%s]",
+                    RED + query("hp") + NOR, HIG + "100" + NOR,
+                    BLU + query("food") + NOR, HIG + "100" + NOR,
+                    YEL + query("desire") + NOR, HIG + "100" + NOR
+                  )
+          );
 }
