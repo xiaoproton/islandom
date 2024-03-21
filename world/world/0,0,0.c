@@ -1,4 +1,5 @@
 // 0,0,0.c
+#include "ansi.h"
 inherit DBASE;
 
 string look_shiban();
@@ -29,6 +30,7 @@ void init()
 
     add_action(function(string arg) {
         object me = this_player();
+        write("你侧耳倾听...");
         me->msp_oob("!!MUSIC(ocean-waves.mp3 L=1 V=100 U=http://islandom.space/storage/)");
         return 1;
         //return me->move("/world/area");
@@ -39,5 +41,5 @@ void init()
 string look_shiban()
 {
     object me = this_player();
-    return "一块就地取材的不规则形状的岩石板。\n上面有似乎是用砖红色的石头草草刻画出的向东的箭头。\n还有个隐隐约约的听(listen)字？\n";
+    return YEL+"一块就地取材的不规则形状的岩石板。\n上面有似乎是用砖红色的石头草草刻画出的向东的箭头。\n还有个隐隐约约的'听'("+GRN+"listen"+YEL+")字？\n"+NOR;
 }
