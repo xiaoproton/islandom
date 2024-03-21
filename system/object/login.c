@@ -59,6 +59,8 @@ void password(string arg)
 
 void setname(string arg)
 {
+    object checkuser;
+
     if (!arg || arg == "")
     {
         write("中文名不能为空，请重新输入：");
@@ -66,9 +68,16 @@ void setname(string arg)
     }
     else
     {
-        set("gender", random(2) ? "男" : "女");
-        set("name", arg);
+        checkuser = new(USER_OB, arg);
+        if(checkuser->load(arg))
+        {
+            checkuser->set("gender", random(2) ? "男" : "女");
+            checkuser->set("name", arg);
+        }
+        destruct(checkuser);
+
     }
+
 
 }
 
