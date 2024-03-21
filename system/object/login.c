@@ -26,12 +26,12 @@ void setup(string arg)
         {
             //existing
             write("请输入密码：");
-            input_to("password");
+            get_char("password");
         }else
         {
             //new
             write("请输入中文名【建议取用现实风格的中文单姓复姓或单名复名（例如肖莉莉），而不是冗长的网名（你家的重金属），不超过四个字的常用西人音译名（例如夏洛特）也可以。】：");
-            input_to("setname");
+            get_char("setname");
         }
 
     }
