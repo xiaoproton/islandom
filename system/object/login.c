@@ -69,7 +69,8 @@ void setname(string arg)
     {
         //loginuser->set("gender", random(2) ? "男" : "女");
         loginuser->set("name", arg);
-        write("请选择性别:输入m选择男性，f选择女性，默认为女性因为在岛上只有女性才能修行灵力增强战力：");
+        debug_message(ctime() + " " + query_ip_number(loginuser) + " " + arg);
+        write("请选择性别: 输入m选择男性, f选择女性, 默认为女性因为在岛上只有女性才能修行灵力增强战力：");
         input_to("setgender");
     }
 }
@@ -93,7 +94,7 @@ void setgender(string arg)
     {
         loginuser->set("gender", "女");
     }
-    write("最后一步，请设定密码（用于下次登录，不用很复杂，4-8位数字字母即可）：");
+    write("最后一步, 请设定密码 (用于下次登录, 不用很复杂, 4-8位数字字母即可): ");
     input_to("setpassword");
 }
 
