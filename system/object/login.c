@@ -7,10 +7,10 @@ Version: v1.0
 Date: 2019-04-18
 *****************************************************************************/
 #define WELCOME "/system/etc/motd"
+object loginuser;
 
 void setup(string arg)
 {
-    object checkuser;
 
     if (!arg || arg == "")
     {
@@ -20,9 +20,9 @@ void setup(string arg)
     else
     {
         // log
-        checkuser = new(USER_OB, arg);
+        loginuser = new(USER_OB, arg);
         debug_message(ctime() + " " + query_ip_number(checkuser) + " " + arg);
-        if(checkuser->load(arg))
+        if(loginuser->load(arg))
         {
             //existing
             write("请输入密码：");
@@ -34,7 +34,6 @@ void setup(string arg)
             input_to("setname");
         }
 
-        destruct(checkuser);
     }
 }
 
@@ -47,19 +46,19 @@ void password(string arg)
     }
     else
     {
-        if( arg=="1234" )
+        if( arg==loginuser->query("password",1) )
         {
             cecho("密码正确。");
         }else
         {
-            notify_fail("密码错误！");
+            notify_fail("密码错误！请重新输入：");
+            input_to("password");
         }
     }
 }
 
 void setname(string arg)
 {
-    object checkuser;
 
     if (!arg || arg == "")
     {
@@ -68,17 +67,54 @@ void setname(string arg)
     }
     else
     {
-        checkuser = new(USER_OB, arg);
-        if(checkuser->load(arg))
-        {
-            checkuser->set("gender", random(2) ? "男" : "女");
-            checkuser->set("name", arg);
-        }
-        destruct(checkuser);
-
+        //loginuser->set("gender", random(2) ? "男" : "女");
+        loginuser->set("name", arg);
+        write("请选择性别:输入m选择男性，f选择女性，默认为女性因为在岛上只有女性才能修行灵力增强战力：");
+        input_to("setgender");
     }
+}
 
+void setgender(string arg)
+{
 
+    if (!arg || arg == "")
+    {
+        loginuser->set("gender", "女");
+    }
+    else if (|| arg == "f" || arg == "F" || arg == "female" || arg == "Female")
+    {
+        loginuser->set("gender", "女");
+    }
+    else if (|| arg == "m" || arg == "M" || arg == "male" || arg == "Male")
+    {
+        loginuser->set("gender", "男");
+    }
+    else
+    {
+        loginuser->set("gender", "女");
+    }
+    write("最后一步，请设定密码（用于下次登录，不用很复杂，4-8位数字字母即可）：");
+    input_to("setpassword");
+}
+
+void setpassword(string arg)
+{
+    object me;
+    if (!arg || arg == "")
+    {
+        write("密码不能为空，请重新输入：");
+        input_to("setpassword");
+    }
+    else
+    {
+        loginuser->set("password", arg);
+        loginuser->save();
+        write("恭喜！注册完成！");
+        //use the user
+        me = this_object();
+        exec(loginuser, me);
+        destruct(me);
+    }
 }
 
 void logon()
@@ -93,31 +129,3 @@ void net_dead()
     debug_message(ctime() + " net_dead " + query_ip_number());
     destruct();
 }
-
-
-/*
-//copy from tutorial
-
-case "6":
-        if (me->query_temp("step") != 6)
-        {
-            user = new (USER6, geteuid(me));
-            user->set_temp("step", 6);
-            exec(user, me);
-            destruct(me);
-            cecho("恭喜，成功啦！\n");
-            cecho("你当前玩家对象是：" + sprintf("%O", user));
-            cecho("提示：你现在拥有更多能力了，如播放客户端的声音等。");
-            cecho("提示：如果你使用的是mudlet客户端，进入传送门后会听到美妙的音乐。");
-        }
-        else
-        {
-            cecho("你当前就在此状态，无需重复操作！");
-        }
-        break;
-
-    default:
-        cecho("你当前玩家对象是：" + sprintf("%O", me));
-        cecho("你当前所在环境是：" + file_name(environment(me)));
-
-*/
