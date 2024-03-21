@@ -118,12 +118,13 @@ void setpassword(string arg)
 
 void landing()
 {
-    object me;
+    object cuurentme;
     //use the user
-    me = this_object();
-    exec(loginuser, me);
-    destruct(me);
-    move_object(START_ROOM);
+    cuurentme = this_object();
+    exec(loginuser, cuurentme);
+    loginuser->move_object(START_ROOM);
+    destruct(cuurentme);
+
 
 }
 

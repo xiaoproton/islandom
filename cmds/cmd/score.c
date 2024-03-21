@@ -15,10 +15,10 @@ int main(object me, string arg)
                     +"\n"
                     ,
                     me,me,
-                    WHT + query("hp") + NOR, HIG + "100" + NOR,
-                    WHT + query("food") + NOR, HIG + "100" + NOR,
-                    WHT + query("desire") + NOR, HIG + "100" + NOR,
-                    WHT + query("power") + NOR,WHT + query("tech") + NOR,WHT + query("glamour") + NOR
+                    WHT + me->query("hp") + NOR, HIG + "100" + NOR,
+                    WHT + me->query("food") + NOR, HIG + "100" + NOR,
+                    WHT + me->query("desire") + NOR, HIG + "100" + NOR,
+                    WHT + me->query("power") + NOR,WHT + me->query("tech") + NOR,WHT + me->query("glamour") + NOR
                 );
     write(str);
 }
