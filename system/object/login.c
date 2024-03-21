@@ -126,8 +126,8 @@ void landing()
     exec(loginuser, cuurentme);
     destruct(cuurentme);
     write(YEL+"前一秒钟你还在地球上的西太平洋某处, 在工作人员的指示下, 赤身裸体游向那海面下的不可见的传送门...\n"+NOR);
-    write(YEL+"眼前一晃，下一秒中你就奇迹般的出现在了"+HBMAG+"仙女岛"+YEL+"这个异次元碎片空间里。 \n"+NOR);
-    write(WHT+"提示: 你可以用键盘输入"+GRN+"look"+NOR+"或"+GRN+"l"+WHT+"四处看看。输入help获取更多帮助信息。\n "+NOR);
+    write(YEL+"眼前一晃，下一秒中你就奇迹般的出现在了"+HBMAG+"仙女岛"+NOR+" "+YEL+"这个异次元碎片空间里。 \n"+NOR);
+    write(WHT+"提示: 你可以用键盘输入"+GRN+"look"+NOR+"或"+GRN+"l"+NOR+" "+WHT+"四处看看。或输入"+GRN+"help"++NOR+" "+WHT+"获取更多帮助信息。\n "+NOR);
         loginuser->move_object(START_ROOM);
     debug_message(ctime() + " " + query_ip_number(loginuser) + " " + START_ROOM);
     loginuser->look_room();
