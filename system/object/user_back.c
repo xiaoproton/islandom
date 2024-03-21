@@ -24,7 +24,7 @@ int command_hook(string arg)
     //demo = DEMO_PATH + verb;
     //test = TEST_PATH + verb;
 
-    if (cmd_ob = load_object(cmd) ） //|| cmd_ob = load_object(test) || cmd_ob = load_object(demo))
+    if (cmd_ob = load_object(cmd) ) //|| cmd_ob = load_object(test) || cmd_ob = load_object(demo))
     {
         return (int)cmd_ob->main(this_object(), arg);
     }

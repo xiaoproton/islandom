@@ -51,7 +51,7 @@ nomask int command_hook(string arg)
     {
         me->command("go " + verb);
     }
-    else if (cmd_ob = load_object(cmd)） // || cmd_ob = load_object(test) || cmd_ob = load_object(efun_cmd) || cmd_ob = load_object(demo))
+    else if (cmd_ob = load_object(cmd)) // || cmd_ob = load_object(test) || cmd_ob = load_object(efun_cmd) || cmd_ob = load_object(demo))
     {
         return (int)cmd_ob->main(me, arg);
     }
