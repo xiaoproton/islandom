@@ -27,8 +27,8 @@ mixed process_input(string verb)
      "chat":"shout",
       "who":"users",
         "i":"all_inventory",
-       "ls":"get_dir",
-       "sa":"area_set",
+      // "ls":"get_dir",
+      // "sa":"area_set",
     ]);
 
     // verb = lower_case(verb);

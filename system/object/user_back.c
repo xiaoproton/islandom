@@ -1,6 +1,6 @@
 #define CMD_PATH "/cmds/cmd/"
-#define DEMO_PATH "/cmds/demo/"
-#define TEST_PATH "/cmds/test/"
+//#define DEMO_PATH "/cmds/demo/"
+//#define TEST_PATH "/cmds/test/"
 
 varargs void create(string arg)
 {
@@ -21,16 +21,16 @@ int command_hook(string arg)
 
     verb = query_verb();
     cmd = CMD_PATH + verb;
-    demo = DEMO_PATH + verb;
-    test = TEST_PATH + verb;
+    //demo = DEMO_PATH + verb;
+    //test = TEST_PATH + verb;
 
-    if (cmd_ob = load_object(cmd) || cmd_ob = load_object(test) || cmd_ob = load_object(demo))
+    if (cmd_ob = load_object(cmd) ） //|| cmd_ob = load_object(test) || cmd_ob = load_object(demo))
     {
         return (int)cmd_ob->main(this_object(), arg);
     }
     else
     {
-        return notify_fail("指令不存在，你可以输入 tutorial 寻求帮助。\n");
+        return notify_fail("指令不存在，你可以输入 help 寻求帮助。\n");
     }
 }
 

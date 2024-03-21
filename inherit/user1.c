@@ -13,13 +13,15 @@ varargs void create(string arg)
 {
     if (clonep())
     {
-        string *name1 = ({"赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "褚", "卫", "蒋", "沈", "韩", "杨"});
-        string *name2 = ({"春", "夏", "秋", "冬", "风", "花", "雪", "月", "天", "地", "玄", "黄", "宇", "宙", "洪", "荒"});
-
         ::create();
         set_living(arg);
+        /*
+        string *name1 = ({"赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "褚", "卫", "蒋", "沈", "韩", "杨"});
+        string *name2 = ({"春", "夏", "秋", "冬", "风", "花", "雪", "月", "天", "地", "玄", "黄", "宇", "宙", "洪", "荒"});
         set("gender", random(2) ? "男" : "女");
         set("name", element_of(name1) + element_of(name2));
+        */
+
         move_object(START_ROOM);
     }
     else

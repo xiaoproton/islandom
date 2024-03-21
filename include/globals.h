@@ -15,7 +15,7 @@
 #endif
 // 核对对象
 #define LOGIN_OB "/system/object/login"
-#define USER_OB "/system/object/user"
+#define USER_OB  "/inherit/user" //"/system/object/basicuser"
 #define VOID_OB "/system/object/void"
 // 守护进程（服务）
 #define COMBAT_D "/system/daemons/combat_d"
