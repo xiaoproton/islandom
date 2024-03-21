@@ -119,10 +119,10 @@ void setpassword(string arg)
 void landing()
 {
     object cuurentme;
+    loginuser->look_room();
     //use the user
     cuurentme = this_object();
     exec(loginuser, cuurentme);
-    loginuser->move_object(START_ROOM);
     destruct(cuurentme);
 
 
