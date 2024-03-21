@@ -29,7 +29,7 @@ void init()
 
     add_action(function(string arg) {
         object me = this_player();
-        me->msp_oob("!!MUSIC(ocean-waves.mp3 L=1 V=100 U=http://islandom.space/)");
+        me->msp_oob("!!MUSIC(ocean-waves.mp3 L=1 V=100 U=http://islandom.space/storage/)");
         return 1;
         //return me->move("/world/area");
     }, ({"listen", "ting"}));
