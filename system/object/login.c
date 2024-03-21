@@ -21,7 +21,7 @@ void setup(string arg)
     {
         // log
         loginuser = new(USER_OB, arg);
-        debug_message(ctime() + " " + query_ip_number(checkuser) + " " + arg);
+        debug_message(ctime() + " " + query_ip_number(loginuser) + " " + arg);
         if(loginuser->load(arg))
         {
             //existing
