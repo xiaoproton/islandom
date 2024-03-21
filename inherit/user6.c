@@ -3,15 +3,15 @@ inherit __DIR__ "user5";
 // 客户端窗口大小
 void window_size(int width, int height)
 {
-    string msg = sprintf("TELNET NAWS: %dx%d\n", width, height);
-    receive(msg);
+    //string msg = sprintf("TELNET NAWS: %dx%d\n", width, height);
+    //receive(msg);
 }
 
 // receive_environ
 void receive_environ(string var, string value)
 {
-    string msg = sprintf("TELNET ENV received: %s=%s\n", var, value);
-    receive(msg);
+    //string msg = sprintf("TELNET ENV received: %s=%s\n", var, value);
+    //receive(msg);
 }
 
 void mxp_enable()
