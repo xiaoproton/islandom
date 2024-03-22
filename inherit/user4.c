@@ -43,11 +43,11 @@ void write_prompt()
                   )
           );
           */
-    if (to_int(me->query("desire"))>=60 )
+    if (to_int(query("desire"))>=60 )
     {
         write (MAG + "你面色绯红, 呼吸加重, 是不是该做点什么了?" + NOR);
     }
-    if (to_int(me->query("food"))<=40 )
+    if (to_int(query("food"))<=40 )
     {
         write (YEL + "你肚子咕咕叫, 是不是该吃点什么了?" + NOR);
     }
