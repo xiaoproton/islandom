@@ -28,7 +28,7 @@ mixed process_input(string verb)
       "who":"users",
         "i":"all_inventory",
         "shuxing":"score",
-        "xue":"learn"，
+        "xue":"learn",
         "chi":"eat",
       // "ls":"get_dir",
       // "sa":"area_set",
