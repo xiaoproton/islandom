@@ -14,14 +14,14 @@ protected void create()
     setSynonyms("l");
     setRules("", "STR", "OBJ", "at STR", "at OBJ", "on OBJ", "in OBJ", "inside OBJ",
              "at OBJ in OBJ", "OBJ inside OBJ", "at OBJ on OBJ", "at STR on OBJ");
-    setErrorMessage("你想看什么?");
+    setErrorMessage("What would you like to look at?");
 }
 
 mixed can_look()
 {
     object env = environment(this_player());
     if (!env || !env->query("short") && !env->is_area())
-        return "floggy and blurry. Nothing can be seen.";
+        return "Foggy and blurry. Nothing can be seen.";
     else
         return 1;
 }

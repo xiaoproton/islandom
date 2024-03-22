@@ -4,6 +4,8 @@ inherit DBASE;
 
 void create()
 {
+    mixed npc = __DIR__ "npc/npc"};
+
     set("short", "Queens Chamber");
     set("long", @LONG
     A big chamber for Queen Ant Islandom to live.
@@ -17,6 +19,11 @@ LONG );
     ]));
     set("objects", ([
         "Queen":load_object("/world/world/npc/npc"),
+    ]));
+
+    load_object(npc);
+    set("objects", ([
+        npc:1,
     ]));
 }
 
