@@ -16,7 +16,7 @@ LONG );
         "south":__DIR__ "0,0,0",
     ]));
     set("objects", ([
-        load_object("npc/npc.c"):1,
+        "Queen":load_object("/world/world/npc/npc"),
     ]));
 }
 
