@@ -4,7 +4,7 @@ inherit DBASE;
 
 void create()
 {
-    mixed npc = __DIR__ "npc/npc"};
+    mixed npc = __DIR__ "npc/npc";
 
     set("short", "Queens Chamber");
     set("long", @LONG
@@ -16,9 +16,6 @@ void create()
 LONG );
     set("exits", ([
         "south":__DIR__ "0,0,0",
-    ]));
-    set("objects", ([
-        "Queen":load_object("/world/world/npc/npc"),
     ]));
 
     load_object(npc);
