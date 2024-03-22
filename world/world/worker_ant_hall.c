@@ -1,6 +1,7 @@
-// 0,0,0.c
+// worker_ant_hall.c
 #include "ansi.h"
-inherit DBASE;
+//inherit DBASE;
+inherit ROOM;
 
 string look_rock();
 
@@ -15,8 +16,8 @@ void create()
     A small rock ($GRN$ $BOLD$ look rock $NOR$) is in the middle of the hall.
 LONG );
     set("exits", ([
-        "north":__DIR__ "0,1,0",
-        "south":__DIR__ "0,-1,0",
+        "north":__DIR__ "queens_chamber",
+        "south":__DIR__ "egg_chamber",
     ]));
     set("items", ([
         "small rock" : (: look_rock :),

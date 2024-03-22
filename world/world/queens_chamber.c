@@ -1,5 +1,6 @@
-// 0,0,1.c
-inherit DBASE;
+// queens_chamber.c
+//inherit DBASE;
+inherit ROOM;
 
 
 void create()
@@ -16,14 +17,14 @@ void create()
     Eggs need to be moved the Egg Chamber for good tempareture to incubate.
 LONG );
     set("exits", ([
-        "south":__DIR__ "0,0,0",
+        "south":__DIR__ "worker_ant_hall",
     ]));
 
     result=load_object(npc);
     debug_message(sprintf("load npc %d", objectp(result)));
     debug_message(sprintf("load npc %s", result->query("name")));
     set("objects", ([
-        "queen":npc,
+        npc,
     ]));
 }
 

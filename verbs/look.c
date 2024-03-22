@@ -119,7 +119,7 @@ mixed do_look_at_str(string str, string arg)
     else if (stringp(exits[str]))
         return look_room(me, load_object(exits[str]));
     else if (mapp(exits[str]))
-        cecho("You cannot look at the whole area.");
+        cecho("You cannot see clearly for a big area.");
     else if (item_desc = env->query("items/" + str))
         cecho(evaluate(item_desc));
     else if (ob = present(arg, env))
@@ -152,8 +152,8 @@ int look_room(object me, object env)
         return env->do_look(me);
     }
 
-    str = sprintf(HIC + "%s" + NOR + "\n%s" + NOR,
-                  env->query("short"),  env->query("long"));  //file_name(env),
+    str = sprintf(HIC + "%s" + NOR + "(%s)\n%s" + NOR,
+                  env->query("short"), file_name(env) ,env->query("long"));
 
     if (mapp(exits = env->query("exits")))
     {
@@ -223,6 +223,7 @@ string list_all_inventory_of_object(object me, object env)
         return "";
 
     inv = all_inventory(env);
+    debug_message(sizeof(inv));
     if (!sizeof(inv))
         return str;
 
@@ -242,7 +243,7 @@ int look_living(object me, object ob)
         msg = "$ME looked $YOU as if $YOU are a piece of food.";
         msg("vision", msg, me, ob);
     }
-    msg = sprintf("%s is a %s living creature. \n", ob->short(), ob->appearance());
+    msg = sprintf("%s (%s) is a %s living creature. \n", (ob->colourStr()||MAG)+(ob->short())+NOR,file_name(ob), ob->appearance());
     msg += line;
     msg += sprintf("Power %s\n", ob->query("power"));
     msg += line;

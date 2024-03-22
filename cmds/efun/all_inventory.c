@@ -13,7 +13,7 @@ int main(object me, string arg)
     }
     else
     {
-        cecho("没有找到对象 " + arg);
+        cecho("Objects not found " + arg);
     }
 
     return 1;

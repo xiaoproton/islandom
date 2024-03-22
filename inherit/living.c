@@ -33,30 +33,33 @@ int command(string cmd)
     return efun::command(cmd);
 }
 
+string colourString()
+{
+    string colour= query("colour") || "b";
+    if(colour=="b")
+        return BLU;
+    if(colour=="y")
+        return YEL;
+    if(colour=="p")
+        return MAG;
+}
+
 string appearance()
 {
     string colorStr;
-    string colour;
     int size = (query("size") || "1");
-    colour = query("colour") || "b";
-    if(colour="b")
-        colorStr = BLU + "blue" + NOR;
-    if(colour="y")
-        colorStr = YEL + "yellow" + NOR;
-    if(colour="p")
-        colorStr = MAG + "pink" + NOR;
     if(size<=2)
-        return "tiny " + colorStr;
+        return "tiny " + colourString();
     if(size>2 && size<=4)
-        return "small " + colorStr;
+        return "small " + colourString();
     if(size>4 && size<=6)
-        return "medium " + colorStr;
+        return "medium " + colourString();
     if(size>6 && size<=8)
-        return "large " + colorStr;
+        return "large " + colourString();
     if(size>8 && size<=10)
-        return "huge " + colorStr;
+        return "huge " + colourString();
     if(size>10)
-        return "giantic " + colorStr;
+        return "giantic " + colourString();
 
 }
 

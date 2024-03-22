@@ -1,5 +1,6 @@
-// 0,0,1.c
-inherit DBASE;
+// egg_chamber.c
+//inherit DBASE;
+inherit ROOM;
 
 
 void create()
@@ -10,7 +11,7 @@ void create()
     they need to be moved to lavae chamber within 1 hour.
 LONG );
     set("exits", ([
-        "north":__DIR__ "0,0,0",
+        "north":__DIR__ "worker_ant_hall",
     ]));
 }
 

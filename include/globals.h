@@ -37,6 +37,6 @@
 // 预加载列表
 #define PRELOAD "/system/etc/preload"
 // 出生地
-#define START_ROOM "/world/world/0,0,0"
+#define START_ROOM "/world/world/worker_ant_hall"
 
 #endif
