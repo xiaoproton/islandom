@@ -24,7 +24,7 @@ LONG );
     debug_message(sprintf("load npc %d", objectp(result)));
     debug_message(sprintf("load npc %s", result->query("name")));
     set("objects", ([
-        npc
+        npc:1,
     ]));
 }
 
