@@ -223,7 +223,7 @@ string list_all_inventory_of_object(object me, object env)
         return "";
 
     inv = all_inventory(env);
-    debug_message(sizeof(inv));
+    debug_message(sprintf("size inv %d",sizeof(inv)));
     if (!sizeof(inv))
         return str;
 
