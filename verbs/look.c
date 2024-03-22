@@ -223,13 +223,13 @@ string list_all_inventory_of_object(object me, object env)
         return "";
 
     inv = all_inventory(env);
-    debug_message(sprintf("size inv %d",sizeof(inv)));
+    debug_message(sprintf("size inv of %s is %d",file_name(env),sizeof(inv)));
     if (!sizeof(inv))
         return str;
 
     obs = filter_array(inv, (: $(me) != $1 :));
     str += desc_of_objects(obs);
-
+    debug_message(sprintf("list_all_inventory_of_object of %s returns %s",file_name(env),str));
     return str;
 }
 
