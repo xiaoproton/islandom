@@ -41,8 +41,9 @@ string appearance()
 string basicinfo()
 {
     int power;
+    float lv;
     power = to_int(query("power") || 1);
-    float lv = log2(power);
+    lv = log2(power);
     if(lv<2.0)
         return WHT+"weak"+NOR;
     else if(lv>=2.0 && lv<5.0)
