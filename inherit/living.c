@@ -53,7 +53,7 @@ string appearance()
     if(size>2 && size<=4)
         return "small " ;
     if(size>4 && size<=6)
-        return "medium " + ;
+        return "medium " ;
     if(size>6 && size<=8)
         return "large " ;
     if(size>8 && size<=10)
