@@ -68,7 +68,6 @@ void do_attack(object me, object victim)
      */
     if (random(100) < 10)
     {
-        damage = attack;
         attack_type = TYPE_C;
     }
     // 伤害波动
@@ -84,7 +83,7 @@ void do_attack(object me, object victim)
 
     if (damage < 0)
     {
-        damage = random(1);
+        damage = 0;
     }
 
     victim->set("hp", victim->query("hp") - damage);

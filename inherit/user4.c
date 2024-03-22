@@ -11,7 +11,7 @@ varargs void create(string arg)
     {
 
         //initial value
-        set("spirit",spirit);
+        set("size", "small");
         set("hp", 90+random(10));
         set("food", 90+random(10));
         set("power", random(5));
