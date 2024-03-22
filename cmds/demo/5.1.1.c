@@ -17,12 +17,12 @@ int main(object me, string arg)
 {
     if (query_heart_beat())
     {
-        write("停止心跳！\n");
+        write("starting heart-beat\n");
         set_heart_beat(0);
     }
     else
     {
-        write("开始心跳！\n");
+        write("stopping heart-beat\n");
         set_heart_beat(1);
     }
 

@@ -184,6 +184,8 @@ string desc_of_objects(object *obs)
     string short_name;
     string *ob;
 
+    debug_message(sprintf("desc_of_objects %d ",sizeof(obs)));
+
     if (obs && sizeof(obs) > 0)
     {
         str = "";
@@ -193,6 +195,7 @@ string desc_of_objects(object *obs)
         for (i = 0; i < sizeof(obs); i++)
         {
             short_name = obs[i]->short();
+            debug_message("short_name "+short_name);
 
             list[short_name] += obs[i]->query_temp("amount") ? obs[i]->query_temp("amount") : 1;
             unit[short_name] = obs[i]->query("unit") ? obs[i]->query("unit") : "";
@@ -223,13 +226,13 @@ string list_all_inventory_of_object(object me, object env)
         return "";
 
     inv = all_inventory(env);
-    debug_message(sprintf("size inv of %s is %d",file_name(env),sizeof(inv)));
+    debug_message(sprintf("size inv of %s is %d",env->short(),sizeof(inv)));
     if (!sizeof(inv))
         return str;
 
     obs = filter_array(inv, (: $(me) != $1 :));
     str += desc_of_objects(obs);
-    debug_message(sprintf("list_all_inventory_of_object of %s returns %s",file_name(env),str));
+    debug_message(sprintf("list_all_inventory_of_object of %s returns %s",env->short(),str));
     return str;
 }
 
@@ -243,7 +246,7 @@ int look_living(object me, object ob)
         msg = "$ME looked $YOU as if $YOU are a piece of food.";
         msg("vision", msg, me, ob);
     }
-    msg = sprintf("%s (%s) is a %s living creature. \n", (ob->colourStr()||MAG)+(ob->short())+NOR,file_name(ob), ob->appearance());
+    msg = sprintf("%s is a %s living creature. \n", (ob->colourString()||MAG)+(ob->short())+NOR,ob->appearance());
     msg += line;
     msg += sprintf("Power %s\n", ob->query("power"));
     msg += line;

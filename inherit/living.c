@@ -46,20 +46,20 @@ string colourString()
 
 string appearance()
 {
-    string colorStr;
-    int size = (query("size") || "1");
+
+    int size = to_int(query("size") || "1");
     if(size<=2)
-        return "tiny " + colourString();
+        return "tiny " ;
     if(size>2 && size<=4)
-        return "small " + colourString();
+        return "small " ;
     if(size>4 && size<=6)
-        return "medium " + colourString();
+        return "medium " + ;
     if(size>6 && size<=8)
-        return "large " + colourString();
+        return "large " ;
     if(size>8 && size<=10)
-        return "huge " + colourString();
+        return "huge " ;
     if(size>10)
-        return "giantic " + colourString();
+        return "giantic ";
 
 }
 
