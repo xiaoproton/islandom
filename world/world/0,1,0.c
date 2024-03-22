@@ -16,7 +16,7 @@ LONG );
         "south":__DIR__ "0,0,0",
     ]));
     set("objects", ([
-        load_object("npc/npc"):1,
+        load_object("npc/npc.c"):1,
     ]));
 }
 
