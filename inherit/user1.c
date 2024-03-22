@@ -29,6 +29,7 @@ varargs void create(string arg)
 
 void consume(int level) //smallest task, consumption level = 1, normal task consumption level = 10, biggest task 20
 {
+    debug_message(ctime() + " " + query_ip_number(loginuser) + " consume " + sprintf("%d",level));
     string gender;
     int food, desire,spirit;
     this_object()->query("gender");
@@ -55,6 +56,7 @@ void consume(int level) //smallest task, consumption level = 1, normal task cons
 
 int command(string cmd)
 {
+    debug_message(ctime() + " " + query_ip_number(loginuser) + " command " + cmd);
     if(cmd[0..2]=="go ")
     {
         consume(1);
