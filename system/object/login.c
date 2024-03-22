@@ -48,7 +48,7 @@ void password(string arg)
     }
     else
     {
-        if( arg==loginuser->query("password") )
+        if( arg==sha1(loginuser->query("password")) )
         {
             cecho("登录成功。");
             this_object()->landing();
@@ -113,8 +113,8 @@ void setpassword(string arg)
     else
     {
         encrypted=sha1(arg);
-        debug_message(ctime() + " " + query_ip_number(loginuser) + " " + encrypted);
-        loginuser->set("password", arg);
+        //debug_message(ctime() + " " + query_ip_number(loginuser) + " " + encrypted);
+        loginuser->set("password", encrypted);
         loginuser->save();
         cecho("恭喜！注册完成！");
         this_object()->landing();
