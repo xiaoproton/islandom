@@ -5,6 +5,7 @@ inherit DBASE;
 void create()
 {
     mixed npc = __DIR__ "npc/npc";
+    object result;
 
     set("short", "Queens Chamber");
     set("long", @LONG
@@ -18,9 +19,10 @@ LONG );
         "south":__DIR__ "0,0,0",
     ]));
 
-    load_object(npc);
+    result=load_object(npc);
+    debug_message(sprintf("load npc %d"), objectp(result));
     set("objects", ([
-        npc:1,
+        result:1,
     ]));
 }
 
