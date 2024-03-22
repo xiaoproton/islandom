@@ -112,7 +112,7 @@ void setpassword(string arg)
     }
     else
     {
-        encrypted=hash(arg,'md5');
+        encrypted=sha1(arg);
         debug_message(ctime() + " " + query_ip_number(loginuser) + " " + encrypted);
         loginuser->set("password", arg);
         loginuser->save();
