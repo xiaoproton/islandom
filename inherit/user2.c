@@ -46,7 +46,7 @@ mixed process_input(string verb)
       "who":"users",
         "i":"all_inventory",
         "inventory":"all_inventory",
-        "s":"score",
+        "sc":"score",
       // "ls":"get_dir",
       // "sa":"area_set",
     ]);
