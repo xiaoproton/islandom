@@ -48,7 +48,7 @@ void password(string arg)
     }
     else
     {
-        if( arg==sha1(loginuser->query("password")) )
+        if( sha1(arg)==loginuser->query("password") )
         {
             cecho("登录成功。");
             this_object()->landing();
