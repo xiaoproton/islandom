@@ -173,9 +173,10 @@ int look_room(object me, object env)
         str += "    No way to this direction. \n";
     }
     objs1 = env->query("objects");
-    objs2 = env->query_temp("objects");
+    //objs2 = env->query_temp("objects");
     debug_message("objs1 size" + sizeof(objs1));
-    debug_message("objs2 size" + sizeof(objs2));
+    //debug_message("objs2 size" + sizeof(objs2));
+
     str += list_all_inventory_of_object(me, env);
     debug_message("inv str " + str);
     tell_object(me, str);
