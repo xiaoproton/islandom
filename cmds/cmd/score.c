@@ -6,7 +6,7 @@ int main(object me, string arg)
     string str;
     string cl = MAG;
 
-    str = sprintf(YEL+"--------Ant "+NOR+cl+"%s"+NOR+YEL+" Score-------\n"+NOR
+    str = sprintf(YEL+"----------- Ant "+NOR+cl+"%s"+NOR+YEL+" -----------\n"+NOR
                     +"[Life %s Nutrition %s Power %s ]\n"
                     +"\n"
                     ,

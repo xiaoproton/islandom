@@ -3,19 +3,18 @@ inherit __DIR__ "user1";
 
 void consume(int level) //smallest task, consumption level = 1, normal task consumption level = 10, biggest task 20
 {
-    int food,power;
+    int food;
 
-    food = to_int(this_object()->query("food"));
-    power = to_int(this_object()->query("power"));
+    food = to_int(query("food"));
 
     //consume
-    food = food - to_int(level * log2(power));
+    food = food - level;
 
     if(food<0)
         food = 0;
     if(food>100)
         food = 100;
-    this_object()->set("food", food);
+    set("food", food);
 }
 
 // apply函数：如果用户对象中有process_input()，驱动会将玩家所有输入传入这里
@@ -73,6 +72,10 @@ mixed process_input(string verb)
     {
         consume(1);
     }
+    if((verb=="s")||(verb=="n")||(verb=="w")||(verb=="e")||(verb=="u")||(verb=="d") )
+    {
+        consume(1);
+    }
     if(verb[0..4]=="feed")
     {
         consume(4);
@@ -83,4 +86,24 @@ mixed process_input(string verb)
     }
 
     return verb;
+}
+
+void heart_beat()
+{
+    int hp,power,food;
+
+    hp = to_int(query("hp"));
+    power = to_int(query("power"));
+    food = to_int(query("food"));
+
+    if(food>20 && hp<100)
+    {
+        hp = hp + to_int(log2(power));
+        food = food - 1;
+    }
+    if(hp>100)
+        hp = 100;
+    set("food", food);
+    set("hp", hp);
+
 }

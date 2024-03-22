@@ -4,7 +4,7 @@
 int main(object me, string arg)
 {
     string help = @HELP
-    $YEL$-----------------------Hand--------------------------$NOR$
+    $YEL$-------------------------------Peronmone Handbook----------------------------------$NOR$
 
     User Your Keyboard to type the command：
         $CYN$north,south,east,west OR n,s,e,w$NOR$      move to different directions
@@ -17,6 +17,7 @@ int main(object me, string arg)
         $CYN$score OR s$NOR$                            check your status and attributes
         $CYN$fight$NOR$                                 try to kill something
         $CYN$quit$NOR$                                  quit this game
+    $YEL$-----------------------------------------------------------------------------------$NOR$
 HELP;
     string file;
 
