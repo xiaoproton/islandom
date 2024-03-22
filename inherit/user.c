@@ -11,7 +11,7 @@ void heart_beat()
 
     if(food>20 && hp<100)
     {
-        hp = hp + to_int(log2(power));
+        hp = hp + to_int(log2(power+1));
         food = food - 1;
     }
     if(hp>100)
