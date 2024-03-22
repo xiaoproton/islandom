@@ -35,24 +35,31 @@ int command(string cmd)
 
 string appearance()
 {
-    return (query("size") || "medium");
+    string colorStr;
+    string colour;
+    int size = (query("size") || "1");
+    colour = query("colour") || "b";
+    if(colour="b")
+        colorStr = BLU + "blue" + NOR;
+    if(colour="y")
+        colorStr = YEL + "yellow" + NOR;
+    if(colour="p")
+        colorStr = MAG + "pink" + NOR;
+    if(size<=2)
+        return "tiny " + colorStr;
+    if(size>2 && size<=4)
+        return "small " + colorStr;
+    if(size>4 && size<=6)
+        return "medium " + colorStr;
+    if(size>6 && size<=8)
+        return "large " + colorStr;
+    if(size>8 && size<=10)
+        return "huge " + colorStr;
+    if(size>10)
+        return "giantic " + colorStr;
+
 }
 
-string basicinfo()
-{
-    int power;
-    float lv;
-    power = to_int(query("power") || 1);
-    lv = log2(power);
-    if(lv<2.0)
-        return WHT+"weak"+NOR;
-    else if(lv>=2.0 && lv<5.0)
-        return GRN+"normal"+NOR;
-    else if(lv>=5.0 && lv<10.0)
-        return RED + "strong" + NOR;
-    else if(lv>=10.0)
-        return HIR+"extreme"+ NOR;
-}
 
 nomask int command_hook(string arg)
 {

@@ -71,36 +71,35 @@ void setname(string arg)
     }
     else
     {
-        //loginuser->set("gender", random(2) ? "男" : "女");
         loginuser->set("name", arg);
         debug_message(ctime() + " " + query_ip_number(loginuser) + " " + arg);
         write("Please choose your ant colour (b for blue, Y for yellow, p for pink):");
-        input_to("setgender");
+        input_to("setcolour");
     }
 }
 
-void setgender(string arg)
+void setcolour(string arg)
 {
 
     if (!arg || arg == "")
     {
-        loginuser->set("gender", "y");
+        loginuser->set("colour", "y");
     }
     else if (arg == "p" || arg == "P" || arg == "pink" || arg == "Pink")
     {
-        loginuser->set("gender", "p");
+        loginuser->set("colour", "p");
     }
     else if (arg == "b" || arg == "B" || arg == "Blue" || arg == "blue")
     {
-        loginuser->set("gender", "b");
+        loginuser->set("colour", "b");
     }
     else if (arg == "y" || arg == "Y" || arg == "Yellow" || arg == "yellow")
     {
-        loginuser->set("gender", "y");
+        loginuser->set("colour", "y");
     }
     else
     {
-        loginuser->set("gender", "y");
+        loginuser->set("colour", "y");
     }
     write("Please set your password (no need to over-complicate it. 4-8 numbers/letters should be enough.): ");
     input_to("setpassword");

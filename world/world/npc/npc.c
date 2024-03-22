@@ -5,7 +5,7 @@ void create()
 {
     ::create();
     set_living("npc");
-    set("name", " Worker Ant ");
+    set("name", " Ant ");
     set("unit", "");
     if (clonep())
     {
@@ -15,7 +15,7 @@ void create()
         set("food", random(20)+80);
         set("def", 3 * lv + random(30));
         set("agi", 2 * lv + random(20));
-        set("gender", random(3) ? (random(3) ? "b" : "y") : "p");
+        set("colour", random(3) ? (random(3) ? "b" : "y") : "p");
         set_heart_beat(1);
     }
 }

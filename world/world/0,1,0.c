@@ -15,6 +15,9 @@ LONG );
     set("exits", ([
         "south":__DIR__ "0,0,0",
     ]));
+    set("objects", ([
+        load_object("npc/npc"):1,
+    ]));
 }
 
 void init()

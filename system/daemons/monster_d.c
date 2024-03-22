@@ -9,16 +9,16 @@ Version: v1.0
  * ID, Name, HP, 攻, 防, 速, EXP, Gold
  */
 nosave mixed mob_info = ({
-    ({"mob", "common slug", 11}),
-    ({"mob1", "earth worm", 23}),
-    ({"mob2", "fire ant", 34}),
-    ({"mob3", "golden beetle", 45}),
-    ({"mob4", "grass cricket", 67}),
-    ({"mob5", "finger butterfly", 87}),
-    ({"mob6", "tree frog", 113}),
-    ({"mob7", "brown snake", 157}),
-    ({"mob8", "cave rat", 201}),
-    ({"mob9", "mountain cat", 298}),
+    ({"fly", "mini fly", 11,1}),
+    ({"worm", "earth worm", 23,2}),
+    ({"termite", "fire termite", 34,3}),
+    ({"beetle", "golden beetle", 45,4}),
+    ({"cricket", "grass cricket", 67,5}),
+    ({"butterfly", "finger butterfly", 87,6}),
+    ({"frog", "tree frog", 113,7}),
+    ({"snake", "brown snake", 157,8}),
+    ({"rat", "cave rat", 201,9}),
+    ({"cat", "mountain cat", 298,10}),
 });
 
 // 超出范围则随机返回

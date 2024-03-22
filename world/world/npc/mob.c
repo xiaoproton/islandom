@@ -13,8 +13,10 @@ varargs void create(int i, int power)
     info = MONSTER_D->info(i);
     set_living(info[0]);
     set("name", info[1]);
-    set("size",random(3):"big","small");
-    set("power", power);
+    set("size",info[3]);
+    set("power", info[2]+ random(power));
+    set("unit", "");
+    set("colour", random(3) ? (random(3) ? "b" : "y") : "p");
     if (clonep())
     {
         set("hp", 100);

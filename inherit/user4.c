@@ -11,11 +11,11 @@ varargs void create(string arg)
     {
 
         //initial value
-        set("size", "small");
+        set("size", 1);
         set("hp", 90+random(10));
         set("food", 90+random(10));
         set("power", random(5));
-
+        set("unit", "");
         set_heart_beat(1);
     }
 }
