@@ -20,7 +20,7 @@ LONG );
     ]));
 
     result=load_object(npc);
-    debug_message(sprintf("load npc %d"), objectp(result));
+    debug_message(sprintf("load npc %d", objectp(result)));
     set("objects", ([
         result:1,
     ]));
