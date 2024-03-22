@@ -35,13 +35,13 @@ int command(string cmd)
 
 string appearance()
 {
-    return (this_object()->query("size") || "medium");
+    return (query("size") || "medium");
 }
 
 string basicinfo()
 {
     int power;
-    power = to_int(this_object()->query("power") || 1);
+    power = to_int(query("power") || 1);
     float lv = log2(power);
     if(lv<2.0)
         return WHT+"weak"+NOR;
