@@ -143,7 +143,7 @@ void landing()
 void logon()
 {
     color_cat(WELCOME);
-    write("Please use keyboard to enter your login name (first-time ant please choose your own, purely English letters):");
+    write("Please enter your login name (first-time ant please choose your own, purely English letters):");
     input_to("setup");
 }
 

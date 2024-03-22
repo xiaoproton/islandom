@@ -35,13 +35,13 @@ int command(string cmd)
 
 string appearance()
 {
-    return this_object.query("size");
+    return this_object().query("size");
 }
 
 string basicinfo()
 {
     int power;
-    power = to_int(this_object.query("power"));
+    power = to_int(this_object().query("power"));
     float lv = log2(power);
     if(lv<2.0)
         return WHT+"weak"+NOR;

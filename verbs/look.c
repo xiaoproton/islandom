@@ -21,7 +21,7 @@ mixed can_look()
 {
     object env = environment(this_player());
     if (!env || !env->query("short") && !env->is_area())
-        return "你的四周灰蒙蒙地一片，什么也没有。";
+        return "floggy and blurry. Nothing can be seen.";
     else
         return 1;
 }
@@ -94,11 +94,11 @@ mixed do_look_in_obj(object ob)
 {
     if (sizeof(all_inventory(ob)))
     {
-        cecho(sprintf("%s里有:\n%s", ob->short(), list_all_inventory_of_object(ob, ob)));
+        cecho(sprintf("In %s, there is \n%s", ob->short(), list_all_inventory_of_object(ob, ob)));
     }
     else
     {
-        cecho(sprintf("%s里什么也没有。", ob->short()));
+        cecho(sprintf("In %s, there is nothing.", ob->short()));
     }
 
     return 1;
@@ -119,7 +119,7 @@ mixed do_look_at_str(string str, string arg)
     else if (stringp(exits[str]))
         return look_room(me, load_object(exits[str]));
     else if (mapp(exits[str]))
-        cecho("此方向是区域环境，无法观察。");
+        cecho("You cannot look at the whole area.");
     else if (item_desc = env->query("items/" + str))
         cecho(evaluate(item_desc));
     else if (ob = present(arg, env))
@@ -160,16 +160,16 @@ int look_room(object me, object env)
         dirs = keys(exits);
 
         if (sizeof(dirs) == 0)
-            str += "    这里没有任何明显的出路。\n";
+            str += "    There is no obvious exit. \n";
         else if (sizeof(dirs) == 1)
-            str += "    这里唯一的出口是 " + BOLD + dirs[0] + NOR + "。\n";
+            str += "    The only exit here is " + BOLD + dirs[0] + NOR + "。\n";
         else
-            str += sprintf("    这里明显的出口是 " + BOLD + "%s" + NOR + " 和 " + BOLD + "%s" + NOR + "。\n",
+            str += sprintf("    The obvious exits are " + BOLD + "%s" + NOR + " and " + BOLD + "%s" + NOR + "。\n",
                            implode(dirs[0..sizeof(dirs)-2], "、"), dirs[sizeof(dirs) - 1]);
     }
     else
     {
-        str += "    这里没有任何出路。\n";
+        str += "    No way to this direction. \n";
     }
     str += list_all_inventory_of_object(me, env);
     tell_object(me, str);
@@ -195,7 +195,7 @@ string desc_of_objects(object *obs)
             short_name = obs[i]->short();
 
             list[short_name] += obs[i]->query_temp("amount") ? obs[i]->query_temp("amount") : 1;
-            unit[short_name] = obs[i]->query("unit") ? obs[i]->query("unit") : "个";
+            unit[short_name] = obs[i]->query("unit") ? obs[i]->query("unit") : "";
         }
 
         ob = sort_array(keys(list), 1);
@@ -254,16 +254,16 @@ int look_living(object me, object ob)
 int help(object me)
 {
     write(@HELP
-指令格式 : look ｜ l
+Command format: look ｜ l
 
-最基本的look指令，让你睁眼看世界，可以查看对象了解信息。
+Basic look, allows you to observe objects and look around environment.
 
-当存在多个同名对象时，比如有4个NPC，你要查看指定对象可以使用以下格式：
+When there are more than one objects, for example, 4 NPCs, you may specify the particular object by using
 
-    l 1st n 或 l n 1
-    l 2nd n 或 l n 2
-    l 3rd n 或 l n 3
-    l 4th n 或 l n 4
+    l 1st n or l n 1
+    l 2nd n or l n 2
+    l 3rd n or l n 3
+    l 4th n or l n 4
 
 HELP );
     return 1;
