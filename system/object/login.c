@@ -16,7 +16,7 @@ void setup(string arg)
 
     if (!arg || arg == "")
     {
-        write("用户名不能为空，请重新输入：");
+        write("User login name cannot be balnk. Please enter again: ");
         input_to("setup");
     }
     else
@@ -27,12 +27,12 @@ void setup(string arg)
         if(loginuser->load(arg))
         {
             //existing
-            write("请输入密码：");
+            write("Please type your password: ");
             input_to("password");
         }else
         {
             //new
-            write("请输入中文名【建议取用现实风格的中文单姓复姓或单名复名（例如肖莉莉），而不是冗长的网名（你家的重金属）; 不超过四个字的常用西人音译名（例如夏洛特）也可以。】：");
+            write("Please enter your display name (please use a pronouceable name):");
             input_to("setname");
         }
 
@@ -43,18 +43,18 @@ void password(string arg)
 {
     if (!arg || arg == "")
     {
-        write("密码不能为空，请重新输入：");
+        write("Password cannot be blank. Please type it again: ");
         input_to("password");
     }
     else
     {
         if( sha1(arg)==loginuser->query("password") )
         {
-            cecho("登录成功。");
+            cecho("Login successfully.");
             this_object()->landing();
         }else
         {
-            write("密码错误！请重新输入：");
+            write("Wrong password. Try again: ");
             input_to("password");
         }
     }
@@ -66,7 +66,7 @@ void setname(string arg)
 
     if (!arg || arg == "")
     {
-        write("中文名不能为空，请重新输入：");
+        write("display name cannot be blank. Please type it again: ");
         input_to("setname");
     }
     else
@@ -74,7 +74,7 @@ void setname(string arg)
         //loginuser->set("gender", random(2) ? "男" : "女");
         loginuser->set("name", arg);
         debug_message(ctime() + " " + query_ip_number(loginuser) + " " + arg);
-        write("请选择性别: 输入m选择男性, f选择女性。默认为女性, 因为在岛上只有女性才能修行灵力增强战力: ");
+        write("Please choose your ant colour (b for blue, Y for yellow, p for pink):");
         input_to("setgender");
     }
 }
@@ -84,21 +84,25 @@ void setgender(string arg)
 
     if (!arg || arg == "")
     {
-        loginuser->set("gender", "女");
+        loginuser->set("gender", "y");
     }
-    else if (arg == "f" || arg == "F" || arg == "female" || arg == "Female")
+    else if (arg == "p" || arg == "P" || arg == "pink" || arg == "Pink")
     {
-        loginuser->set("gender", "女");
+        loginuser->set("gender", "p");
     }
-    else if (arg == "m" || arg == "M" || arg == "male" || arg == "Male")
+    else if (arg == "b" || arg == "B" || arg == "Blue" || arg == "blue")
     {
-        loginuser->set("gender", "男");
+        loginuser->set("gender", "b");
+    }
+    else if (arg == "y" || arg == "Y" || arg == "Yellow" || arg == "yellow")
+    {
+        loginuser->set("gender", "y");
     }
     else
     {
-        loginuser->set("gender", "女");
+        loginuser->set("gender", "y");
     }
-    write("请设定密码 (用于下次登录, 不用很复杂, 4-8位数字字母即可): ");
+    write("Please set your password (no need to over-complicate it. 4-8 numbers/letters should be enough.): ");
     input_to("setpassword");
 }
 
@@ -107,7 +111,7 @@ void setpassword(string arg)
     string encrypted;
     if (!arg || arg == "")
     {
-        write("密码不能为空，请重新输入：");
+        write("Password cannot be balnk. Try again: ");
         input_to("setpassword");
     }
     else
@@ -116,7 +120,7 @@ void setpassword(string arg)
         //debug_message(ctime() + " " + query_ip_number(loginuser) + " " + encrypted);
         loginuser->set("password", encrypted);
         loginuser->save();
-        cecho("恭喜！注册完成！");
+        cecho("Congrats! You are officially an Alien Ant.");
         this_object()->landing();
     }
 }
@@ -128,9 +132,9 @@ void landing()
     cuurentme = this_object();
     exec(loginuser, cuurentme);
     destruct(cuurentme);
-    write(YEL+"前一秒钟你还在地球上的西太平洋某处, 在工作人员的指示下, 赤身裸体游向那海面下的不可见的传送门...\n"+NOR);
-    write(YEL+"眼前一晃，下一秒中你就奇迹般的出现在了"+HBMAG+"仙女岛"+NOR+" "+YEL+"这个异次元碎片空间里。 \n"+NOR);
-    write(WHT+"提示: 你可以用键盘输入"+GRN+"look"+NOR+"或"+GRN+"l"+NOR+" "+WHT+"四处看看。或输入"+GRN+"help"+NOR+" "+WHT+"获取更多帮助信息。\n "+NOR);
+    write(YEL+"One second ago, you were a human being sitting in front a screen.\n"+NOR);
+    write(YEL+"Suddenly, one second later, you are an Alien Ant, crawing in "+HBMAG+"Queen Islandom"+NOR+" "+YEL+"'s ant colony. \n"+NOR);
+    write(WHT+"Hint: use your keyboard type "+GRN+" look "+NOR+"OR"+GRN+" l "+NOR+" "+WHT+"to look around. Or, type "+GRN+"help"+NOR+" "+WHT+" to get more command info. \n "+NOR);
         loginuser->move_object(START_ROOM);
     debug_message(ctime() + " " + query_ip_number(loginuser) + " " + START_ROOM);
     loginuser->look_room();
@@ -139,7 +143,7 @@ void landing()
 void logon()
 {
     color_cat(WELCOME);
-    write("请输入你的英文用户名 (首次到来的旅行者请直接输入要创建的用户名）：");
+    write("Please use keyboard to enter your login name (first-time ant please choose your own, purely English letters):");
     input_to("setup");
 }
 

@@ -1,5 +1,5 @@
 /system/object/login
-/system/object/user
+/inherit/user
 /system/object/void
 /system/daemons/combat_d
 /system/daemons/monster_d

@@ -6,16 +6,16 @@ int main(object me, string arg)
     {
         if (ob == me)
         {
-            msg("emote", "$ME热情的和$ME自己打招呼！", me);
+            msg("emote", "$ME emotionally greeting $ME themselves.", me);
         }
         else
         {
-            msg("emote", "$ME热情的和$YOU打招呼！", me, ob);
+            msg("emote", "$ME emotionally greeting $YOU.", me, ob);
         }
     }
     else
     {
-        msg("emote", "$ME热情的和大家打招呼！", me);
+        msg("emote", "$M eemotionally greeting everyone.", me);
     }
 
     return 1;

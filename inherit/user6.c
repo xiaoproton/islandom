@@ -49,7 +49,7 @@ void send_gmcp(string req)
 #if efun_defined(send_gmcp)
     efun::send_gmcp(req);
 #else
-    receive("当前驱动不支持efun send_gmcp\n");
+    receive("driver not supporting efun send_gmcp\n");
 #endif
 }
 
@@ -64,7 +64,6 @@ void msp_oob(string req)
 #if efun_defined(telnet_msp_oob)
     efun::telnet_msp_oob(req);
 #else
-    //receive("当前驱动不支持efun telnet_msp_oob\n");
-    receive("当前设置不支持音乐播放。\n");
+    receive("driver not supporting efun telnet_msp_oob\n");
 #endif
 }

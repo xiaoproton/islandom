@@ -30,6 +30,6 @@ varargs void create(string arg)
 
 void net_dead()
 {
-    say(HIR "玩家(" + geteuid() + ")离开了游戏。\n" NOR);
+    say(HIR "Ant " + geteuid() + " returns to reality.\n" NOR);
     destruct();
 }

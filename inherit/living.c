@@ -6,6 +6,7 @@ inherit VERB;
 //#define DEMO_PATH "/cmds/demo/"
 //#define EFUN_PATH "/cmds/efun/"
 //#define TEST_PATH "/cmds/test/"
+#include "ansi.h"
 
 int is_living() { return 1; }
 
@@ -30,6 +31,26 @@ void set_living(string id)
 int command(string cmd)
 {
     return efun::command(cmd);
+}
+
+string appearance()
+{
+    return this_object.query("size");
+}
+
+string basicinfo()
+{
+    int power;
+    power = to_int(this_object.query("power"));
+    float lv = log2(power);
+    if(lv<2.0)
+        return WHT+"weak"+NOR;
+    else if(lv>=2.0 && lv<5.0)
+        return GRN+"normal"+NOR;
+    else if(lv>=5.0 && lv<10.0)
+        return RED + "strong" + NOR;
+    else if(lv>=10.0)
+        return HIR+"extreme"+ NOR;
 }
 
 nomask int command_hook(string arg)

@@ -72,21 +72,21 @@ function mudConnect() {
         const attachAddon = new AttachAddon.AttachAddon(ws);
         term.loadAddon(attachAddon);
         ws.onopen = (_event) => {
-            console.log("服务器连接成功！");
+            console.log("Connected successfully.");
             cmd.focus();
         };
         ws.onclose = (_event) => {
-            console.log("服务器连接断开！");
+            console.log("Connection lost.");
             term.write("\r\n<======== Connection Lost ========>\r\n");
             send.setAttribute("disabled", "disabled");
             cmd.setAttribute("disabled", "disabled");
         };
         ws.onerror = (_event) => {
-            console.log("服务器连接失败！");
+            console.log("Establishing connection failed.");
         };
     } else {
         // 浏览器不支持 WebSocket
-        alert("您的浏览器不支持 WebSocket!");
+        alert("Your browser does not support WebSocket.");
     }
 }
 
@@ -108,7 +108,7 @@ function sendCmd() {
         term.write(cmd.value + "\n\r");
         cmd.value = "";
     } else {
-        console.log("服务器未连接！");
+        console.log("No connection.");
     }
 }
 // 历史输入

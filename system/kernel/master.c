@@ -63,7 +63,7 @@ void error_handler(mapping map, int caught)
     str += sprintf("\n%O\n\n", map);
 
     if (caught)
-        cecho("出错啦！详情记录在 error_handler 日志。");
+        cecho("Error occurred. Check error_handler log. ");
     else
         printf("%s", map["error"]);
 
@@ -302,9 +302,9 @@ string parser_error_message(int type, object ob, mixed arg, int flag)
     switch (type)
     {
     case ERR_NOT_LIVING:
-        return sprintf("%s 不是生物。\n", arg);
+        return sprintf("%s is not a living object\n", arg);
     case ERR_THERE_IS_NO:
-        return sprintf("这里没有 %s 。\n", arg);
+        return sprintf("There is no %s 。\n", arg);
     case ERR_ALLOCATED:
         return sprintf("%s\n", arg);
     case ERR_IS_NOT:

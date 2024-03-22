@@ -17,7 +17,7 @@ protected void create()
     setVerb("go");
     setSynonyms("move");
     setRules("STR", "into STR");
-    setErrorMessage("你想去哪儿？");
+    setErrorMessage("Where to go?");
 }
 
 mixed can_go_str(string dir, string str)
@@ -35,22 +35,17 @@ mixed can_go_str(string dir, string str)
 
     if (!me->query("area_info") && (!mapp(exits = env->query("exits")) || undefinedp(exit = exits[dir])))
     {
-        return RED "这个方向没有出路。" NOR;
+        return RED "No way." NOR;
     }
 
     if (me->query("food") && to_int(me->query("food"))<=0 )
     {
-        return RED "你过度饥饿无法移动, 得吃饭了。" NOR;
-    }
-
-    if (me->query("desire") && to_int(me->query("desire"))>=100 )
-    {
-        return MAG "你夹紧双腿浑身颤抖, 不断有欲望的电流从各敏感点传出。\n 你满脑子都想着色色的事, 无法移动。" NOR;
+        return RED "You have no nutrition. Consider eating something." NOR;
     }
 
     if (me->is_fighting())
     {
-        return YEL "你逃跑失败了~" NOR;
+        return YEL "You failed to escape ~ " NOR;
     }
 
     switch (typeof(exit))
@@ -58,21 +53,21 @@ mixed can_go_str(string dir, string str)
     case T_STRING:
         if (!objectp(dest = load_object(exit)))
         {
-            return sprintf("目标环境异常，无法向 %s 移动。", exit);
+            return sprintf("Something wrong. You cannot move to %s. ", exit);
         }
         break;
     case T_MAPPING:
         if (undefinedp(exit["filename"]) || undefinedp(exit["x_axis"]) || undefinedp(exit["y_axis"]))
         {
-            return sprintf("目标方向异常，无法向 %s 移动。", dir);
+            return sprintf("Something wrong. You cannot move to %s.", dir);
         }
         if (!objectp(dest = load_object(exit["filename"])))
         {
-            return sprintf("目标环境异常，无法向 %s 移动。\n", exit["filename"]);
+            return sprintf("Something wrong. You cannot move to %s.\n", exit["filename"]);
         }
         break;
     default:
-        return env->is_area() || "这个方向的出口有问题，请联系巫师处理。";
+        return env->is_area() || "Something wrong. Please contact admin or programmer.";
     }
 
     return 1;
@@ -98,9 +93,9 @@ int do_go_str(string dir, string str)
     }
     else
     {
-        msg("info", "$ME离开了这里！", me, environment(me), ({me}));
+        msg("info", "$ME left here.", me, environment(me), ({me}));
         me->move(dest);
-        msg("info", "$ME走了过了！", me, environment(me), ({me}));
+        msg("info", "$ME passed through.", me, environment(me), ({me}));
     }
 
     return 1;

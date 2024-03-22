@@ -72,11 +72,11 @@ void die()
 {
     object me = this_object();
     remove_all_enemy();
-    msg("danger", "$ME死亡了。", me);
+    msg("danger", "$ME is dead.", me);
     if (userp(me))
     {
         me->move(START_ROOM);
-        me->set("hp", me->query("max_hp"));
+        me->set("hp", 100);
     }
     else
     {
@@ -100,7 +100,7 @@ void heart_beat()
         if (!userp(me) && !shadow(me, 0) && !query_shadowing(me) && me->query("hp") < me->query("hp") / 3 && !random(3))
         {
             object ob = new ("/world/world/npc/mob", 8);
-            msg("danger", me->query("name") + "变身为" + ob->query("name") + "。", me);
+            msg("danger", me->query("name") + " shapshifted to " + ob->query("name") + "。", me);
             ob->shadowto(me);
         }
         else

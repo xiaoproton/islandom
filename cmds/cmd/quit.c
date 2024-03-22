@@ -4,7 +4,7 @@ int main(object me, string arg)
     {
         me->save();
     }
-    say("玩家(" + geteuid(me) + ")退出了游戏。\n");
+    say("Ant " + geteuid(me) + " returns to reality. \n");
     destruct(me);
 
     return 1;

@@ -3,27 +3,19 @@ inherit __DIR__ "user1";
 
 void consume(int level) //smallest task, consumption level = 1, normal task consumption level = 10, biggest task 20
 {
-    int food, desire,spirit;
-    this_object()->query("gender");
+    int food,power;
+
     food = to_int(this_object()->query("food"));
-    desire = to_int(this_object()->query("desire"));
-    spirit = to_int(this_object()->query("spirit"));
+    power = to_int(this_object()->query("power"));
 
     //consume
-    food = food - level;
+    food = food - to_int(level * log2(power));
 
-    //recover
-    food = food + to_int(level * log2(spirit));
-    desire = desire + to_int(0.5 * level * log2(spirit));
-
-    //
     if(food<0)
         food = 0;
-    if(desire>100)
-        desire = 100;
     if(food>100)
         food = 100;
-
+    this_object()->set("food", food);
 }
 
 // apply函数：如果用户对象中有process_input()，驱动会将玩家所有输入传入这里
@@ -53,9 +45,8 @@ mixed process_input(string verb)
      "chat":"shout",
       "who":"users",
         "i":"all_inventory",
-        "shuxing":"score",
-        "xue":"learn",
-        "chi":"eat",
+        "inventory":"all_inventory",
+        "s":"score",
       // "ls":"get_dir",
       // "sa":"area_set",
     ]);
@@ -82,9 +73,9 @@ mixed process_input(string verb)
     {
         consume(1);
     }
-    if(verb[0..4]=="learn")
+    if(verb[0..4]=="feed")
     {
-        consume(2);
+        consume(4);
     }
     if(verb[0..4]=="fight")
     {

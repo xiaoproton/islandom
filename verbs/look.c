@@ -239,13 +239,12 @@ int look_living(object me, object ob)
 
     if (ob != this_player())
     {
-        msg = "$ME看了看$YOU，好像对$YOU很感兴趣对样子。";
+        msg = "$ME looked $YOU as if $YOU are a piece of food.";
         msg("vision", msg, me, ob);
     }
-    msg = sprintf("%s 是一位 %d 级的%s性生物。\n", ob->short(), ob->query("lv"), ob->query("gender") || "??");
+    msg = sprintf("%s is a %s living creature. \n", ob->short(), ob->appearance());
     msg += line;
-    msg += sprintf("  %-36s\n", "ＨＰ：" + ob->query("hp") + " / " + ob->query("max_hp"));
-    msg += sprintf("  %-12s%-12s%-12s\n", "力量：" + ob->query("str"), "敏捷：" + ob->query("agi"), "防御：" + ob->query("def"));
+    msg += sprintf("%s\n", ob->basicinfo());
     msg += line;
     tell_object(me, msg);
 

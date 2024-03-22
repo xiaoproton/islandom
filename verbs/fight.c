@@ -8,7 +8,7 @@ protected void create()
     setVerb("fight");
     setSynonyms("kill", "hit");
     setRules("LIV");
-    setErrorMessage("你想和谁战斗？");
+    setErrorMessage("Who do you fight against?");
 }
 
 mixed can_fight_liv(mixed *data...)
@@ -21,23 +21,19 @@ mixed can_fight_liv(mixed *data...)
     // cecho(data);
     if (file_name(environment(me)) == START_ROOM)
     {
-        return "这里禁止战斗。";
+        return "This is a fight-free area.";
     }
-    if (me->query("desire") && to_int(me->query("desire"))>=80 )
+    if (me->query("food") && to_int(me->query("food"))<=20 )
     {
-        return MAG "你面色绯红, 摩擦双腿, 浑身发软。\n 你只想着色色的事, 无法集中精神战斗。" NOR;
+        return RED "You don't have enough nutrition to support you to fight." NOR;
     }
-    if (me->query("food") && to_int(me->query("food"))<=0 )
-    {
-        return RED "你腹中空空, 头晕手软, 完全没有力气战斗。" NOR;
-    }
-    return me->can_fight() || HIY "你无法战斗。" NOR;
+    return me->can_fight() || HIY "You cannot fight." NOR;
 }
 
 mixed direct_fight_liv(object ob, string arg)
 {
     if (ob == this_player())
-        return HIM "你真有想法，可惜你做不到自己和自己战斗。" NOR;
+        return HIM "Good Idea! But it is impossible." NOR;
     return ob->can_fight();
 }
 
@@ -45,7 +41,7 @@ int do_fight_liv(object ob, string arg)
 {
     object me = this_player();
 
-    msg("warning", "$ME大喝一声，对$YOU发起了攻击。", me, ob);
+    msg("warning", "$ME put up your front claws, start attacking $YOU. ", me, ob);
     me->fight(ob);
 
     return 1;
@@ -54,9 +50,9 @@ int do_fight_liv(object ob, string arg)
 int help(object me)
 {
     write(@HELP
-指令格式 : fight | hit | kill
+Command syntax: fight | hit | kill
 
-战斗指令，可以向其它生物发起战斗。
+fighting command. use it to try to kill other living creatures.
 
 HELP );
     return 1;
