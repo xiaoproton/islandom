@@ -10,8 +10,8 @@ int main(object me, string arg)
         $CYN$north,south,east,west或n,s,e,w$NOR$      走向不同的地方
         $CYN$up,down或u,d$NOR$                        走向不同的高度
         $CYN$look或l$NOR$                             查看周围的情况
-        $CYN$help或help加其他命令$NOR$                 查看该手册或其他命令详情
-        $CYN$learn加技能名或xue加技能名$NOR$            学习某种技能
+        $CYN$help或help加其他命令$NOR$                  查看该手册或其他命令详情
+        $CYN$eat或chi$NOR$                            吃东西
         $CYN$inventory或i$NOR$                        查看自己携带的物品
         $CYN$score或shuxing$NOR$                      查看自己的状态技能等
         $CYN$go$NOR$                                  快速去某个地方

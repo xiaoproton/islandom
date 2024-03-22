@@ -23,6 +23,14 @@ mixed can_fight_liv(mixed *data...)
     {
         return "这里禁止战斗。";
     }
+    if (me->query("desire") && to_int(me->query("desire"))>=80 )
+    {
+        return MAG "你面色绯红, 摩擦双腿, 浑身发软。\n 你只想着色色的事, 无法集中精神战斗。" NOR;
+    }
+    if (me->query("food") && to_int(me->query("food"))<=0 )
+    {
+        return RED "你腹中空空, 头晕手软, 完全没有力气战斗。" NOR;
+    }
     return me->can_fight() || HIY "你无法战斗。" NOR;
 }
 

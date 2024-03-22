@@ -20,6 +20,7 @@ varargs void create(string arg)
         {
             spirit = 1 + random(2);
         }
+        //initial value
         set("spirit",spirit);
         set("hp", 90+random(10));
         set("food", 90+random(10));
@@ -42,4 +43,12 @@ void write_prompt()
                   )
           );
           */
+    if (to_int(me->query("desire"))>=60 )
+    {
+        return MAG "你面色绯红, 呼吸加重, 是不是该做点什么了?" NOR;
+    }
+    if (to_int(me->query("food"))<=40 )
+    {
+        return YEL "你肚子咕咕叫, 是不是该吃点什么了?" NOR;
+    }
 }

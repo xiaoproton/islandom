@@ -38,6 +38,16 @@ mixed can_go_str(string dir, string str)
         return RED "这个方向没有出路。" NOR;
     }
 
+    if (me->query("food") && to_int(me->query("food"))<=0 )
+    {
+        return RED "你过度饥饿无法移动, 得吃饭了。" NOR;
+    }
+
+    if (me->query("desire") && to_int(me->query("desire"))>=100 )
+    {
+        return MAG "你夹紧双腿浑身颤抖, 不断有欲望的电流从各敏感点传出。\n 你满脑子都想着色色的事, 无法移动。" NOR;
+    }
+
     if (me->is_fighting())
     {
         return YEL "你逃跑失败了~" NOR;
