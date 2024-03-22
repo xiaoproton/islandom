@@ -104,6 +104,7 @@ void setgender(string arg)
 
 void setpassword(string arg)
 {
+    string encrypted;
     if (!arg || arg == "")
     {
         write("密码不能为空，请重新输入：");
@@ -111,6 +112,8 @@ void setpassword(string arg)
     }
     else
     {
+        encrypted=hash(arg,'md5');
+        debug_message(ctime() + " " + query_ip_number(loginuser) + " " + encrypted);
         loginuser->set("password", arg);
         loginuser->save();
         cecho("恭喜！注册完成！");
