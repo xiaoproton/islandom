@@ -29,9 +29,6 @@ varargs void create(string arg)
 
 void consume(int level) //smallest task, consumption level = 1, normal task consumption level = 10, biggest task 20
 {
-    //debug_message(ctime() + " " + file_name(this_object()) + " consume " + sprintf("%d",level));
-    debug_message(ctime() + " " + file_name(this_object()) + " consume ");
-
     int food, desire,spirit;
     this_object()->query("gender");
     food = to_int(this_object()->query("food"));
