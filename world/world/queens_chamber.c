@@ -28,6 +28,6 @@ LONG );
 
 void init()
 {
-    setup();
+
 
 }

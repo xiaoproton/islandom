@@ -37,7 +37,7 @@ LONG );
 
 void init()
 {
-    setup();
+
     add_action(function(string arg) {
         object me = this_player();
         write("You are listening...");
