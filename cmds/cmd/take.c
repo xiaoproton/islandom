@@ -8,6 +8,7 @@ int main(object me, string arg)
     //mixed foundObj;
     int power;
     int num;
+    object real_obj;
     if(!arg||arg=="")
     {
         notify_fail("What do you want to pick up?");
@@ -21,17 +22,20 @@ int main(object me, string arg)
     {
         foreach( obj,num in ob_list)
         {
+
             debug_message(sprintf("obj = %O",obj));
-            if(obj->shortfilename()==arg)
+            real_obj = find_object(obj);
+            debug_message(sprintf("real_obj = %O",real_obj));
+            if(real_obj->shortfilename()==arg)
             {
                 power = to_int(me->query("power"));
-                if(obj->can_be_pickedup(power))
+                if(real_obj->can_be_pickedup(power))
                 {
 
-                    obj->move_object(me);
+                    real_obj->move_object(me);
 
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
-                    destruct(obj);
+                    destruct(real_obj);
                     me->save();
                     return 1;
                 }
