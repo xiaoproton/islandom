@@ -12,7 +12,7 @@ int main(object me, string arg)
     obj=load_object(arg);
     if(!obj)
     {
-        debug_message("obj = "+obj->getruid());
+        debug_message("obj = %O"+obj);
         me->make_inventory(obj);
         debug_message("make_inventory done");
         write("You have picked up "+obj->short()+" and placed into your inventory.");

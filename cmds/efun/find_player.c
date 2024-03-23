@@ -6,11 +6,11 @@ int main(object me, string arg)
 
     if (!arg)
     {
-        return notify_fail(HIY "指令格式： find_player name\n" NOR);
+        return notify_fail(HIY "Command format: find_player name\n" NOR);
     }
     if (ob = find_player(arg))
         write(HIG + arg + " => " + file_name(ob) + "\n" NOR);
     else
-        write(HIR "没有找到名字是 " + arg + " 的玩家！\n" NOR);
+        write(HIR "Couldn't find a play with name " + arg + " .\n" NOR);
     return 1;
 }

@@ -6,11 +6,11 @@ int main(object me, string arg)
 
     if (!arg)
     {
-        return notify_fail(HIY "指令格式： find_living name\n" NOR);
+        return notify_fail(HIY "Command syntax: find_living name\n" NOR);
     }
     if (ob = find_living(arg))
         write(HIG + arg + " => " + file_name(ob) + "\n" NOR);
     else
-        write(HIR "没有找到名字是 " + arg + " 的对象！\n" NOR);
+        write(HIR "Couldn't find a creature with name " + arg + ".\n" NOR);
     return 1;
 }

@@ -41,10 +41,12 @@ mixed process_input(string verb)
        "ne":"go northeast",
         "d":"go down",
         "u":"go up",
-     //"chat":"shout",
-      //"who":"users",
+     "chat":"shout",
+      "who":"users",
         "i":"inventory",
         "sc":"score",
+        "snoopee":"query_snoop",
+        "snooper":"query_snooping"
       // "ls":"get_dir",
       // "sa":"area_set",
     ]);

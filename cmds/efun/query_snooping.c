@@ -5,21 +5,21 @@ int main(object me, string arg)
 
     if (!arg)
     {
-        cecho("指令格式：query_snooping snooper");
+        cecho("Command syntax query_snooping snooper");
     }
     else
     {
         if (!objectp(snooper = find_player(arg)))
         {
-            cecho("没有找到 " + arg + " 这个玩家，无法查看信息。");
+            cecho("Couldn't find player " + arg + ". No info provided.");
         }
         else if (objectp(snoopee = query_snooping(snooper)))
         {
-            printf("玩家 %O 正在监听玩家 %O。\n", snooper, snoopee);
+            printf("Player %O is snooping %O .\n", snooper, snoopee);
         }
         else
         {
-            cecho("玩家 " + arg + " 没有监听任何人。");
+            cecho("Player " + arg + " is not snooping anyone.");
         }
     }
 

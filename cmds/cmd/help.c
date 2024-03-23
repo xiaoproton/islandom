@@ -16,7 +16,11 @@ int main(object me, string arg)
         $CYN$nurse$NOR$                                 take care of something/someone
         $CYN$inventory OR i$NOR$                        check what you are carrying
         $CYN$score OR s$NOR$                            check your status and power
-        $CYN$fight$NOR$                                 try to kill something
+        $CYN$fight$NOR$                                 try to kill someone
+        $CYN$say$NOR$                                   say to everyone in the current room/place
+        $CYN$chat$NOR$                                  talk to everyonr online
+        $CYN$who$NOR$                                   list all players online
+        $CYN$snoop$NOR$                                 monitor someone
         $CYN$quit$NOR$                                  quit this game
     $YEL$-----------------------------------------------------------------------------------$NOR$
 HELP;
