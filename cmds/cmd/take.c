@@ -5,12 +5,16 @@ int main(object me, string arg)
 {
     mixed obj;
     mixed ob_list;
+    mixed foundObj;
     if(!arg||arg=="")
     {
         notify_fail("What do you want to pick up?");
     }
     debug_message("arg = "+arg);
+    foundObj=find_objects(arg);
+    debug_message(sprintf("foundObj = %O"+foundObj);
     ob_list=environment(me)->query("objects");
+    debug_message("ob_list = "+sizeof(ob_list));
     foreach(mixed ob in ob_list)
     {
         debug_message(sprintf("obj = %s",ob));
@@ -19,8 +23,10 @@ int main(object me, string arg)
     if(!obj)
     {
         debug_message(sprintf("obj = %O",obj));
-        me->make_inventory(obj);
-        debug_message("make_inventory done");
+        //me->make_inventory(obj);
+        //debug_message("make_inventory done");
+        obj->move_object(me);
+        debug_message("move_object done");
         write("You have picked up "+obj->short()+" and placed into your inventory.");
         return 1;
     }
