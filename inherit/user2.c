@@ -15,7 +15,6 @@ void consume(int level) //smallest task, consumption level = 1, normal task cons
     if(food>100)
         food = 100;
     set("food", food);
-    save();
 }
 
 // apply函数：如果用户对象中有process_input()，驱动会将玩家所有输入传入这里
