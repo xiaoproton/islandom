@@ -1,4 +1,4 @@
-// worker_ant_hall.c
+// hall.c
 #include "ansi.h"
 //inherit DBASE;
 inherit ROOM;
@@ -18,15 +18,14 @@ void create()
     A small rock (look rock) is in the middle of the hall.
 LONG );
     set("exits", ([
-        "north":__DIR__ "queens_chamber",
-        "south":__DIR__ "egg_chamber",
+        "north":__DIR__ "palace",
+        "south":__DIR__ "incubator",
     ]));
     set("items", ([
         "small rock" : (: look_rock :),
     ]));
 
     load_object(food)->move_object(this_object());;
-    obj->move_object(this_object());
     set("objects", ([
         food:1,
     ]));
