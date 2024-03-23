@@ -5,7 +5,7 @@ int main(object me, string arg)
 {
     mixed obj;
     mixed ob_list;
-    mixed foundObj;
+    //mixed foundObj;
     int power;
     int num;
     if(!arg||arg=="")
@@ -13,8 +13,8 @@ int main(object me, string arg)
         notify_fail("What do you want to pick up?");
     }
     debug_message(sprintf("present %s got %O", arg, present(arg)));
-    foundObj=find_object(arg);
-    debug_message(sprintf("foundObj = %O",foundObj));
+    //foundObj=find_object(arg);
+    //debug_message(sprintf("foundObj = %O",foundObj));
     ob_list=environment(me)->query("objects");
     debug_message(sprintf("ob_list = %O",ob_list));
     if(ob_list && sizeof(ob_list)>0)
@@ -27,13 +27,13 @@ int main(object me, string arg)
                 power = to_int(me->query("power"));
                 if(obj->can_be_pickedup(power))
                 {
-                    obj->move_object(VOID_OB);
-                    me->make_inventory(obj);
+                    obj->move_object(me);
+                    //me->make_inventory(obj);
                     debug_message("make_inventory done");
                     //obj->move_object(me);
                     //debug_message("move_object done");
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
-                    destruct(obj);
+                    //destruct(obj);
                     me->save();
                     return 1;
                 }
