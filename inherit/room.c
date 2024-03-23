@@ -144,8 +144,8 @@ mixed myPresent(string arg)
     foreach( obj,num in ob_list)
     {
         shortname = obj->shortfilename();
-        debug_message(sprintf("myPresent shortname %s",obj->shortfilename()));
-        if(==arg)
+        debug_message(sprintf("myPresent shortname %s",shortname));
+        if(shortname==arg)
         {
             return obj;
         }
