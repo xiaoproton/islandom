@@ -25,6 +25,7 @@ int main(object me, string arg)
                 power = to_int(me->query("power"));
                 if(obj->can_be_pickedup(power))
                 {
+                    debug_message(sprintf("obj %O",obj));
                     obj->move_object(VOID_OB);
                     newobj=me->make_inventory(obj);
                     debug_message(sprintf("newobj = %O",newobj));
