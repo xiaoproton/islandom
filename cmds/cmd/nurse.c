@@ -8,6 +8,7 @@ int main(object me, string arg)
     //mixed foundObj;
     int num;
     int nutrition;
+    int power;
 
     if(!arg||arg=="")
     {
