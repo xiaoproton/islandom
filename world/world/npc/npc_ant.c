@@ -28,13 +28,13 @@ int can_be_pickedup(int pwr)
 
 void heart_beat()
 {
-    if(random(20)<1)
-    {
-        say("[NPC Ant]: working harder...\n");
-    }
     if(random(10)<1)
     {
+        say("[NPC Ant]: working harder...\n");
+
         object fd = clone_object(__DIR__ "../item/food") ;
+        debug_message(sprintf("created %O",fd));
         fd->move_object(environment(this_object()));
+        debug_message(sprintf("fd env %O",environment(fd)));
     }
 }
