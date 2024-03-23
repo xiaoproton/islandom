@@ -131,24 +131,25 @@ mixed myPresent(string arg)
 {
     mixed ret;
     mixed ob_list;
-    object obj;
+    mixed obj;
     int num;
     string shortname;
-    debug_message(sprintf("myPresent arg %s", arg));
+    //debug_message(sprintf("myPresent arg %s", arg));
     ret = present(arg, this_object());
     if(ret)
         return ret;
 
     ob_list=this_object()->query("objects");
-    debug_message(sprintf("myPresent ob_list %O", ob_list));
+    //debug_message(sprintf("myPresent ob_list %O", ob_list));
 
     foreach( obj,num in ob_list)
     {
         shortname = obj->shortfilename();
-        debug_message(sprintf("myPresent shortname %s",shortname));
+       // debug_message(sprintf("myPresent shortname %s",shortname));
         if(shortname==arg)
         {
-            return obj;
+            //debug_message(sprintf("myPresent return %O",obj));
+            return load_object(obj);
         }
     }
 
