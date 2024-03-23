@@ -15,8 +15,8 @@ varargs void create(int i, int power)
     set("name", info[1]);
     set("size",info[3]);
     set("power", info[2]+ random(power));
-    set("unit", "");
-    set("colour", random(3) ? (random(3) ? "b" : "y") : "p");
+    set("unit", " ");
+    set("colour", "r");
     if (clonep())
     {
         set("hp", 100);

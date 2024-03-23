@@ -7,6 +7,8 @@ string look_rock();
 
 void create()
 {
+    mixed food = __DIR__ "item/food";
+
     set("short", "Worker Ant Hall");
     set("long", @LONG
     Your pheromone tells you this underground space is called Worker Ant Hall,
@@ -22,6 +24,12 @@ LONG );
     set("items", ([
         "small rock" : (: look_rock :),
     ]));
+
+    //load_object(food);
+    set("objects", ([
+        food:1,
+    ]));
+    setup();
 }
 
 void init()

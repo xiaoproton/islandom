@@ -4,9 +4,9 @@ inherit LIVING;
 void create()
 {
     ::create();
-    set_living("npc");
-    set("name", " Ant ");
-    set("unit", "");
+    set_living("npc_ant");
+    set("name", "NPC Ant");
+    set("unit", " ");
     if (clonep())
     {
         int power = random(20) + 1;
@@ -15,8 +15,8 @@ void create()
         set("food", random(20)+80);
         set("size",random(3));
         set("power", random(10));
-        set("unit", "");
-        set("colour", random(3) ? (random(3) ? "b" : "y") : "p");
+        set("unit", " ");
+        set("colour", "g");
         set_heart_beat(1);
     }
 }

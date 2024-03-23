@@ -146,7 +146,6 @@ int look_room(object me, object env)
 {
     string str, *dirs;
     mapping exits;
-    mixed objs1,objs2;
 
     if (env->is_area())
     {
@@ -172,13 +171,8 @@ int look_room(object me, object env)
     {
         str += "    No way to this direction. \n";
     }
-    objs1 = env->query("objects");
-    //objs2 = env->query_temp("objects");
-    debug_message("objs1 size" + sizeof(objs1));
-    //debug_message("objs2 size" + sizeof(objs2));
 
     str += list_all_inventory_of_object(me, env);
-    debug_message("inv str " + str);
     tell_object(me, str);
     return 1;
 }
@@ -191,7 +185,7 @@ string desc_of_objects(object *obs)
     string short_name;
     string *ob;
 
-    debug_message(sprintf("desc_of_objects %d ",sizeof(obs)));
+    //debug_message(sprintf("desc_of_objects %d ",sizeof(obs)));
 
     if (obs && sizeof(obs) > 0)
     {
@@ -201,11 +195,11 @@ string desc_of_objects(object *obs)
 
         for (i = 0; i < sizeof(obs); i++)
         {
-            short_name = obs[i]->short();
+            short_name = obs[i]->colourString() + obs[i]->short() + NOR;
             debug_message("short_name "+short_name);
 
             list[short_name] += obs[i]->query_temp("amount") ? obs[i]->query_temp("amount") : 1;
-            unit[short_name] = obs[i]->query("unit") ? obs[i]->query("unit") : "";
+            unit[short_name] = obs[i]->query("unit") ? obs[i]->query("unit") : " ";
         }
 
         ob = sort_array(keys(list), 1);
@@ -239,7 +233,7 @@ string list_all_inventory_of_object(object me, object env)
 
     obs = filter_array(inv, (: $(me) != $1 :));
     str += desc_of_objects(obs);
-    debug_message(sprintf("list_all_inventory_of_object of %s returns %s",env->short(),str));
+    //debug_message(sprintf("list_all_inventory_of_object of %s returns %s",env->short(),str));
     return str;
 }
 

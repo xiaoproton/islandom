@@ -43,8 +43,7 @@ mixed process_input(string verb)
         "u":"go up",
      "chat":"shout",
       "who":"users",
-        "i":"all_inventory",
-        "inventory":"all_inventory",
+        "i":"inventory",
         "sc":"score",
       // "ls":"get_dir",
       // "sa":"area_set",
@@ -58,13 +57,7 @@ mixed process_input(string verb)
         return "say " + verb[1..];
     }
 
-    if (sizeof(word) && !undefinedp(alias[word[0]]))
-    {
-        word[0] = alias[word[0]];
-        return implode(word, " ");
-    }
-
-    if(verb[0..2]=="go ")
+     if(verb[0..2]=="go ")
     {
         consume(1);
     }
@@ -78,11 +71,21 @@ mixed process_input(string verb)
     }
     if(verb[0..4]=="feed")
     {
-        consume(4);
+        consume(2);
+    }
+    if(verb[0..5]=="nurse")
+    {
+        consume(2);
     }
     if(verb[0..4]=="fight")
     {
         consume(8);
+    }
+
+    if (sizeof(word) && !undefinedp(alias[word[0]]))
+    {
+        word[0] = alias[word[0]];
+        return implode(word, " ");
     }
 
     return verb;

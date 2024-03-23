@@ -42,6 +42,10 @@ string colourString()
         return YEL;
     if(colour=="p")
         return MAG;
+    if(colour=="g")
+        return GRN;
+    if(colour=="r")
+        return RED;
 }
 
 string appearance()

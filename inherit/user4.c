@@ -15,7 +15,7 @@ varargs void create(string arg)
         set("hp", 90+random(10));
         set("food", 90+random(10));
         set("power", random(5));
-        set("unit", "");
+        set("unit", " ");
         set_heart_beat(1);
     }
 }
