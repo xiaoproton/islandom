@@ -1,6 +1,6 @@
 int main(object me, string arg)
 {
-    object env = environment(me)
+    object env = environment(me);
 
     env->reset();
 
