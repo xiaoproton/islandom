@@ -152,8 +152,8 @@ int look_room(object me, object env)
         return env->do_look(me);
     }
 
-    str = sprintf(HIC + "%s" + NOR + "(%s)\n%s" + NOR,
-                  env->query("short"), env->geteuid() ,env->query("long"));
+    str = sprintf(HIC + "%s" + NOR + "\n%s" + NOR,
+                  env->short(),env->query("long"));
 
     if (mapp(exits = env->query("exits")))
     {

@@ -4,13 +4,15 @@
 int main(object me, string arg)
 {
     string str;
-    str = sprintf(YEL+"----------- Ant "+NOR+cl+"%s 's Inventory"+NOR+YEL+" -----------\n"+NOR
+    string cl;
+
+    cl = me->colourString();
+    str = sprintf(YEL+"----------- Ant "+NOR+cl+"%s 's Inventory"+NOR+YEL+" -----------\n"+NOR;
     foreach (object ob in all_inventory(me))
     {
-        printf(" - %O\n", ob);
+        debug_message(sprintf(" - %O\n", ob));
         str += sprintf("[   %s              ]\n",ob->short());
     }
     write(str);
     return 1;
-
 }
