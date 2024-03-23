@@ -257,7 +257,7 @@ int look_living(object me, object ob)
     //debug_message("ob->query(power) "+ob->query("power"));
     //msg = sprintf("%s is a living creature. \n", ob->short());  //,ob->appearance()
     //msg += line;
-    msg += sprintf("Power %s\n", ob->query("power"));
+    msg += sprintf("Power %d\n", ob->query("power"));
     msg += line;
     /*tell_object(me, msg);
     */
