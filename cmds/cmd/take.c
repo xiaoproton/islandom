@@ -16,7 +16,7 @@ int main(object me, string arg)
     ob_list=environment(me)->query("objects");
     debug_message(sprintf("ob_list = %O",ob_list));
     obj = ob_list[0];
-    if(!obj)
+    if(obj)
     {
         debug_message(sprintf("obj = %O",obj));
         //me->make_inventory(obj);
