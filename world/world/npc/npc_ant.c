@@ -29,9 +29,17 @@ int can_be_pickedup(int pwr)
 void heart_beat()
 {
     object fd;
-    if(random(10)<1)
+    if(random(30)<1)
     {
-        say("[NPC Ant]: working harder...\n");
+        if(random(2)<1)
+        {
+            say("[NPC Ant]: Me should work harder...\n");
+        }
+        else
+        {
+            say("[NPC Ant]: Me need to fight outside to get more food.\n");
+        }
+
 
         /*
         fd = clone_object("/world/world/item/food") ;

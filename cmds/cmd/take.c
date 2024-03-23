@@ -14,7 +14,7 @@ int main(object me, string arg)
         notify_fail("What do you want to pick up?");
     }
 
-    ob_list = all_inventory(environment(me));
+    ob_list = all_inventory(environment(me));   //use all_inv not query("objects"), to get actual clones
     debug_message(sprintf("ob_list = %O",ob_list));
     if(ob_list && sizeof(ob_list)>0)
     {
@@ -27,7 +27,7 @@ int main(object me, string arg)
                 {
                     debug_message(sprintf("obj %O",obj));
                     obj->move_object(VOID_OB);
-                    newobj=me->make_inventory(base_name(obj));
+                    newobj=me->make_inventory(base_name(obj));  //use base_name, not file_name, to remove # part
                     debug_message(sprintf("newobj = %O",newobj));
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
                     destruct(obj);
