@@ -26,7 +26,7 @@ int main(object me, string arg)
             debug_message("make_inventory done");
             //obj->move_object(me);
             //debug_message("move_object done");
-            write("You have picked up "+obj->short()+" and placed into your inventory.");
+            write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
             return 1;
         }
     }
