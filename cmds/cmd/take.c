@@ -10,7 +10,7 @@ int main(object me, string arg)
         notify_fail("What do you want to pick up?");
     }
     debug_message("arg = "+arg);
-    ob_list=environment(e)->query("objects");
+    ob_list=environment(me)->query("objects");
     foreach(mixed ob in ob_list)
     {
         debug_message(sprintf("obj = %s",ob));
