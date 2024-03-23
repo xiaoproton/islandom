@@ -16,9 +16,8 @@ int main(object me, string arg)
     debug_message(sprintf("foundObj = %O",foundObj));
     ob_list=environment(me)->query("objects");
     debug_message(sprintf("ob_list = %O",ob_list));
-    obj = ob_list[0];
 
-    foreach( obj,num in obj_list)
+    foreach( obj,num in ob_list)
     {
         debug_message(sprintf("obj = %O",obj));
         if(obj->shortfilename()==arg)

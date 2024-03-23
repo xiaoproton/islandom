@@ -77,9 +77,11 @@ string lastpathname()
     string *parts ;
     string lastpath;
     allpath= file_name();
-    parts = explode(allpath,"/");
-    lastpath = parts[sizeof(parts) - 1];
-    return lastpath;
+    if(parts = explode(allpath,"/"))
+    {
+        return parts[sizeof(parts) - 1];
+    }
+    return allpath;
 }
 
 string shortfilename()
@@ -87,8 +89,11 @@ string shortfilename()
     string lastpath;
     string *parts;
     lastpath = lastpathname();
-    parts = explode(lastpath,"#");
-    return parts[0];
+    if(parts = explode(lastpath,"#"))
+    {
+        return parts[0];
+    }
+    return lastpath;
 }
 
 int id_num()
