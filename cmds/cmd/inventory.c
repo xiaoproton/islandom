@@ -7,7 +7,7 @@ int main(object me, string arg)
     string cl;
 
     cl = me->colourString();
-    str = sprintf(YEL+"----------- Ant "+NOR+cl+"%s 's Inventory"+NOR+YEL+" -----------\n"+NOR;
+    str = sprintf(YEL+"----------- Ant "+NOR+cl+"%s 's Inventory"+NOR+YEL+" -----------\n"+NOR);
     foreach (object ob in all_inventory(me))
     {
         debug_message(sprintf(" - %O\n", ob));

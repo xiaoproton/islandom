@@ -92,3 +92,37 @@ void addExit(string dir, string dest)
     if (!exits[dir])
         exits[dir] = dest;
 }
+
+
+string lastpathname()
+{
+    string allpath;
+    string *parts ;
+    string lastpath;
+    allpath= file_name();
+    if(parts = explode(allpath,"/"))
+    {
+        return parts[sizeof(parts) - 1];
+    }
+    return allpath;
+}
+
+string shortfilename()
+{
+    string lastpath;
+    string *parts;
+    lastpath = lastpathname();
+    if(parts = explode(lastpath,"#"))
+    {
+        return parts[0];
+    }
+    return lastpath;
+}
+
+
+// 对象简称
+string short()
+{
+    return sprintf("%s(%s)", query("name")||"???", shortfilename());
+
+}
