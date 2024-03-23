@@ -13,9 +13,10 @@ int main(object me, string arg)
     {
         notify_fail("What do you want to pick up?");
     }
-    debug_message(sprintf("present %s got %O", arg, present(arg)));
+    //debug_message(sprintf("present %s got %O", arg, present(arg)));
     //foundObj=find_object(arg);
     //debug_message(sprintf("foundObj = %O",foundObj));
+    debug_message(sprintf("all_inventory env %O", all_inventory(environment(me))));
     ob_list=environment(me)->query("objects");
     debug_message(sprintf("ob_list = %O",ob_list));
     if(ob_list && sizeof(ob_list)>0)
