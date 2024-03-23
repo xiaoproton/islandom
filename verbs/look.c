@@ -73,7 +73,7 @@ mixed do_look_at_obj(object ob)
     }
     else
     {
-        printf("%s\n", ob->long());
+        printf("%s\n", (ob->long()||ob->query("long")));
     }
 
     return 1;
@@ -140,7 +140,8 @@ mixed do_look_str(string str, string arg)
 
 mixed do_verb_rule(mixed *data...)
 {
-    cecho(sprintf("do_verb_rule : %O", data));
+    //this is triggered by driver?
+    debug_message(sprintf("do_verb_rule : %O", data));
     return 1;
 }
 
