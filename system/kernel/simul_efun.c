@@ -36,27 +36,27 @@ varargs string pronoun(mixed arg, int type)
 {
     if (!objectp(arg))
     {
-        return "你";
+        return "You";
     }
     else
     {
-        arg = arg->query("gender");
+        arg = arg->query("colour");
         switch (type)
         {
         case 1:
-            return "自己";
+            return "Yourself";
         case 2:
-            return "你";
+            return "You";
         case 3:
         default:
             switch (arg)
             {
-            case "男":
-                return "他";
-            case "女":
-                return "她";
+            case "b":
+                return "He";
+            case "p":
+                return "She";
             default:
-                return "它";
+                return "It";
             }
         }
     }

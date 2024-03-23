@@ -112,6 +112,9 @@ mixed do_look_at_str(string str, string arg)
     object ob;
     mixed item_desc;
 
+    debug_message(sprintf("query items %O",env->query("items")));
+    debug_message(sprintf("query items/%s %O",str,env->query("items/" + str)));
+
     if (str == "here")
     {
         return do_look();
@@ -244,7 +247,7 @@ int look_living(object me, object ob)
 
     if (ob != this_player())
     {
-        msg = "$ME looked $YOU as if $YOU are a piece of food.";
+        msg = "$ME looked $YOU as if $YOU is insteresting.";
         msg("vision", msg, me, ob);
     }
     msg = sprintf("%s is a %s living creature. \n", (ob->colourString()||MAG)+(ob->short())+NOR,ob->appearance());
