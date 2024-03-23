@@ -13,26 +13,23 @@ int main(object me, string arg)
     {
         notify_fail("What do you want to pick up?");
     }
-    //debug_message(sprintf("present %s got %O", arg, present(arg)));
-    //foundObj=find_object(arg);
-    //debug_message(sprintf("foundObj = %O",foundObj));
-    debug_message(sprintf("all_inventory env %O", all_inventory(environment(me))));
-    ob_list=environment(me)->query("objects");
+
+    ob_list = all_inventory(environment(me));
     debug_message(sprintf("ob_list = %O",ob_list));
     if(ob_list && sizeof(ob_list)>0)
     {
-        foreach( obj,num in ob_list)
+        foreach( obj in ob_list)
         {
             if(obj->shortfilename()==arg)
             {
                 power = to_int(me->query("power"));
                 if(obj->can_be_pickedup(power))
                 {
-                    //obj->move_object(VOID_OB);
-                    newobj=me->make_inventory(obj);
+                    obj->move_object(me);
+                    //newobj=me->make_inventory(obj);
                     debug_message(sprintf("newobj = %O",newobj));
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
-                    obj->destruct();
+                    //obj->destruct();
                     me->save();
                     return 1;
                 }
