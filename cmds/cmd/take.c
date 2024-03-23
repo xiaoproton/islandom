@@ -11,10 +11,10 @@ int main(object me, string arg)
         notify_fail("What do you want to pick up?");
     }
     debug_message("arg = "+arg);
-    foundObj=find_objects(arg);
+    foundObj=find_object(arg);
     debug_message(sprintf("foundObj = %O"+foundObj);
     ob_list=environment(me)->query("objects");
-    debug_message("ob_list = "+sizeof(ob_list));
+    debug_message(sprintf("ob_list = %d"+sizeof(ob_list)));
     foreach(mixed ob in ob_list)
     {
         debug_message(sprintf("obj = %s",ob));
