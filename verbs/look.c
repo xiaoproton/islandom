@@ -248,9 +248,12 @@ int look_living(object me, object ob)
 
     if (ob != this_player())
     {
-        msg = "$ME looked $YOU as if $YOU is insteresting.";
+        msg = "$ME looked $YOU as if $YOU is interesting.";
         msg("vision", msg, me, ob);
     }
+    debug_message("ob->short() "+ob->short());
+    debug_message("ob->appearance() "+ob->appearance());
+    debug_message("ob->query(power) "+ob->query("power"));
     msg = sprintf("%s is a %s living creature. \n", ob->short(),ob->appearance());
     msg += line;
     msg += sprintf("Power %s\n", ob->query("power"));
