@@ -134,6 +134,7 @@ mixed myPresent(string arg)
     object obj;
     int num;
     string shortname;
+    debug_message(sprintf("myPresent arg %s", arg));
     ret = present(arg, this_object());
     if(ret)
         return ret;
