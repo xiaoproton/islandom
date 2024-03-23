@@ -32,7 +32,7 @@ LONG );
         npc:1,
         food:1,
     ]));
-    //setup();
+    setup();
 }
 
 void init()

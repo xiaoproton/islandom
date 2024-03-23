@@ -17,7 +17,7 @@ int main(object me, string arg)
         if(ob->shortfilename()=="food")
         {
             ob->move_object(VOID_OB);
-            ob->destruct(ob);
+            destruct(ob);
             nutrition += addition;
             me->set("food",nutrition);
             write(sprintf(GRN+"You ate a piece of food.\n "

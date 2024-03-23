@@ -23,7 +23,7 @@ LONG );
     set("objects", ([
         queen:1,
     ]));
-    //setup();
+    setup();
 }
 
 void init()
