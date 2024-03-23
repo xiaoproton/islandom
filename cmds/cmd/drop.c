@@ -29,7 +29,7 @@ int main(object me, string arg)
 
                     //debug_message(sprintf("obj %O",obj));
                     obj->move_object(VOID_OB);
-                    newobj=emvironment(me)->make_inventory(base_name(obj));  //use base_name, not file_name, to remove # part
+                    newobj=environment(me)->make_inventory(base_name(obj));  //use base_name, not file_name, to remove # part
                     //debug_message(sprintf("newobj = %O",newobj));
                     write(GRN+"You have dropped "+obj->short()+".\n"+NOR);
                     destruct(obj);
