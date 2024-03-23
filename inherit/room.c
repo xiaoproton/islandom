@@ -32,6 +32,8 @@ void reset()
     string file;
     int amount;
 
+    debug_message(sprintf("reset called for %O",this_object()));
+
     if (!mapp(ob_list = query("objects")))
         return;
 
@@ -40,6 +42,7 @@ void reset()
 
     foreach(file, amount in ob_list)
     {
+        debug_message(sprintf("foreach %O",ob_list));
         if (amount == 1)
         {
             if(!objectp(ob[file]))
