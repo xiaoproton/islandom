@@ -210,11 +210,11 @@ string desc_of_objects(object *obs)
         ob = sort_array(keys(list), 1);
         for (i = 0; i < sizeof(ob); i++)
         {
-            str += "  ";
+            str += YEL+" * "+NOR+"  ";
             if (list[ob[i]] > 1)
-                str += list[ob[i]] + unit[ob[i]] + ob[i] + "\n";
+                str += list[ob[i]] + unit[ob[i]] + ob[i] +YEL+" * "+NOR+ "\n";
             else
-                str += ob[i] + "\n";
+                str += ob[i] +YEL+" * "+NOR+ "\n";
         }
         return str;
     }
