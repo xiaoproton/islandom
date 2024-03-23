@@ -14,12 +14,8 @@ int main(object me, string arg)
     foundObj=find_object(arg);
     debug_message(sprintf("foundObj = %O",foundObj));
     ob_list=environment(me)->query("objects");
-    debug_message(sprintf("ob_list = %d",sizeof(ob_list)));
-    foreach(mixed ob in ob_list)
-    {
-        debug_message(sprintf("obj = %s",ob));
-        debug_message(sprintf("obj = %s",ob->geteuid()));
-    }
+    debug_message(sprintf("ob_list = %O",ob_list));
+    obj = ob_list[0];
     if(!obj)
     {
         debug_message(sprintf("obj = %O",obj));

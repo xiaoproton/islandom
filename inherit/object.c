@@ -74,7 +74,7 @@ void move_or_destruct(object dest)
 // 对象简称
 string short()
 {
-    return sprintf("%s(%s)", query("name")||"???", geteuid());
+    return sprintf("%s(%s)", query("name")||"???", getuid());
 }
 
 // 对象描述
