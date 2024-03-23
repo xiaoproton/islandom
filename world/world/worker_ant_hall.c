@@ -21,6 +21,7 @@ LONG );
     set("exits", ([
         "north":__DIR__ "queens_chamber",
         "south":__DIR__ "egg_chamber",
+        "east":__DIR__ "larva_chamber",
     ]));
     set("items", ([
         "rock" : (: look_rock :),
@@ -51,6 +52,6 @@ void init()
 string look_rock()
 {
     object me = this_player();
-    return YEL+"A small rock. \nThe pheronmone on it tells you, the north is Queens Chamber,\n"
-                +" and the south is Egg Chamber.\n"+NOR;
+    return YEL+"A small rock. \nThe pheronmone on it tells you, the north is Queens Chamber.\n"
+                +"Also, this reminds you that you can try to look almost everything.\n"+NOR;
 }

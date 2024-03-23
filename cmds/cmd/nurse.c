@@ -31,10 +31,20 @@ int main(object me, string arg)
             write(GRN+"You spent energy and nutrition to nurse "+obj->short()+".\n"+NOR);
             if(arg=="egg" && random(10)<2)
             {
-                write(sprintf(YEL+"You are feeling your power has increased by keeping nursing eggs.\n"+NOR));
-                power = to_int(me->query("power"));
-                me->set("power",(power+1));
-                me->save();
+                if(random(3)<1)
+                {
+                    write(sprintf(HIY+"The egg has just incubated to be a larva thanks to your caring!\n"+NOR));
+                    destruct(obj);
+                    environment(me)->make_inventory("/world/world/item/larva");
+                }
+                else
+                {
+                    write(sprintf(YEL+"You are feeling your power has increased by keeping nursing eggs.\n"+NOR));
+                    power = to_int(me->query("power"));
+                    me->set("power",(power+1));
+                    me->save();
+                }
+
             }
             return 1;
         }

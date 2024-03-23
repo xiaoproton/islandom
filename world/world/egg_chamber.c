@@ -9,7 +9,7 @@ void create()
 
     set("short", "Egg Chamber");
     set("long", @LONG
-    Eggs are growing here with some care (nurse). When eggs turn into larvae,
+    Eggs, as tiny as white dots, are growing here with some care (nurse). When eggs turn into larvae,
     they need to be moved (take and drop) to Lavra Chamber to grow further.
 LONG );
     set("exits", ([

@@ -13,5 +13,11 @@ void create()
 
 int can_be_pickedup(int pwr)
 {
-    return 0;
+    object env;
+    env = environment(this_object());
+    if(env && env->shortfilename()=="larva_chamber")
+    {
+        return 0;
+    }
+    return 1;
 }

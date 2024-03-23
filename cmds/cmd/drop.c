@@ -46,6 +46,20 @@ int main(object me, string arg)
                             write(sprintf(GRN+"Egg is incubating healthier in Egg Chamber.\n"+NOR));
                         }
                     }
+                    if(obj->shortfilename()=="larva" && environment(me)->shortfilename()=="larva_chamber")
+                    {
+                        if(random(10)<2)
+                        {
+                            write(sprintf(YEL+"You are feeling your power has increased by keeping moving larvae.\n"+NOR));
+                            power = to_int(me->query("power"));
+                            me->set("power",(power+1));
+                            me->save();
+                        }
+                        else
+                        {
+                            write(sprintf(GRN+"Larva is growing healthier in Larva Chamber.\n"+NOR));
+                        }
+                    }
                     destruct(obj);
                     me->save();
                     return 1;
