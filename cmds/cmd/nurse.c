@@ -24,8 +24,8 @@ int main(object me, string arg)
         {
             //me->make_inventory(obj);
             //debug_message("make_inventory done");
-            obj->move(me);
-            debug_message("move done");
+            obj->move_object(me);
+            debug_message("move_object done");
             write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
             return 1;
         }

@@ -28,8 +28,7 @@ int main(object me, string arg)
                 if(obj->can_be_pickedup(power))
                 {
 
-                    me->make_inventory(obj);
-                    debug_message("make_inventory done");
+                    obj->move_object(me);
 
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
                     //destruct(obj);
