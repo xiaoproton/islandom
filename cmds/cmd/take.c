@@ -31,7 +31,7 @@ int main(object me, string arg)
                     obj->move_object(me);
 
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
-                    //destruct(obj);
+                    destruct(obj);
                     me->save();
                     return 1;
                 }
