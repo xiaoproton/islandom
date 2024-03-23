@@ -22,7 +22,7 @@ LONG );
         "south":__DIR__ "egg_chamber",
     ]));
     set("items", ([
-        "small rock" : (: look_rock :),
+        "rock" : (: look_rock :),
     ]));
 
     load_object(food)->move_object(this_object());;

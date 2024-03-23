@@ -55,8 +55,14 @@ varargs string pronoun(mixed arg, int type)
                 return "He";
             case "p":
                 return "She";
+            case "g":
+                return "She";
+            case "y":
+                return "They";
+            case "r":
+                return "He";
             default:
-                return "It";
+                return "They";
             }
         }
     }

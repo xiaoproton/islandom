@@ -112,8 +112,8 @@ mixed do_look_at_str(string str, string arg)
     object ob;
     mixed item_desc;
 
-    debug_message(sprintf("query items %O",env->query("items")));
-    debug_message(sprintf("query items/%s %O",str,env->query("items/" + str)));
+    //debug_message(sprintf("query items %O",env->query("items")));
+    //debug_message(sprintf("query items/%s %O",str,env->query("items/" + str)));
 
     if (str == "here")
     {
@@ -167,7 +167,7 @@ int look_room(object me, object env)
         else if (sizeof(dirs) == 1)
             str += "    The only exit here is " + BOLD + dirs[0] + NOR + "。\n";
         else
-            str += sprintf("    The obvious exits are " + BOLD + "%s" + NOR + " and " + BOLD + "%s" + NOR + "。\n",
+            str += sprintf("    The obvious exits are " + BOLD + "%s" + NOR + " and " + BOLD + "%s" + NOR + ". \n",
                            implode(dirs[0..sizeof(dirs)-2], "、"), dirs[sizeof(dirs) - 1]);
     }
     else
@@ -230,7 +230,7 @@ string list_all_inventory_of_object(object me, object env)
         return "";
 
     inv = all_inventory(env);
-    debug_message(sprintf("size inv of %s is %d",env->short(),sizeof(inv)));
+    //debug_message(sprintf("size inv of %s is %d",env->short(),sizeof(inv)));
     if (!sizeof(inv))
         return str;
 
