@@ -26,8 +26,8 @@ LONG );
         "rock" : (: look_rock :),
     ]));
 
-    load_object(npc)->move_object(this_object());
-    load_object(food)->move_object(this_object());;
+    //load_object(npc)->move_object(this_object());
+    //load_object(food)->move_object(this_object());;
     set("objects", ([
         npc:1,
         food:1,

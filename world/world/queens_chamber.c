@@ -19,7 +19,7 @@ LONG );
         "south":__DIR__ "worker_ant_hall",
     ]));
 
-    load_object(queen)->move_object(this_object());
+    //load_object(queen)->move_object(this_object());
     set("objects", ([
         queen:1,
     ]));
