@@ -1,6 +1,10 @@
 int main(object me, string arg)
 {
-    environement(me)->reset();
+    object env = environment(me)
+
+    env->reset();
+
+    write(sprintf("reset %O",env));
 
     return 1;
 }
