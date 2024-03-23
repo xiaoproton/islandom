@@ -245,12 +245,13 @@ int look_living(object me, object ob)
 {
     string msg;
     string line = repeat_string("-*-", 12) + "\n";
-    /*
+
     if (ob != this_player())
     {
         msg = "$ME looked $YOU as if $YOU is interesting.";
         msg("vision", msg, me, ob);
     }
+    /*
     //debug_message("ob->short() "+ob->short());
     //debug_message("ob->appearance() "+ob->appearance());
     //debug_message("ob->query(power) "+ob->query("power"));
