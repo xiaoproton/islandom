@@ -71,10 +71,21 @@ void move_or_destruct(object dest)
     }
 }
 
+string shortfilename()
+{
+    string allpath;
+    string *parts ;
+    string shortname;
+    allpath= file_name();
+    parts = explode(allpath,"/");
+    shortname = parts[sizeof(parts) - 1];
+    return shortname;
+}
+
 // 对象简称
 string short()
 {
-    return sprintf("%s(%s)", query("name")||"???", getuid());
+    return sprintf("%s(%s)", query("name")||"???", shortfilename());
 }
 
 // 对象描述
