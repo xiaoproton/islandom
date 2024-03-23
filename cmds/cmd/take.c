@@ -3,11 +3,12 @@
 
 int main(object me, string arg)
 {
+    mixed obj;
     if(!arg||arg=="")
     {
         notify_fail("What do you want to pick up?");
     }
-    mixed obj=load_object(arg);
+    obj=load_object(arg);
     if(!obj)
     {
         me->make_inventory(obj);
