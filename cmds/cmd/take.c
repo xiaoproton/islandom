@@ -10,7 +10,7 @@ int main(object me, string arg)
     {
         notify_fail("What do you want to pick up?");
     }
-    debug_message("arg = "+arg);
+    debug_message(sprintf("present %s got %O", arg, present(arg)));
     foundObj=find_object(arg);
     debug_message(sprintf("foundObj = %O",foundObj));
     ob_list=environment(me)->query("objects");
