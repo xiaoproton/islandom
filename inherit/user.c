@@ -30,3 +30,8 @@ object make_inventory(string file)
     ob->move(this_object());
     return ob;
 }
+
+int can_be_pickedup(int pwr)
+{
+    return 0;
+}

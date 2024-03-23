@@ -7,7 +7,8 @@ string look_rock();
 
 void create()
 {
-    mixed food = __DIR__ "item/food";
+    //mixed food = __DIR__ "item/food";
+    mixed npc = __DIR__ "item/npc_ant";
 
     set("short", "Worker Ant Hall");
     set("long", @LONG
@@ -25,9 +26,11 @@ LONG );
         "rock" : (: look_rock :),
     ]));
 
-    load_object(food)->move_object(this_object());;
+    //load_object(food)->move_object(this_object());
+    load_object(npc)->move_object(this_object());
     set("objects", ([
-        food:1,
+        //food:1,
+        npc,1
     ]));
     setup();
 }
@@ -37,7 +40,7 @@ void init()
 
     add_action(function(string arg) {
         object me = this_player();
-        write("You are lstening...");
+        write("You are listening...");
         me->msp_oob("!!MUSIC(ocean-waves.mp3 L=1 V=100 U=http://islandom.space/storage/)");
         return 1;
         //return me->move("/world/area");

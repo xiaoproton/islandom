@@ -19,3 +19,8 @@ int can_be_pickedup(int pwr)
 {
     return 0;
 }
+
+void heart_beat()
+{
+    msg("emote","more eggs, more ants...");
+}

@@ -3,7 +3,7 @@ inherit OBJECT;
 
 void create()
 {
-    set("name", "Ant Egg");
+    set("name", "Incubating Egg");
     set("long","An ant egg that needs to be taken care of ("+GRN+"nurse"+NOR+") in Egg Chamber to grow. \n"
                 +" Then it will turn into a half-larva,\n"
                 +" which then needs to be moved to Larva Chamber,\n"
@@ -13,11 +13,5 @@ void create()
 
 int can_be_pickedup(int pwr)
 {
-    object env;
-    env = environment(this_object());
-    if(env && env->shortfilename()=="egg_chamber")
-    {
-        return 0;
-    }
-    return 1;
+    return 0;
 }

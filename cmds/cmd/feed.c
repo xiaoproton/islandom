@@ -48,7 +48,7 @@ int main(object me, string arg)
                     else if(feedeeType=="queen")
                     {
                         fd->destruct();
-                        if(random(10)<1)
+                        if(random(10)<2)
                         {
                             write(sprintf(YEL+"You are feeling your power has increased by keeping feeding the Queen.\n"+NOR));
                             power = to_int(me->query("power"));
@@ -66,7 +66,7 @@ int main(object me, string arg)
                     else if(feedeeType=="larva")
                     {
                         fd->destruct();
-                        if(random(10)<1)
+                        if(random(10)<2)
                         {
                             write(sprintf(YEL+"You are feeling your power has increased by keeping feeding larvea.\n"+NOR));
                             power = to_int(me->query("power"));

@@ -25,6 +25,11 @@ varargs void create(int i, int power)
     }
 }
 
+int can_be_pickedup(int pwr)
+{
+    return 0;
+}
+
 void init()
 {
     object me = this_player();
