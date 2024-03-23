@@ -22,5 +22,8 @@ int can_be_pickedup(int pwr)
 
 void heart_beat()
 {
-    say("more eggs, more ants...");
+    if(random(20)<1)
+    {
+        say("[Queen Islandom]: more eggs, more ants...\n");
+    }
 }

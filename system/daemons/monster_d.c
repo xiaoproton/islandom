@@ -5,9 +5,7 @@ Description: 游戏怪物守护进程
 Author: xuefeng@mud.ren
 Version: v1.0
 *****************************************************************************/
-/*
- * ID, Name, HP, 攻, 防, 速, EXP, Gold
- */
+
 nosave mixed mob_info = ({
     ({"fly", "mini fly", 11,1}),
     ({"worm", "earth worm", 23,2}),

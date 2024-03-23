@@ -28,5 +28,13 @@ int can_be_pickedup(int pwr)
 
 void heart_beat()
 {
-    say("working harder...");
+    if(random(20)<1)
+    {
+        say("[NPC Ant]: working harder...\n");
+    }
+    if(random(10)<1)
+    {
+        object fd = clone_object(__DIR__ "../item/food") ;
+        fd->move_object(environment(this_object()));
+    }
 }
