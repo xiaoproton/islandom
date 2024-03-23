@@ -49,9 +49,9 @@ int main(object me, string arg)
                     {
                         fd->move_object(VOID_OB);
                         destruct(fd);
-                        if(random(1)<2)
+                        if(random(10)<2)
                         {
-                            if(random(1)<1){
+                            if(random(3)<1){
                                 environment(me)->make_inventory("/world/world/item/egg");
                                 write(sprintf(YEL+"The Queen has just produce a new egg,\n"
                                                     +"thank to your feeding.\n"+NOR));
