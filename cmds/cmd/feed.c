@@ -34,7 +34,8 @@ int main(object me, string arg)
                     feedeeType = feedee->shortfilename();
                     if(feedeeType=="user")
                     {
-                        fd->destruct();
+                        fd->move_object(VOID_OB);
+                        fd->destruct(fd);
                         nutrition = to_int(feedee->query("food"));
                         nutrition += addition;
                         if(nutrition>100)
@@ -47,7 +48,8 @@ int main(object me, string arg)
                     }
                     else if(feedeeType=="queen")
                     {
-                        fd->destruct();
+                        fd->move_object(VOID_OB);
+                        fd->destruct(fd);
                         if(random(10)<2)
                         {
                             write(sprintf(YEL+"You are feeling your power has increased by keeping feeding the Queen.\n"+NOR));
@@ -65,7 +67,8 @@ int main(object me, string arg)
                     }
                     else if(feedeeType=="larva")
                     {
-                        fd->destruct();
+                        fd->move_object(VOID_OB);
+                        fd->destruct(fd);
                         if(random(10)<2)
                         {
                             write(sprintf(YEL+"You are feeling your power has increased by keeping feeding larvea.\n"+NOR));

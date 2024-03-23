@@ -27,7 +27,7 @@ int main(object me, string arg)
                 power = to_int(me->query("power"));
                 if(obj->can_be_pickedup(power))
                 {
-                    obj->move_object(me);
+                    obj->move_object(VOID_OB);
                     me->make_inventory(obj);
                     debug_message("make_inventory done");
                     //obj->move_object(me);
