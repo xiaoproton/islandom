@@ -28,7 +28,7 @@ int can_be_pickedup(int pwr)
 
 void heart_beat()
 {
-    object fd
+    object fd;
     if(random(10)<1)
     {
         say("[NPC Ant]: working harder...\n");
