@@ -32,8 +32,8 @@ int main(object me, string arg)
                 if(real_obj->can_be_pickedup(power))
                 {
 
-                    real_obj->move_object(me);
-
+                    me->make_inventory(real_Obj);
+                    real_obj->move_object(VOID_OB);
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
                     destruct(real_obj);
                     me->save();
