@@ -26,23 +26,8 @@ LONG );
     set("objects", ([
         npc:1,
     ]));
+    make_inventory(npc);
 
-    /*
-    mapping ob_list, ob;
-	string ob_kind;
-	int amount;
-
-    foreach(ob_kind, amount in ob_list) {
-			if( amount==1 ) {
-				if( !objectp(ob[ob_kind]) ) ob[ob_kind] = make_inventory(ob_kind);
-			} else {
-				for(int i=0; i<amount; i++)
-					if( !objectp(ob[ob_kind + " " + i ]) )
-						ob[ob_kind + " " + i] = make_inventory(ob_kind);
-			}
-		}
-
-    */
 }
 
 void init()
