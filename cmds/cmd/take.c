@@ -30,7 +30,7 @@ int main(object me, string arg)
                     newobj=me->make_inventory(base_name(obj));
                     debug_message(sprintf("newobj = %O",newobj));
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
-                    obj->destruct(obj);
+                    destruct(obj);
                     me->save();
                     return 1;
                 }
