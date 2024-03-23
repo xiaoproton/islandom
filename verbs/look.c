@@ -153,7 +153,7 @@ int look_room(object me, object env)
     }
 
     str = sprintf(HIC + "%s" + NOR + "(%s)\n%s" + NOR,
-                  env->query("short"), file_name(env) ,env->query("long"));
+                  env->query("short"), env->geteuid() ,env->query("long"));
 
     if (mapp(exits = env->query("exits")))
     {

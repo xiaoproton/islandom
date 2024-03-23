@@ -7,7 +7,7 @@ int main(object me, string arg)
 
     arg = HIC + arg + NOR + "\n";
 
-    write("你说到：" + arg);
+    write("You saud: " + arg);
     say(HIY + me->query("name") + "(" + geteuid(me) + ")说到：" NOR + arg);
 
     return 1;
