@@ -32,12 +32,12 @@ LONG );
         npc:1,
         food:1,
     ]));
-    setup();
+    //setup();
 }
 
 void init()
 {
-
+    setup();
     add_action(function(string arg) {
         object me = this_player();
         write("You are listening...");
