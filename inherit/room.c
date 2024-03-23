@@ -131,7 +131,7 @@ mixed myPresent(string arg)
 {
     mixed ret;
     mixed ob_list;
-    object ob;
+    object obj;
     int num;
     ret = present(arg, this_object());
     if(ret)
