@@ -15,7 +15,7 @@ int main(object me, string arg)
     debug_message(sprintf("present %s got %O", arg, present(arg)));
     //foundObj=find_object(arg);
     //debug_message(sprintf("foundObj = %O",foundObj));
-    ob_list=environment(me)->query("objects");
+    ob_list=environment(me)->query_temp("objects");
     debug_message(sprintf("ob_list = %O",ob_list));
     if(ob_list && sizeof(ob_list)>0)
     {
@@ -27,7 +27,7 @@ int main(object me, string arg)
                 power = to_int(me->query("power"));
                 if(obj->can_be_pickedup(power))
                 {
-                    obj->move_object(me);
+                    obj->move_object(VOID_OB);
                     //me->make_inventory(obj);
                     debug_message("make_inventory done");
                     //obj->move_object(me);
