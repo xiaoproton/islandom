@@ -25,11 +25,11 @@ int main(object me, string arg)
                 power = to_int(me->query("power"));
                 if(obj->can_be_pickedup(power))
                 {
-                    obj->move_object(me);
-                    //newobj=me->make_inventory(obj);
+                    obj->move_object(VOID_OB);
+                    newobj=me->make_inventory(obj->file_name());
                     debug_message(sprintf("newobj = %O",newobj));
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
-                    //obj->destruct();
+                    obj->destruct(obj);
                     me->save();
                     return 1;
                 }
