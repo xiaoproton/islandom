@@ -8,7 +8,7 @@ void heart_beat()
     hp = to_int(query("hp"));
     power = to_int(query("power"));
     food = to_int(query("food"));
-
+    //recovering hp
     if(food>20 && hp<100)
     {
         hp = hp + to_int(log2(power+1));
@@ -19,4 +19,14 @@ void heart_beat()
     set("food", food);
     set("hp", hp);
     save();
+}
+
+object make_inventory(string file)
+{
+    object ob;
+
+    if(!objectp(ob = new(file)))
+        return 0;
+    ob->move(this_object());
+    return ob;
 }
