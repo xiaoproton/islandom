@@ -139,7 +139,7 @@ mixed myPresent(string arg)
         return ret;
 
     ob_list=this_object()->query("objects");
-    debug_message(sprintf("myPresent ob_list %O",ob))
+    debug_message(sprintf("myPresent ob_list %O", ob));
 
     foreach( obj,num in ob_list)
     {
