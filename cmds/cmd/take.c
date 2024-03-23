@@ -27,7 +27,7 @@ int main(object me, string arg)
                 {
                     debug_message(sprintf("obj %O",obj));
                     obj->move_object(VOID_OB);
-                    newobj=me->make_inventory(file_name(obj));
+                    newobj=me->make_inventory(base_name(obj));
                     debug_message(sprintf("newobj = %O",newobj));
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
                     obj->destruct(obj);
