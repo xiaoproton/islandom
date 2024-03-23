@@ -195,7 +195,7 @@ string desc_of_objects(object *obs)
 
         for (i = 0; i < sizeof(obs); i++)
         {
-            short_name = obs[i]->colourString() + obs[i]->short() + NOR;
+            short_name = (obs[i]->colourString()||"") + obs[i]->short() + NOR;
             debug_message("short_name "+short_name);
 
             list[short_name] += obs[i]->query_temp("amount") ? obs[i]->query_temp("amount") : 1;

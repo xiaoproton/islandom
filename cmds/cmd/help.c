@@ -12,7 +12,7 @@ int main(object me, string arg)
         $CYN$look OR l$NOR$                             look around
         $CYN$help$NOR$                                  check this handbook or command details
         $CYN$eat$NOR$                                   eat food
-        $CYN$take$NOR$                                  pick and carry something in your inventory
+        $CYN$take$NOR$                                  pick up and carry something in your inventory
         $CYN$nurse$NOR$                                 take care of something
         $CYN$take$NOR$                                  pick and carry something
         $CYN$inventory OR i$NOR$                        check what you are carrying
