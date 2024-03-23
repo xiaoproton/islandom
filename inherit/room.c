@@ -123,6 +123,6 @@ string shortfilename()
 // 对象简称
 string short()
 {
-    return sprintf("%s(%s)", query("name")||"???", shortfilename());
+    return sprintf("%s(%s)", query("short")||"???", shortfilename());
 
 }
