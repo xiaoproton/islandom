@@ -151,7 +151,7 @@ mixed myPresent(string arg)
             if(shortname==arg)
             {
                 //debug_message(sprintf("myPresent return %O",obj));
-                return load_object(obj);
+                return find_object(obj);
             }
         }
     }

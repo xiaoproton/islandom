@@ -15,7 +15,7 @@ int main(object me, string arg)
     debug_message(sprintf("present %s got %O", arg, present(arg)));
     //foundObj=find_object(arg);
     //debug_message(sprintf("foundObj = %O",foundObj));
-    ob_list=environment(me)->query_temp("objects");
+    ob_list=environment(me)->query("objects");
     debug_message(sprintf("ob_list = %O",ob_list));
     if(ob_list && sizeof(ob_list)>0)
     {
