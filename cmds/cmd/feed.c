@@ -15,11 +15,9 @@ int main(object me, string arg)
 
     if(!arg||arg=="")
     {
-        notify_fail("Whom do you want to feed?");
+        notify_fail(RED "Whom do you want to feed?" NOR);
     }
-    debug_message(sprintf("present %s got %O", arg, present(arg)));
-    //foundObj=find_object(arg);
-    //debug_message(sprintf("foundObj = %O",foundObj));
+
     ob_list=environment(me)->query("objects");
     debug_message(sprintf("ob_list = %O",ob_list));
 
