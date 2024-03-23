@@ -28,9 +28,9 @@ int main(object me, string arg)
                 if(obj->can_be_pickedup(power))
                 {
                     //obj->move_object(VOID_OB);
-                    newobj=me->make_inventory(file_name(obj));
+                    newobj=me->make_inventory(obj->file_name());
                     debug_message(sprintf("newobj = %O",newobj));
-                    //obj->destruct();
+                    destruct(obj);
                     write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
                     me->save();
                     return 1;
