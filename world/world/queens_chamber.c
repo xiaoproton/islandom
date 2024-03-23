@@ -1,4 +1,4 @@
-// palace.c
+// queens_chamber.c
 //inherit DBASE;
 inherit ROOM;
 
@@ -16,7 +16,7 @@ void create()
     Eggs need to be moved the Egg Chamber for good tempareture to incubate.
 LONG );
     set("exits", ([
-        "south":__DIR__ "hall",
+        "south":__DIR__ "worker_ant_hall",
     ]));
 
     load_object(queen)->move_object(this_object());

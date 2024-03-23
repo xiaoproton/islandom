@@ -1,4 +1,4 @@
-// incubator.c
+// egg_chamber.c
 //inherit DBASE;
 inherit ROOM;
 
@@ -11,7 +11,7 @@ void create()
     they need to be moved to lavae chamber to grow further.
 LONG );
     set("exits", ([
-        "north":__DIR__ "hall",
+        "north":__DIR__ "worker_ant-hall",
     ]));
 }
 

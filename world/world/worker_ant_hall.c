@@ -1,4 +1,4 @@
-// hall.c
+// worker_ant_hall.c
 #include "ansi.h"
 //inherit DBASE;
 inherit ROOM;
@@ -18,8 +18,8 @@ void create()
     A small rock (look rock) is in the middle of the hall.
 LONG );
     set("exits", ([
-        "north":__DIR__ "palace",
-        "south":__DIR__ "incubator",
+        "north":__DIR__ "queens_chamber",
+        "south":__DIR__ "egg_chamber",
     ]));
     set("items", ([
         "small rock" : (: look_rock :),
@@ -29,7 +29,7 @@ LONG );
     set("objects", ([
         food:1,
     ]));
-    setup();
+    //setup();
 }
 
 void init()
@@ -48,5 +48,6 @@ void init()
 string look_rock()
 {
     object me = this_player();
-    return YEL+"A small rock. \nThe pheronmone on it tells you, the north is Queens Chamber,\n and the south is Egg Chamber.\n"+NOR;
+    return YEL+"A small rock. \nThe pheronmone on it tells you, the north is Queens Chamber,\n"
+                +" and the south is Egg Chamber.\n"+NOR;
 }
