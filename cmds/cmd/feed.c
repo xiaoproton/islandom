@@ -11,11 +11,11 @@ int main(object me, string arg)
     int num;
     string feedeeType;
     int power;
-    object newob,
+    object newob;
 
     if(!arg||arg=="")
     {
-        notify_fail(RED "Whom do you want to feed?" NOR);
+        notify_fail(RED+"Whom do you want to feed?"+NOR);
     }
 
     ob_list=environment(me)->query("objects");
