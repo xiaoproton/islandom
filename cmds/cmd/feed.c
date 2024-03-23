@@ -24,7 +24,7 @@ int main(object me, string arg)
 
     foreach( feedee,num in ob_list)
     {
-        debug_message(sprintf("obj = %O",obj));
+        debug_message(sprintf("obj = %O",feedee));
         if(feedee->shortfilename()==arg)
         {
             foreach (object fd in all_inventory(me))
