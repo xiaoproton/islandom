@@ -7,26 +7,34 @@ int main(object me, string arg)
     mixed ob_list;
     //mixed foundObj;
     int num;
+    int nutrition;
+
     if(!arg||arg=="")
     {
-        notify_fail("What do you want to pick up?");
+        notify_fail(RED "What do you want to take care of?" NOR);
+        return 0;
     }
-    debug_message(sprintf("present %s got %O", arg, present(arg)));
-    //foundObj=find_object(arg);
-    //debug_message(sprintf("foundObj = %O",foundObj));
-    ob_list=environment(me)->query("objects");
-    debug_message(sprintf("ob_list = %O",ob_list));
-
-    foreach( obj,num in ob_list)
+    nutrition = to_int(me->query("food"));
+    if(nutrition<10)
     {
-        debug_message(sprintf("obj = %O",obj));
+        notify_fail(RED "You are too hungry. Take care of yourself first." NOR);
+        return 0;
+    }
+    ob_list = all_inventory(environment(me));   //use all_inv not query("objects"), to get actual clones
+
+    foreach( obj in ob_list)
+    {
         if(obj->shortfilename()==arg)
         {
-            //me->make_inventory(obj);
-            //debug_message("make_inventory done");
-            obj->move_object(me);
-            debug_message("move_object done");
-            write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
+            me->consume(4);
+            write(GRN+"You spent energy and nutrition to nurse "+obj->short()+".\n"+NOR);
+            if(arg=="egg" && random(10)<2)
+            {
+                write(sprintf(YEL+"You are feeling your power has increased by keeping nursing eggs.\n"+NOR));
+                power = to_int(me->query("power"));
+                me->set("power",(power+1));
+                me->save();
+            }
             return 1;
         }
     }

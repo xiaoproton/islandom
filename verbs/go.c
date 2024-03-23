@@ -27,10 +27,17 @@ mixed can_go_str(string dir, string str)
     object dest;
     mapping exits;
     mixed exit;
+    int nutrition;
 
     if(classp(me))
     {
         me->save();
+        nutrition = to_int(me->query("food"));
+        if(nutrition<1)
+        {
+            return RED "You are too hungry to crawl. Eat something." NOR;
+        }
+
     }
 
     if (!me->query("area_info") && (!mapp(exits = env->query("exits")) || undefinedp(exit = exits[dir])))

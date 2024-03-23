@@ -29,7 +29,7 @@ int can_be_pickedup(int pwr)
 void heart_beat()
 {
     object fd;
-    if(random(30)<1)
+    if(random(50)<1)
     {
         if(random(2)<1)
         {

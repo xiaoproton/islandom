@@ -16,6 +16,7 @@ int main(object me, string arg)
     if(!arg||arg=="")
     {
         notify_fail(RED+"Whom do you want to feed?"+NOR);
+        return 0;
     }
 
     ob_list=environment(me)->query("objects");

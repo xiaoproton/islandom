@@ -14,6 +14,7 @@ int main(object me, string arg)
     if(!arg||arg=="")
     {
         notify_fail(RED "What do you want to pick up?" NOR);
+        return 0;
     }
     power = to_int(me->query("power"));
     myInvList=all_inventory(me);
@@ -21,6 +22,7 @@ int main(object me, string arg)
     if(myInvNum>power+1)
     {
         notify_fail(RED "You are not strong enough to carry more items." NOR);
+        return 0;
     }
 
     ob_list = all_inventory(environment(me));   //use all_inv not query("objects"), to get actual clones

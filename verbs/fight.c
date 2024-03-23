@@ -13,10 +13,16 @@ protected void create()
 
 mixed can_fight_liv(mixed *data...)
 {
+    int nutrition;
     object me = this_player();
     if(classp(me))
     {
         me->save();
+        nutrition = to_int(me->query("food"));
+        if(nutrition<20)
+        {
+            return RED "You are too hungry to fight. Eat something." NOR;
+        }
     }
     // cecho(data);
     if (file_name(environment(me)) == START_ROOM)

@@ -32,6 +32,20 @@ int main(object me, string arg)
                     newobj=environment(me)->make_inventory(base_name(obj));  //use base_name, not file_name, to remove # part
                     //debug_message(sprintf("newobj = %O",newobj));
                     write(GRN+"You have dropped "+obj->short()+".\n"+NOR);
+                    if(obj->shortfilename()=="egg" && environment(me)->shortfilename()=="egg_chamber")
+                    {
+                        if(random(10)<2)
+                        {
+                            write(sprintf(YEL+"You are feeling your power has increased by keeping moving eggs.\n"+NOR));
+                            power = to_int(me->query("power"));
+                            me->set("power",(power+1));
+                            me->save();
+                        }
+                        else
+                        {
+                            write(sprintf(GRN+"Egg is incubating healthier in Egg Chamber.\n"+NOR));
+                        }
+                    }
                     destruct(obj);
                     me->save();
                     return 1;

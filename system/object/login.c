@@ -132,7 +132,7 @@ void landing()
     exec(loginuser, cuurentme);
     destruct(cuurentme);
     write(YEL+"One second ago, you were a human being sitting in front a screen.\n"+NOR);
-    write(YEL+"One second later, you are an Alien Ant, crawing in "+HBMAG+"Queen Islandom"+NOR+" "+YEL+"'s ant colony. \n"+NOR);
+    write(YEL+"One second later, you are an Alien Ant, crawling in "+HBMAG+"Queen Islandom"+NOR+" "+YEL+"'s ant colony. \n"+NOR);
     write(WHT+"Hint: use your keyboard type "+GRN+" look "+NOR+"OR"+GRN+" l "+NOR+" "+WHT+"to look around. Or, type "+GRN+"help"+NOR+" "+WHT+" to get more command info. \n "+NOR);
         loginuser->move_object(START_ROOM);
     debug_message(ctime() + " " + query_ip_number(loginuser) + " " + START_ROOM);
