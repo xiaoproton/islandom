@@ -29,7 +29,7 @@ LONG );
     set("objects", ([
         food:1,
     ]));
-    //setup();
+    setup();
 }
 
 void init()

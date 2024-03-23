@@ -5,7 +5,7 @@ int main(object me, string arg)
     if (!arg)
         arg = "...";
 
-    arg = HIM "【CHAT】" NOR HIY + me->query("name") + "(" + geteuid(me) + "@" + MUD_NAME + "): " NOR HIC + arg + NOR "\n";
+    arg = HIM "【CHAT】" NOR HIY + me->query("name") + "(" + geteuid(me) + "): " NOR HIC + arg + NOR "\n";
      // 同步消息到QQ群
      /*
     if (me->query_temp("step") > 2)

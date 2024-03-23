@@ -250,7 +250,7 @@ int look_living(object me, object ob)
         msg = "$ME looked $YOU as if $YOU is insteresting.";
         msg("vision", msg, me, ob);
     }
-    msg = sprintf("%s is a %s living creature. \n", (ob->colourString()||MAG)+(ob->short())+NOR,ob->appearance());
+    msg = sprintf("%s is a %s living creature. \n", ob->short(),ob->appearance());
     msg += line;
     msg += sprintf("Power %s\n", ob->query("power"));
     msg += line;
