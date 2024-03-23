@@ -4,7 +4,7 @@ inherit VERB;
 
 #define CMD_PATH "/cmds/cmd/"
 //#define DEMO_PATH "/cmds/demo/"
-//#define EFUN_PATH "/cmds/efun/"
+#define EFUN_PATH "/cmds/efun/"
 //#define TEST_PATH "/cmds/test/"
 #include "ansi.h"
 
@@ -76,7 +76,7 @@ nomask int command_hook(string arg)
     verb = query_verb();
     cmd = CMD_PATH + verb;
     //test = TEST_PATH + verb;
-    //efun_cmd = EFUN_PATH + verb;
+    efun_cmd = EFUN_PATH + verb;
     //demo = DEMO_PATH + verb;
     me = this_object();
 
@@ -87,7 +87,7 @@ nomask int command_hook(string arg)
     {
         me->command("go " + verb);
     }
-    else if (cmd_ob = load_object(cmd)) // || cmd_ob = load_object(test) || cmd_ob = load_object(efun_cmd) || cmd_ob = load_object(demo))
+    else if (cmd_ob = load_object(cmd) || cmd_ob = load_object(efun_cmd)) // || cmd_ob = load_object(test)  || cmd_ob = load_object(demo))
     {
         return (int)cmd_ob->main(me, arg);
     }

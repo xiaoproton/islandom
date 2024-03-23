@@ -6,10 +6,11 @@ int main(object me, string arg)
     string str;
     string cl;
     int power;
+    string title;
 
     cl = me->colourString();
     power = to_int(me->query("power"));
-    string title = "Newbie Ant";
+    title = "Newbie Ant";
     if(power<50)
     {
         title = "Newbie Ant";
