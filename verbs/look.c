@@ -251,7 +251,7 @@ int look_living(object me, object ob)
         msg = "$ME looked $YOU as if $YOU is interesting.";
         msg("vision", msg, me, ob);
     }
-    /*
+
     //debug_message("ob->short() "+ob->short());
     //debug_message("ob->appearance() "+ob->appearance());
     //debug_message("ob->query(power) "+ob->query("power"));
@@ -259,7 +259,7 @@ int look_living(object me, object ob)
     msg += line;
     msg += sprintf("Power %s\n", ob->query("power"));
     msg += line;
-    tell_object(me, msg);
+    /*tell_object(me, msg);
     */
 
     return 1;
