@@ -22,10 +22,10 @@ int main(object me, string arg)
         debug_message(sprintf("obj = %O",obj));
         if(obj->shortfilename()==arg)
         {
-            me->make_inventory(obj);
-            debug_message("make_inventory done");
-            //obj->move_object(me);
-            //debug_message("move_object done");
+            //me->make_inventory(obj);
+            //debug_message("make_inventory done");
+            obj->move(me);
+            debug_message("move done");
             write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
             return 1;
         }
