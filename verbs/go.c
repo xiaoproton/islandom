@@ -80,7 +80,7 @@ int do_go_str(string dir, string str)
     mapping exits = env->query("exits");
     mixed exit;
     object dest;
-
+    me->consume(1);
     if (env->is_area())
         return env->area_go(me, dir);
 

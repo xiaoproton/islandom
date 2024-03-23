@@ -40,7 +40,7 @@ mixed direct_fight_liv(object ob, string arg)
 int do_fight_liv(object ob, string arg)
 {
     object me = this_player();
-
+    me->consume(8);
     msg("warning", "$ME put up your front claws, start attacking $YOU. ", me, ob);
     me->fight(ob);
 

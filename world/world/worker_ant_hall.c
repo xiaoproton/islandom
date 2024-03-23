@@ -15,7 +15,7 @@ void create()
     which is part of the Queen Islandom underground ant colony.
     A few worker ants are busy walking in and out for the goal;
     raise more ants to conquer this island, then conquer the Earth.
-    A small rock ($GRN$ $BOLD$ look rock $NOR$) is in the middle of the hall.
+    A small rock (look rock) is in the middle of the hall.
 LONG );
     set("exits", ([
         "north":__DIR__ "queens_chamber",
@@ -25,7 +25,8 @@ LONG );
         "small rock" : (: look_rock :),
     ]));
 
-    //load_object(food);
+    load_object(food)->move_object(this_object());;
+    obj->move_object(this_object());
     set("objects", ([
         food:1,
     ]));

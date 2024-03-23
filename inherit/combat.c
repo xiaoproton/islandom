@@ -100,7 +100,7 @@ void heart_beat()
         if (!userp(me) && !shadow(me, 0) && !query_shadowing(me) && me->query("hp") < me->query("hp") / 3 && !random(3))
         {
             object ob = new ("/world/world/npc/mob", 8);
-            msg("danger", me->query("name") + " shapshifted to " + ob->query("name") + "。", me);
+            msg("danger", me->query("name") + " shapshifted to " + ob->query("name") + ". ", me);
             ob->shadowto(me);
         }
         else

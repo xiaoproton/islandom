@@ -15,6 +15,7 @@ void consume(int level) //smallest task, consumption level = 1, normal task cons
     if(food>100)
         food = 100;
     set("food", food);
+    save();
 }
 
 // apply函数：如果用户对象中有process_input()，驱动会将玩家所有输入传入这里
@@ -58,32 +59,6 @@ mixed process_input(string verb)
     case '.':
         return "say " + verb[1..];
     }
-
-     if(verb[0..2]=="go ")
-    {
-        consume(1);
-    }
-    if((verb=="south")||(verb=="north")||(verb=="west")||(verb=="east")||(verb=="up")||(verb=="down") )
-    {
-        consume(1);
-    }
-    if((verb=="s")||(verb=="n")||(verb=="w")||(verb=="e")||(verb=="u")||(verb=="d") )
-    {
-        consume(1);
-    }
-    if(verb[0..4]=="feed")
-    {
-        consume(2);
-    }
-    if(verb[0..5]=="nurse")
-    {
-        consume(2);
-    }
-    if(verb[0..4]=="fight")
-    {
-        consume(8);
-    }
-
     if (sizeof(word) && !undefinedp(alias[word[0]]))
     {
         word[0] = alias[word[0]];
