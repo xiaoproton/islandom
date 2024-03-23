@@ -8,6 +8,7 @@ string look_rock();
 void create()
 {
     mixed npc = __DIR__ "npc/npc_ant";
+    mixed food = __DIR__ "item/food";
 
     set("short", "Worker Ant Hall");
     set("long", @LONG
@@ -25,9 +26,11 @@ LONG );
         "rock" : (: look_rock :),
     ]));
 
-    load_object(npc)->move_object(this_object());;
+    load_object(npc)->move_object(this_object());
+    load_object(food)->move_object(this_object());;
     set("objects", ([
         npc:1,
+        food:1,
     ]));
     setup();
 }
