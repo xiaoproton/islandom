@@ -22,5 +22,5 @@ int can_be_pickedup(int pwr)
 
 void heart_beat()
 {
-    msg("emote","more eggs, more ants...");
+    say("more eggs, more ants...");
 }
