@@ -71,21 +71,50 @@ void move_or_destruct(object dest)
     }
 }
 
-string shortfilename()
+string lastpathname()
 {
     string allpath;
     string *parts ;
-    string shortname;
+    string lastpath;
     allpath= file_name();
     parts = explode(allpath,"/");
-    shortname = parts[sizeof(parts) - 1];
-    return shortname;
+    lastpath = parts[sizeof(parts) - 1];
+    return lastpath;
+}
+
+string shortfilename()
+{
+    string lastpath;
+    string *parts;
+    lastpath = lastpathname();
+    parts = explode(lastpath,"#");
+    return parts[0];
+}
+
+int id_num()
+{
+    string lastpath;
+    string *parts;
+    lastpath = lastpathname();
+    parts = explode(lastpath,"#");
+    if(sizeof(parts)>1)
+    {
+        return to_int(parts[1]);
+    }
+
 }
 
 // 对象简称
 string short()
 {
-    return sprintf("%s(%s)", query("name")||"???", shortfilename());
+    if(shortfilename()!="user")
+    {
+        return sprintf("%s(%s)", query("name")||"???", shortfilename());
+    }
+    else
+    {
+        return sprintf("%s(%s)", query("name")||"???", geteuid());
+    }
 }
 
 // 对象描述
