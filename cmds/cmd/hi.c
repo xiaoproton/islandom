@@ -15,7 +15,7 @@ int main(object me, string arg)
     }
     else
     {
-        msg("emote", "$M eemotionally greeting everyone.", me);
+        msg("emote", "$ME emotionally greeting everyone.", me);
     }
 
     return 1;

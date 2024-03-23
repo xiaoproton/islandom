@@ -210,7 +210,7 @@ string desc_of_objects(object *obs)
         ob = sort_array(keys(list), 1);
         for (i = 0; i < sizeof(ob); i++)
         {
-            str += YEL+" * "+NOR+"  ";
+            str += YEL+" * "+NOR;
             if (list[ob[i]] > 1)
                 str += list[ob[i]] + unit[ob[i]] + ob[i] +YEL+" * "+NOR+ "\n";
             else
@@ -256,8 +256,8 @@ int look_living(object me, object ob)
     //debug_message("ob->short() "+ob->short());
     //debug_message("ob->appearance() "+ob->appearance());
     //debug_message("ob->query(power) "+ob->query("power"));
-    msg = sprintf("%s is a %s living creature. \n", ob->short(),ob->appearance());
-    msg += line;
+    msg = line;
+    msg += sprintf("%s is a %s living creature. \n", ob->short(),ob->appearance());
     msg += sprintf("Power %d\n", ob->query("power"));
     msg += line;
     tell_object(me, msg);

@@ -142,16 +142,20 @@ mixed myPresent(string arg)
     ob_list=this_object()->query("objects");
     //debug_message(sprintf("myPresent ob_list %O", ob_list));
 
-    foreach( obj,num in ob_list)
+    if(ob_list && sizeof(ob_list)>0)
     {
-        shortname = obj->shortfilename();
-       // debug_message(sprintf("myPresent shortname %s",shortname));
-        if(shortname==arg)
+        foreach( obj,num in ob_list)
         {
-            //debug_message(sprintf("myPresent return %O",obj));
-            return load_object(obj);
+            shortname = obj->shortfilename();
+        // debug_message(sprintf("myPresent shortname %s",shortname));
+            if(shortname==arg)
+            {
+                //debug_message(sprintf("myPresent return %O",obj));
+                return load_object(obj);
+            }
         }
     }
+
 
     return 0;
 }

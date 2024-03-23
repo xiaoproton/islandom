@@ -9,6 +9,8 @@ int main(object me, string arg)
     int nutrition;
     int addition=30+random(10);
     int num;
+    string feedeeType;
+    int power;
 
     if(!arg||arg=="")
     {
@@ -29,15 +31,60 @@ int main(object me, string arg)
             {
                 if(fd->shortfilename()=="food")
                 {
-                    fd->destruct();
-                    nutrition = to_int(feedee->query("food"));
-                    nutrition += addition;
-                    feedee->set("food",nutrition);
-                    write(sprintf(GRN+"You fed a piece of food to %s.\n "
-                                    +"Their nutrition (%d) has increased in their body now.\n"+NOR
-                                feedee->short(),addition));
-                    me->consume(3);
-                    return 1;
+                    feedeeType = feedee->shortfilename();
+                    if(feedeeType=="user")
+                    {
+                        fd->destruct();
+                        nutrition = to_int(feedee->query("food"));
+                        nutrition += addition;
+                        if(nutrition>100)
+                            nutrition = 100;
+                        feedee->set("food",nutrition);
+                        msg("success", "$ME fed a piece of food to $YOU.\n"
+                                        +"The nutrition in $YOU has increased by %d", me, feedee,addition);
+                        me->consume(3);
+                        return 1;
+                    }
+                    else if(feedeeType=="queen")
+                    {
+                        fd->destruct();
+                        if(random(10)<1)
+                        {
+                            write(sprintf(YEL+"You are feeling your power has increased by keeping feeding the Queen.\n"+NOR));
+                            power = to_int(me->query("power"));
+                            me->set("power",(power+1));
+                            me->save();
+                        }
+                        else
+                        {
+                            write(sprintf(GRN+"Through Pheromone, the Queen tells you she's appreciated your food.\n"
+                                            +"She may be able to produce more eggs now.\n"+NOR));
+                        }
+                        me->consume(3);
+                        return 1;
+                    }
+                    else if(feedeeType=="larva")
+                    {
+                        fd->destruct();
+                        if(random(10)<1)
+                        {
+                            write(sprintf(YEL+"You are feeling your power has increased by keeping feeding larvea.\n"+NOR));
+                            power = to_int(me->query("power"));
+                            me->set("power",(power+1));
+                            me->save();
+                        }
+                        else
+                        {
+                            write(sprintf(GRN+"Larva is being growing more thanks to your feeding.\n"+NOR));
+                        }
+                        me->consume(3);
+                        return 1;
+                    }
+                    else
+                    {
+                        notify_fail("They do not need to be fed.\n");
+                        return 0;
+                    }
 
                 }
             }

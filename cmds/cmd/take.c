@@ -16,19 +16,21 @@ int main(object me, string arg)
     debug_message(sprintf("foundObj = %O",foundObj));
     ob_list=environment(me)->query("objects");
     debug_message(sprintf("ob_list = %O",ob_list));
-
-    foreach( obj,num in ob_list)
+    if(ob_list && sizeof(ob_list)>0)
     {
-        debug_message(sprintf("obj = %O",obj));
-        if(obj->shortfilename()==arg)
+        foreach( obj,num in ob_list)
         {
-            me->make_inventory(obj);
-            debug_message("make_inventory done");
-            //obj->move_object(me);
-            //debug_message("move_object done");
-            write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
-            me->save();
-            return 1;
+            debug_message(sprintf("obj = %O",obj));
+            if(obj->shortfilename()==arg)
+            {
+                me->make_inventory(obj);
+                debug_message("make_inventory done");
+                //obj->move_object(me);
+                //debug_message("move_object done");
+                write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
+                me->save();
+                return 1;
+            }
         }
     }
 

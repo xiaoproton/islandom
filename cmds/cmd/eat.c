@@ -1,16 +1,22 @@
 // eat.c
 #include <ansi.h>
 
+
 int main(object me, string arg)
 {
     int nutrition;
-    int addition=30+random(10);
+    int addition=50+random(20);
+    nutrition = to_int(me->query("food"));
+    if(nutrition>=100)
+    {
+        notify_fail("You are full of nutrition. No need to waste food.\n");
+        return 0;
+    }
     foreach (object ob in all_inventory(me))
     {
         if(ob->shortfilename()=="food")
         {
             ob->destruct();
-            nutrition = to_int(me->query("food"));
             nutrition += addition;
             me->set("food",nutrition);
             write(sprintf(GRN+"You ate a piece of food.\n "
