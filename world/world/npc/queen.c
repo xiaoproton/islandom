@@ -14,3 +14,8 @@ void create()
     set("colour", "g");
     set_heart_beat(1);
 }
+
+int can_be_pickedup(int pwr)
+{
+    return 0;
+}

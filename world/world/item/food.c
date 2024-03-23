@@ -8,3 +8,8 @@ void create()
                 +"Or, it can be fed ("+GRN+"feed"+NOR+") to others.\n");
     set("unit", " ");
 }
+
+int can_be_pickedup(int pwr)
+{
+    return 1;
+}

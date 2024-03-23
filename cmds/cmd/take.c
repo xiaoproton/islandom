@@ -6,6 +6,7 @@ int main(object me, string arg)
     mixed obj;
     mixed ob_list;
     mixed foundObj;
+    int power;
     int num;
     if(!arg||arg=="")
     {
@@ -23,13 +24,22 @@ int main(object me, string arg)
             debug_message(sprintf("obj = %O",obj));
             if(obj->shortfilename()==arg)
             {
-                me->make_inventory(obj);
-                debug_message("make_inventory done");
-                //obj->move_object(me);
-                //debug_message("move_object done");
-                write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
-                me->save();
-                return 1;
+                power = to_int(me->query("power"));
+                if(obj->can_be_pickedup(power))
+                {
+                    me->make_inventory(obj);
+                    debug_message("make_inventory done");
+                    //obj->move_object(me);
+                    //debug_message("move_object done");
+                    write(GRN+"You have picked up "+obj->short()+" and placed into your inventory.\n"+NOR);
+                    me->save();
+                    return 1;
+                }
+                else
+                {
+                    notify_fail("You cannot take away "+arg+". too heavy? or inappropriate?");
+                    return 0;
+                }
             }
         }
     }

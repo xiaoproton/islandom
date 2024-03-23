@@ -10,3 +10,8 @@ void create()
         );
     set("unit", " ");
 }
+
+int can_be_pickedup(int pwr)
+{
+    return 1;
+}
