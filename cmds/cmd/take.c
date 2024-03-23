@@ -9,9 +9,18 @@ int main(object me, string arg)
     int power;
     int num;
     object newobj;
+    int myInvNum;
+    mixed myInvList;
     if(!arg||arg=="")
     {
-        notify_fail("What do you want to pick up?");
+        notify_fail(RED "What do you want to pick up?" NOR);
+    }
+    power = to_int(me->query("power"));
+    myInvList=all_inventory(me);
+    myInvNum = sizeof(myInvList);
+    if(myInvNum>power+1)
+    {
+        notify_fail(RED "You are not strong enough to carry more items." NOR);
     }
 
     ob_list = all_inventory(environment(me));   //use all_inv not query("objects"), to get actual clones
@@ -22,7 +31,6 @@ int main(object me, string arg)
         {
             if(obj->shortfilename()==arg)
             {
-                power = to_int(me->query("power"));
                 if(obj->can_be_pickedup(power))
                 {
                     debug_message(sprintf("obj %O",obj));
@@ -36,7 +44,7 @@ int main(object me, string arg)
                 }
                 else
                 {
-                    notify_fail("You cannot take away "+arg+". too heavy? or inappropriate?");
+                    notify_fail(RED "You cannot take away "+arg+". too heavy? or inappropriate?" NOR);
                     return 0;
                 }
             }
@@ -44,7 +52,7 @@ int main(object me, string arg)
     }
 
     debug_message("no obj");
-    notify_fail("There is no "+arg+" around.");
+    notify_fail(RED "There is no "+arg+" around." NOR);
     return 0;
 
 }

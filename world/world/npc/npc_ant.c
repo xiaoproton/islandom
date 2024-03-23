@@ -41,11 +41,5 @@ void heart_beat()
         }
 
 
-        /*
-        fd = clone_object("/world/world/item/food") ;
-        debug_message(sprintf("created %O",fd));
-        fd->move_object(environment(this_object()));
-        debug_message(sprintf("fd env %O",environment(fd)));
-        */
     }
 }

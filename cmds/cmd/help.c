@@ -13,6 +13,7 @@ int main(object me, string arg)
         $CYN$help$NOR$                                  check this handbook or command details
         $CYN$eat$NOR$                                   eat food
         $CYN$take$NOR$                                  pick up and carry something in your inventory
+        $CYN$drop$NOR$                                  move something out of your inventory
         $CYN$nurse$NOR$                                 take care of something/someone
         $CYN$inventory OR i$NOR$                        check what you are carrying
         $CYN$score OR s$NOR$                            check your status and power

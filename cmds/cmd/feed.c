@@ -11,6 +11,7 @@ int main(object me, string arg)
     int num;
     string feedeeType;
     int power;
+    object newob,
 
     if(!arg||arg=="")
     {
@@ -50,12 +51,21 @@ int main(object me, string arg)
                     {
                         fd->move_object(VOID_OB);
                         destruct(fd);
-                        if(random(10)<2)
+                        if(random(1)<2)
                         {
-                            write(sprintf(YEL+"You are feeling your power has increased by keeping feeding the Queen.\n"+NOR));
-                            power = to_int(me->query("power"));
-                            me->set("power",(power+1));
-                            me->save();
+                            if(random(1)<1){
+                                environment(me)->make_inventory("/world/world/item/egg");
+                                write(sprintf(YEL+"The Queen has just produce a new egg,\n"
+                                                    +"thank to your feeding.\n"+NOR));
+                            }
+                            else
+                            {
+                                write(sprintf(YEL+"You are feeling your power has increased by keeping feeding the Queen.\n"+NOR));
+                                power = to_int(me->query("power"));
+                                me->set("power",(power+1));
+                                me->save();
+                            }
+
                         }
                         else
                         {

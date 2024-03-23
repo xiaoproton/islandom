@@ -1,4 +1,4 @@
-inherit __DIR__ "user6";
+inherit "/inherit/user6";
 
 
 void heart_beat()

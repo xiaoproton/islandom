@@ -1,3 +1,5 @@
+#include "ansi.h"
+
 inherit COMBAT;
 inherit LIVING;
 
@@ -31,8 +33,10 @@ void heart_beat()
         }
         else
         {
-            say("[Queen Islandom]: Hey, Worker Ant, Well done!\n");
+            say("[Queen Islandom]: Hey, Worker Ant, Well done!\n"
+                    +" Remember to type "+GRN+"sc"+NOR+" and "+GRN+"i"+NOR+" to monitor your status and inventory.\n ");
         }
     }
+
 
 }

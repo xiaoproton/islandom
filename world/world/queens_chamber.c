@@ -6,6 +6,7 @@ inherit ROOM;
 void create()
 {
     mixed queen = __DIR__ "npc/queen";
+    mixed egg = __DIR__ "item/egg";
 
     set("short", "Queens Chamber");
     set("long", @LONG
@@ -22,6 +23,7 @@ LONG );
     //load_object(queen)->move_object(this_object());
     set("objects", ([
         queen:1,
+        egg:1,
     ]));
     setup();
 }
