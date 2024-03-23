@@ -126,3 +126,26 @@ string short()
     return sprintf("%s(%s)", query("short")||"???", shortfilename());
 
 }
+
+mixed myPresent(string arg)
+{
+    mixed ret;
+    mixed ob_list;
+    object ob;
+    int num;
+    ret = present(arg, this_object());
+    if(ret)
+        return ret;
+
+    ob_list=this_object()->query("objects");
+
+    foreach( obj,num in ob_list)
+    {
+        if(obj->shortfilename()==arg)
+        {
+            return obj;
+        }
+    }
+
+    return 0;
+}

@@ -125,7 +125,8 @@ mixed do_look_at_str(string str, string arg)
         cecho("You cannot see clearly for a big area.");
     else if (item_desc = env->query("items/" + str))
         cecho(evaluate(item_desc));
-    else if (ob = present(arg, env))
+    //else if (ob = present(arg, env))
+    else if (ob=env->myPresent(arg))
         return do_look_obj(ob);
     else
         cecho(getErrorMessage());
