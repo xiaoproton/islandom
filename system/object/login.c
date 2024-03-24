@@ -98,6 +98,7 @@ void setname(string arg)
     {
         write("Invali display name. Please type it again: ");
         input_to("setname");
+    }
     else
     {
         loginuser->set("name", arg);
