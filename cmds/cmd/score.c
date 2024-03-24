@@ -78,9 +78,9 @@ int main(object me, string arg)
         title = "Elder Ant";
     }
 
-    str = sprintf(YEL+"----------- "+title+" "+NOR+cl+"%s"+NOR+YEL+" -----------\n"
+    str = sprintf(YEL+"----------- "+title+" "+NOR+cl+"%s"+NOR+YEL+" -----------\n"+NOR
                     +"[ Health %s      Nutrition %s        Power %s ]\n"
-                    +"------------------------------------------------------------\n"+NOR
+                    +YEL+"------------------------------------------------------------\n"+NOR
                     +"\n"
                     +"---------- Tasks you could do at your power level---------  \n"
                     +"%s "

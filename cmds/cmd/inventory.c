@@ -13,6 +13,7 @@ int main(object me, string arg)
         debug_message(sprintf(" - %O\n", ob));
         str += sprintf("[   %s              ]\n",ob->short());
     }
+    str += sprintf(YEL+"--------------------------------------------------------------\n"+NOR);
     write(str);
     return 1;
 }
