@@ -81,7 +81,7 @@ nomask int command_hook(string arg)
     efun_cmd = EFUN_PATH + verb;
     //demo = DEMO_PATH + verb;
     me = this_object();
-
+    debug_message("me->geteuid(): "+me->geteuid());
     if ((verb = trim(verb)) == "")
         return 0;
 
@@ -93,7 +93,7 @@ nomask int command_hook(string arg)
     {
         return (int)cmd_ob->main(me, arg);
     }
-    else if (me->geteuid()=="admin" && cmd_ob = load_object(admincmd) )
+    else if ((me->geteuid()=="admin" || me->geteuid()=="root" || me->geteuid()=="syoleen") && cmd_ob = load_object(admincmd) )
     {
         return (int)cmd_ob->main(me, arg);
     }
