@@ -25,7 +25,7 @@ int can_be_pickedup(int pwr)
 void heart_beat()
 {
     int choice;
-    if(random(30)<1)
+    if(random(40)<1)
     {
         choice = random(4);
         if(choice==0)

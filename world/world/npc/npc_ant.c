@@ -30,7 +30,7 @@ void heart_beat()
 {
     int choice;
     string envname;
-    if(random(30)<1)
+    if(random(40)<1)
     {
         choice = random(3);
         envname = environment(this_object())->shortfilename();
