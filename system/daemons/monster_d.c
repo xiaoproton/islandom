@@ -7,7 +7,16 @@ Version: v1.0
 *****************************************************************************/
 
 nosave mixed mob_info = ({
-    ({"fire", "Fire Ant", 4,0}),
+    ({"red", "Red Ant", 2,0}),
+    ({"fire", "Fire Ant", 2,0}),
+    ({"black", "Black Ant", 3,0}),
+    ({"brown", "Brown Ant", 3,0}),
+    ({"white", "White Ant", 4,0}),
+    ({"sugar", "Sugar Ant", 4,0}),
+    ({"big", "Big Ant", 6,1}),
+    ({"fighter", "Fighter Ant", 7,1}),
+    ({"power", "Power Ant", 8,1}),
+    ({"mountain", "Mountain Ant", 9,1}),
     /*
     ({"fly", "Mini Fly", 11,1}),
     ({"worm", "Earth Worm", 23,2}),
