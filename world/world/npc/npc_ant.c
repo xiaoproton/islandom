@@ -35,7 +35,7 @@ void heart_beat()
         choice = random(3);
         envname = environment(this_object())->shortfilename();
         debug_message("envname "+envname);
-        if(envname=="worker_ant_chamber")
+        if(envname=="worker_ant_hall")
         {
             if(choice==0)
             {

@@ -8,7 +8,8 @@ int main(object me, string arg)
 
     User Your Keyboard to type the command：
         $CYN$north,south,east,west OR n,s,e,w$NOR$      move to different directions
-        $CYN$up,down OR u,d$NOR$                        move to different height
+        $CYN$ne,se,nw,sw$NOR$                           move to different directions
+        $CYN$up,down OR u,d$NOR$                        move to different heights
         $CYN$look OR l$NOR$                             look around
         $CYN$help$NOR$                                  check this handbook or command details
         $CYN$eat$NOR$                                   eat food

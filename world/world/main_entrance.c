@@ -5,7 +5,6 @@ inherit ROOM;
 
 void create()
 {
-    mixed npc = __DIR__ "npc/npc_ant";
     set("short", "Main Entrance");
     set("long", @LONG
     This is the main entrance and exit of the whole colony.
@@ -15,10 +14,6 @@ LONG );
     set("exits", ([
         "down":__DIR__ "entrance_hall",
     ]));
-    set("objects", ([
-        npc:1,
-    ]));
-    setup();
 }
 
 void init()
