@@ -47,7 +47,7 @@ void heart_beat()
             }
             if(choice==2)
             {
-                say("[Newbie Tips]: Typing 'take food' allows you to get them bfore typing 'eat'.\n");
+                say("[Newbie Tips]: Typing 'take food' allows you to get them before typing 'eat'.\n");
             }
             if(choice==3)
             {
