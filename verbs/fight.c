@@ -51,12 +51,14 @@ int do_fight_liv(object ob, string arg)
     string colour;
     object me = this_player();
 
+    /*
     colour = ob->query("colour");
     if(colour!="r")
     {
         msg("warning", "You can only fight against a red-colour enemy. ");
         return 1;
     }
+    */
 
     me->consume(8);
     msg("warning", "$ME put up your front claws, start attacking $YOU. ", me, ob);
