@@ -33,7 +33,7 @@ int main(object me, string arg)
     }
 
     str = sprintf(YEL+"----------- "+title+" "+NOR+cl+"%s"+NOR+YEL+" -----------\n"+NOR
-                    +"[ Life(HP) %s      Nutrition %s        Power %s ]\n"
+                    +"[ Health %s      Nutrition %s        Power %s ]\n"
                     +"\n"
                     ,
                     me->short(),
