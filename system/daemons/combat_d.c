@@ -22,7 +22,7 @@ nosave string *dodge_msg = ({
     "But $YOU turned around to skip the attack from $ME.",
 });
 // 伤害信息
-string damage_msg(int damage, int type)
+string damage_msg(int damage, int type, int hp)
 {
     if (damage == 0)
     {
@@ -40,9 +40,9 @@ string damage_msg(int damage, int type)
     switch (type)
     {
     case TYPE_C:
-        return YEL "$ME hit a [WAEK POINT] of $YOU, causing " + damage + " damage.";
+        return YEL "$ME hit a [WAEK POINT] of $YOU (HP "+hp+"), causing " + damage + " damage.";
     default:
-        return "$ME caused to $YOU  " + damage + " damage.";
+        return "$ME caused " + damage + " damage to $YOU (HP "+hp+").";
     }
 }
 
@@ -55,7 +55,7 @@ string death_msg()
         case 2:
             return "$YOU have sacrificed your health for the Queens colony and the Brood.";
         default:
-            return "$YOU are almost killed by $ME. All your vision turns into darkness.";
+            return "$YOU are almost killed by $ME. The vision of $YOU turns into darkness.";
     }
 
 }
@@ -103,10 +103,10 @@ void do_attack(object me, object victim)
     {
         damage = random(2);
     }
-    debug_message(sprintf("victim %O",victim));
-    debug_message(sprintf("vic hp %d",(victim->query("hp") )));
+    //debug_message(sprintf("victim %O",victim));
+    //debug_message(sprintf("vic hp %d",(victim->query("hp") )));
     victim->set("hp", victim->query("hp") - damage);
-    msg("warning", damage_msg(damage, attack_type), me, victim);
+    msg("warning", damage_msg(damage, attack_type, victim->query("hp")), me, victim);
     if(to_int(victim->query("hp"))<=0)
     {
         msg("danger", death_msg(), me, victim);
