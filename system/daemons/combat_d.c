@@ -103,8 +103,8 @@ void do_attack(object me, object victim)
     {
         damage = random(2);
     }
-    //debug_message(sprintf("victim %O",victim));
-    //debug_message(sprintf("damage %d",damage));
+    debug_message(sprintf("victim %O",victim));
+    debug_message(sprintf("vic hp %d",(victim->query("hp") )));
     victim->set("hp", victim->query("hp") - damage);
     msg("warning", damage_msg(damage, attack_type), me, victim);
     if(to_int(victim->query("hp"))<=0)
