@@ -45,7 +45,7 @@ string taskDescr(int power)
     }
     else
     {
-        return "Ask fields to join this game and help them\n";
+        return "Ask fields to join this game and help them\n"
                 + "help others\n";
     }
 }
