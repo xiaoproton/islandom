@@ -34,14 +34,14 @@ void heart_beat()
         }
 
         //recovering hp
-        debug_message(sprintf("food %d", food));
-        debug_message(sprintf("hp %d", hp));
+        //debug_message(sprintf("food %d", food));
+        //debug_message(sprintf("hp %d", hp));
         if(food>20 && hp<100)
         {
             power = to_int(query("power"));
             inc=rate*to_int(log2(power+1));
             hp = hp + inc;
-            debug_message(sprintf("inc %d", inc));
+            //debug_message(sprintf("inc %d", inc));
             if(random(rate)==0)
                 food = food - 1;
 
