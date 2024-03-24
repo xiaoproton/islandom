@@ -84,6 +84,7 @@ nomask int command_hook(string arg)
     debug_message(sprintf("me %O ",me));
     debug_message("me->geteuid(): "+me->geteuid());
     debug_message("me->short(): "+me->short());
+    debug_message("me->shortfilename(): "+me->shortfilename());
     if ((verb = trim(verb)) == "")
         return 0;
 
