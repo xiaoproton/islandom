@@ -15,5 +15,6 @@ int main(object me, string arg)
     }
     str += sprintf(YEL+"--------------------------------------------------------------\n"+NOR);
     write(str);
+    me->save();
     return 1;
 }

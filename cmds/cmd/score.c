@@ -95,5 +95,6 @@ int main(object me, string arg)
                     HIK+ taskDescr(me->query("power"))+NOR
                 );
     write(str);
+    me->save();
     return 1;
 }
