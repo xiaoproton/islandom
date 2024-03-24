@@ -18,5 +18,6 @@ int increase_new_ant_total()
     num = to_int(query("new_ant_total"));
     num++;
     set("new_ant_total", num);
+    save();
     return num;
 }

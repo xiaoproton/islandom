@@ -142,7 +142,7 @@ void landing()
 void logon()
 {
     color_cat(WELCOME);
-    write(sprintf(RED + " 🐜🐜🐜🐜🐜 SO FAR, THERE HAVE BEEN %d NEW NPC ANTS BORNED. 🐜🐜🐜🐜🐜 \n\n" + NOR,COLONY_D->get_new_ant_total()));
+    write(sprintf(RED + " 🐜🐜🐜🐜🐜 SO FAR, THERE HAVE BEEN %d NEW NPC ANTS BORN. 🐜🐜🐜🐜🐜 \n\n" + NOR,COLONY_D->get_new_ant_total()));
     write("Please enter your login name (first-time ant please choose your own, purely English letters):");
     input_to("setup");
 }

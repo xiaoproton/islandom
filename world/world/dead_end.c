@@ -14,7 +14,7 @@ void create()
     So that their bodies would not cause any troubles or deceases to the whole colony.
 LONG );
     set("exits", ([
-        "northeast":__DIR__ "the_fork",
+        "east":__DIR__ "the_fork",
     ]));
 }
 

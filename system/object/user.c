@@ -13,12 +13,24 @@ void heart_beat()
     {
         hp = to_int(query("hp"));
         food = to_int(query("food"));
+        env = environment(this_object());
+        if(env->shortfilename()=="resting_healing")
+        {
+            rate = 2; //for recovering hp
+
+            //slowly recover nutrition
+            if(food<50 && random(4)<1)
+            {
+                food += 1;
+                set("food", food);
+                write("You have recovered a bit of nutrition by eating the fungi around here.");
+                save();
+            }
+        }
+
         //recovering hp
         if(food>20 && hp<100)
         {
-            env = environment(this_object());
-            if(env->shortfilename()=="resting_healing") rate = 2;
-
             power = to_int(query("power"));
 
             hp = hp + rate*to_int(log2(power+1));
@@ -31,6 +43,8 @@ void heart_beat()
             set("hp", hp);
             if(hp==100)
                 write("You have fully recovered.");
+            else
+                write("You are recovering by consuming food...");
             save();
         }
     }

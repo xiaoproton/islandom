@@ -25,9 +25,9 @@ int can_be_pickedup(int pwr)
 void heart_beat()
 {
     int choice;
-    if(random(50)<1)
+    if(random(30)<1)
     {
-        choice = random(3);
+        choice = random(4);
         if(choice==0)
         {
             say("[Queen Islandom]: Food helps us to produce more eggs, more ants.\n");
@@ -40,6 +40,10 @@ void heart_beat()
         if(choice==2)
         {
             say("[Queen Islandom]: The more power you have, the more things you can carry.\n");
+        }
+        if(choice==3)
+        {
+            say(sprintf("[Queen Islandom]: We have achieved %d new NPC ants born.\n",COLONY_D->get_new_ant_total()));
         }
     }
 

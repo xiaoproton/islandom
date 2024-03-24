@@ -11,7 +11,7 @@ void create()
     The big hall is for all ants to mobilize while there is an important event or potential invasion.
 LONG );
     set("exits", ([
-        "south":__DIR__ "the_fork",
+        "northest":__DIR__ "the_fork",
         "up":__DIR__ "main_entrance",
     ]));
     set("objects", ([

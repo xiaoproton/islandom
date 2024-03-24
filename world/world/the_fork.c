@@ -13,9 +13,9 @@ LONG );
     set("exits", ([
         "east":__DIR__ "worker_ant_hall",
         "northwest":__DIR__ "resting_healing",
-        "southwest":__DIR__ "dead_end",
+        "west":__DIR__ "dead_end",
         "south":__DIR__ "pupa_chamber",
-        "north":__DIR__ "entrance_hall",
+        "southwest":__DIR__ "entrance_hall",
     ]));
 }
 

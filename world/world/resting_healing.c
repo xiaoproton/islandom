@@ -10,6 +10,7 @@ void create()
     set("long", @LONG
     If you are sick or hurt, you may feel recovering faster here
     while costing less food than other places.
+    You can even restore your nutrition slowly here!
 LONG );
     set("exits", ([
         "southeast":__DIR__ "the_fork",
