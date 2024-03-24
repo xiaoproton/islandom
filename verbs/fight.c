@@ -15,7 +15,16 @@ mixed can_fight_liv(mixed *data...)
 {
     int nutrition;
     string colour;
+    mixed cp;
+    object cpObj;
     object me = this_player();
+    if(sizeof(data)<2)
+    {
+        return RED "No enemy found." NOR;
+    }
+    cp = data[1];
+    cpObj = load_object(cp);
+
     debug_message(sprintf("can_fight_liv data %O",data));
     if(classp(me))
     {
@@ -31,13 +40,12 @@ mixed can_fight_liv(mixed *data...)
     {
         return "This is a fight-free area.";
     }
-    /*
-        colour = ob->query("colour");
+    colour = cpObj->query("colour");
     if(colour!="r")
     {
-        msg("warning", "$ME put up your front claws, start attacking $YOU. ", me, ob);
+        return "You can only fight against a red-colour enemy.";
     }
-    */
+
     if (me->query("food") && to_int(me->query("food"))<=20 )
     {
         return RED "You don't have enough nutrition to support you to fight." NOR;
