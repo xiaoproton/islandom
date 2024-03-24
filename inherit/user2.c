@@ -46,7 +46,7 @@ mixed process_input(string verb)
         "i":"inventory",
         "sc":"score",
         "snoopee":"query_snoop",
-        "snooper":"query_snooping"
+        "snooper":"query_snooping",
        "ls":"get_dir",
        //"sa":"area_set",
     ]);
