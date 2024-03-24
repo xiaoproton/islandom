@@ -1,3 +1,5 @@
+#include "ansi.h"
+
 inherit "/inherit/user6";
 
 
@@ -6,6 +8,7 @@ void heart_beat()
     int hp,power,food;
     int rate;
     mixed env;
+    int inc;
 
     rate = 1;
 
@@ -31,11 +34,14 @@ void heart_beat()
         }
 
         //recovering hp
+        debug_message(sprintf("food %d", food));
+        debug_message(sprintf("hp %d", hp));
         if(food>20 && hp<100)
         {
             power = to_int(query("power"));
-
-            hp = hp + rate*to_int(log2(power+1));
+            inc=rate*to_int(log2(power+1));
+            hp = hp + inc;
+            debug_message(sprintf("inc %d", inc));
             if(random(rate)==0)
                 food = food - 1;
 
@@ -44,7 +50,7 @@ void heart_beat()
             set("food", food);
             set("hp", hp);
             if(hp==100)
-                write("You have fully recovered.");
+                write(YEL+"You have fully recovered."+NOR);
             else
                 write("Your body is recovering by consuming nutrition...\n");
             save();
