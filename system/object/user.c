@@ -4,8 +4,10 @@ inherit "/inherit/user6";
 void heart_beat()
 {
     int hp,power,food;
-    int rate = 1;
+    int rate;
     obj env;
+
+    rate = 1;
 
     if(random(5)<1)  //trying this every 5 heart-beats
     {
