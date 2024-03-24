@@ -4,7 +4,7 @@ int main(object me, string arg)
     {
         me->save();
     }
-    say("Ant " + geteuid(me) + " returns to reality. \n");
+    say("Ant " + (me->short()||geteuid(me)) + " has returned to reality. \n");
     destruct(me);
 
     return 1;

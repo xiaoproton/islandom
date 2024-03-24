@@ -30,6 +30,6 @@ varargs void create(string arg)
 
 void net_dead()
 {
-    say(HIR "Ant " + geteuid() + " returns to reality.\n" NOR);
+    say(HIR "Ant " + (this_object()->short()||geteuid()) + " has returned to reality.\n" NOR);
     destruct();
 }
