@@ -83,7 +83,7 @@ int main(object me, string arg)
                             if(random(2)<1)
                             {
                                 write(sprintf(HIY+"The larva has just turned into a pupa thanks to your feeding!\n"+NOR));
-                                destruct(obj);
+                                //destruct(obj);
                                 environment(me)->make_inventory("/world/world/item/pupa");
                             }
                             else
