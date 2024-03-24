@@ -1,7 +1,7 @@
 inherit COMBAT;
 inherit LIVING;
 
-varargs void create(int i, int power)
+varargs void create()
 {
     mixed info;
     int i;

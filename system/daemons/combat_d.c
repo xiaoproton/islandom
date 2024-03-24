@@ -51,11 +51,11 @@ string death_msg()
     switch (random(3))
     {
         case 1:
-            return "$YOU are almost dead during for fighting with $ME.";
+            return "$YOU are dead during for fighting with $ME.";
         case 2:
-            return "$YOU have sacrificed your health for the Queens colony and the Brood.";
+            return "$YOU have sacrificed your life for the Queens colony and the Brood.";
         default:
-            return "$YOU are almost killed by $ME. The vision of $YOU turns into darkness.";
+            return "$YOU are killed by $ME. The vision of $YOU turns into darkness.";
     }
 
 }
