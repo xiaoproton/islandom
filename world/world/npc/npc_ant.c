@@ -33,7 +33,7 @@ void heart_beat()
     if(random(50)<1)
     {
         choice = random(3);
-        envname = environment(me)->shortfilename();
+        envname = environment(this_object())->shortfilename();
         if(envname=="worker_ant_chamber")
         {
             if(choice==0)
