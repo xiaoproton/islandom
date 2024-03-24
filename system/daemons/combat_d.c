@@ -113,14 +113,14 @@ void do_attack(object me, object victim)
         msg("success", "Both $ME and $YOU felt stronger and more powerful. Although $ME won the battle.", me,victim);
         if (userp(victim))
         {
-            powervic += randome(3) + 1;
+            powervic += random(3) + 1;
             victim->set("power",powervic);
             victim->save();
             victim->die();
         }
         if (userp(me))
         {
-            powerme += randome(6) + 2;
+            powerme += random(6) + 2;
             me->set("power",powerme);
             me->save();
         }
