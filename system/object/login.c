@@ -14,14 +14,14 @@ object loginuser;
 void setup(string arg)
 {
 
-    debug_message("regex "+regex(arg,"^[a-zA-Z]+$"));
+    debug_message("regexp "+regexp(arg,"^[a-zA-Z]+$"));
     debug_message(sprintf("len %d",strlen(arg));
     if (!arg || arg == "")
     {
         write("User login name cannot be blank. Please enter again: ");
         input_to("setup");
     }
-    else if(!regex(arg,"^[a-zA-Z]+$") || strlen(arg)<3 || strlen(arg)>30)
+    else if(!regexp(arg,"^[a-zA-Z]+$") || strlen(arg)<3 || strlen(arg)>30)
     {
         write("Invalid login name. Please enter again: ");
         input_to("setup");
@@ -88,7 +88,7 @@ void setname(string arg)
         write("display name cannot be blank. Please type it again: ");
         input_to("setname");
     }
-    else if(!regex(arg,"^[a-z A-Z\\-]+$") || strlen(arg)<3 || strlen(arg)>30)
+    else if(!regexp(arg,"^[a-z A-Z\\-]+$") || strlen(arg)<3 || strlen(arg)>30)
     {
         write("Invali display name. Please type it again: ");
         input_to("setname");
