@@ -14,16 +14,14 @@ object loginuser;
 void setup(string arg)
 {
 
+    debug_message("regex "+regex(arg,"^[a-zA-Z]+$"));
+    debug_message(sprintf("len %d",strlen(arg));
     if (!arg || arg == "")
     {
         write("User login name cannot be blank. Please enter again: ");
         input_to("setup");
     }
-    else if(strsrch(arg,'/') || strsrch(arg,'.') || strsrch(arg,'1') || strsrch(arg,'2')
-            || strsrch(arg,'#') || strsrch(arg,'@') || strsrch(arg,'3') || strsrch(arg,'0')
-            || strsrch(arg,'$') || strsrch(arg,'%') || strsrch(arg,'9') || strsrch(arg,'8')
-            || strsrch(arg,'^') || strsrch(arg,'!') || strsrch(arg,'"') || strsrch(arg,' ')
-            || strlen(arg)<2 || strlen(arg)>30 )
+    else if(!regex(arg,"^[a-zA-Z]+$") || strlen(arg)<3 || strlen(arg)>30)
     {
         write("Invalid login name. Please enter again: ");
         input_to("setup");
@@ -90,11 +88,7 @@ void setname(string arg)
         write("display name cannot be blank. Please type it again: ");
         input_to("setname");
     }
-    else if(strsrch(arg,'/') || strsrch(arg,'.') || strsrch(arg,'1') || strsrch(arg,'2')
-            || strsrch(arg,'#') || strsrch(arg,'@') || strsrch(arg,'3') || strsrch(arg,'0')
-            || strsrch(arg,'$') || strsrch(arg,'%') || strsrch(arg,'9') || strsrch(arg,'8')
-            || strsrch(arg,'^') || strsrch(arg,'!') || strsrch(arg,'"') || strsrch(arg,'&')
-            || strlen(arg)<2 || strlen(arg)>30 )
+    else if(!regex(arg,"^[a-z A-Z\\-]+$") || strlen(arg)<3 || strlen(arg)>30)
     {
         write("Invali display name. Please type it again: ");
         input_to("setname");
