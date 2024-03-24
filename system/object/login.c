@@ -26,7 +26,6 @@ void setup(string arg)
         write("Invalid login name. Please enter again: ");
         input_to("setup");
     }
-    /*
     else if(lower_case(arg)=="admin" || lower_case(arg)=="wiz"
             || lower_case(arg)=="wizard" || lower_case(arg)=="islandom"
             || lower_case(arg)=="root" )
@@ -34,7 +33,6 @@ void setup(string arg)
         write("login name cannot be reserved words. Please enter again: ");
         input_to("setup");
     }
-    */
     else
     {
         // log

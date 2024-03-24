@@ -81,10 +81,10 @@ nomask int command_hook(string arg)
     efun_cmd = EFUN_PATH + verb;
     //demo = DEMO_PATH + verb;
     me = this_object();
-    debug_message(sprintf("me %O ",me));
-    debug_message("me->geteuid(): "+me->geteuid());
-    debug_message("me->short(): "+me->short());
-    debug_message("me->shortfilename(): "+me->shortfilename());
+    //debug_message(sprintf("me %O ",me));
+    //debug_message("me->geteuid(): "+me->geteuid());
+    //debug_message("me->short(): "+me->short());
+    //debug_message("me->shortfilename(): "+me->shortfilename());
     if ((verb = trim(verb)) == "")
         return 0;
 
@@ -96,7 +96,7 @@ nomask int command_hook(string arg)
     {
         return (int)cmd_ob->main(me, arg);
     }
-    else if ((me->geteuid()=="admin" || me->geteuid()=="root" || me->geteuid()=="syoleen") && cmd_ob = load_object(admincmd) )
+    else if ((me->short()=="Admin(admin)" || me->geteuid()=="Admin(root)" || me->geteuid()=="Admin(syoleen)") && cmd_ob = load_object(admincmd) )
     {
         return (int)cmd_ob->main(me, arg);
     }
