@@ -59,7 +59,8 @@ void do_attack(object me, object victim)
     int powerme, damage, powervic, random, attack_type = TYPE_N;
 
     powerme = me->query("power");
-    powervic = me->query("power");
+    powervic = victim->query("power");
+    debug_message(sprintf("powerme %d powervic %d",powerme,powervic));
     damage = log2(powerme - powervic);
 
     /**
@@ -85,9 +86,10 @@ void do_attack(object me, object victim)
     {
         damage = 0;
     }
-
+    debug_message(sprintf("victim %O",victim));
+    debug_message(sprintf("damage %d",damage));
     victim->set("hp", victim->query("hp") - damage);
-    msg("success", damage_msg(damage, attack_type), me, victim);
+    msg("warning", damage_msg(damage, attack_type), me, victim);
 }
 
 // 战斗回合处理
@@ -104,6 +106,6 @@ void fight(object me, object victim)
         victim->fight(me);
     }
 
-    msg("info", element_of(attack_msg), me, victim);
+    msg("danger", element_of(attack_msg), me, victim);
     do_attack(me, victim);
 }
