@@ -88,7 +88,7 @@ int main(object me, string arg)
                     me->short(),
                     HIG + me->query("hp") +"%"+ NOR,HIG + me->query("food") +"%"+ NOR,
                     HIG + me->query("power") + NOR,
-                    WHT+taskDescr(me->query("power")+NOR)
+                    WHT+ taskDescr(me->query("power"))+NOR
                 );
     write(str);
     return 1;
