@@ -76,7 +76,7 @@ void die()
     if (userp(me))
     {
         me->move(REBORN);
-        me->set("hp", 100);
+        me->set("hp", 1);
     }
     else
     {

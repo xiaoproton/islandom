@@ -151,10 +151,16 @@ void setpassword(string arg)
 void landing()
 {
     object cuurentme;
+    int hp;
     //use the user
     cuurentme = this_object();
     exec(loginuser, cuurentme);
     destruct(cuurentme);
+    hp = to_int(loginuser->query("hp"));
+    if(hp<=0)
+        hp = 1;
+    loginuser->set("hp",hp);
+    loginuser->save();
     write(YEL+"One second ago, you were a human being sitting in front a screen.\n"+NOR);
     write(YEL+"One second later, you are an Alien Ant, crawling in "+HBMAG+"Queen Islandom"+NOR+" "+YEL+"'s ant colony. \n"+NOR);
     write(WHT+"Hint: use your keyboard type "+GRN+" look "+NOR+"OR"+GRN+" l "+NOR+" "+WHT+"to look around. Or, type "+GRN+"help"+NOR+" "+WHT+" to get more command info. \n "+NOR);
