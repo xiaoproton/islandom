@@ -14,16 +14,6 @@ protected void create()
 mixed can_fight_liv(mixed *data...)
 {
     int nutrition;
-    string colour;
-    mixed cp;
-    object cpObj;
-    object me = this_player();
-    if(sizeof(data)<2)
-    {
-        return RED "No enemy found." NOR;
-    }
-    cp = data[1];
-    cpObj = load_object(cp);
 
     debug_message(sprintf("can_fight_liv data %O",data));
     if(classp(me))
@@ -39,11 +29,6 @@ mixed can_fight_liv(mixed *data...)
     if (file_name(environment(me)) == START_ROOM)
     {
         return "This is a fight-free area.";
-    }
-    colour = cpObj->query("colour");
-    if(colour!="r")
-    {
-        return "You can only fight against a red-colour enemy.";
     }
 
     if (me->query("food") && to_int(me->query("food"))<=20 )
@@ -62,7 +47,16 @@ mixed direct_fight_liv(object ob, string arg)
 
 int do_fight_liv(object ob, string arg)
 {
+    string colour;
     object me = this_player();
+
+    colour = ob->query("colour");
+    if(colour!="r")
+    {
+        msg("warning", "You can only fight against a red-colour enemy. ");
+        return 0;
+    }
+
     me->consume(8);
     msg("warning", "$ME put up your front claws, start attacking $YOU. ", me, ob);
     me->fight(ob);
