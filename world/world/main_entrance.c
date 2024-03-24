@@ -5,6 +5,8 @@ inherit ROOM;
 
 void create()
 {
+    mixed mob = __DIR__ "npc/npc_ant";
+
     set("short", "Main Entrance");
     set("long", @LONG
     This is the main entrance and exit of the whole colony.
@@ -14,6 +16,10 @@ LONG );
     set("exits", ([
         "down":__DIR__ "entrance_hall",
     ]));
+    set("objects", ([
+        mob:1,
+    ]));
+    setup();
 }
 
 void init()
