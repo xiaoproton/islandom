@@ -20,9 +20,9 @@ void setup(string arg)
         input_to("setup");
     }
     else if(strsrch(arg,'/') || strsrch(arg,'.') || strsrch(arg,'1') || strsrch(arg,'2')
-            strsrch(arg,'#') || strsrch(arg,'@') || strsrch(arg,'3') || strsrch(arg,'0')
-            strsrch(arg,'$') || strsrch(arg,'%') || strsrch(arg,'9') || strsrch(arg,'8')
-            strsrch(arg,'^') || strsrch(arg,'!') || strsrch(arg,'"') || strsrch(arg,' ')
+            || strsrch(arg,'#') || strsrch(arg,'@') || strsrch(arg,'3') || strsrch(arg,'0')
+            || strsrch(arg,'$') || strsrch(arg,'%') || strsrch(arg,'9') || strsrch(arg,'8')
+            || strsrch(arg,'^') || strsrch(arg,'!') || strsrch(arg,'"') || strsrch(arg,' ')
             || strlen(arg)<2 || strlen(arg)>30 )
     {
         write("Invalid login name. Please enter again: ");
@@ -91,9 +91,9 @@ void setname(string arg)
         input_to("setname");
     }
     else if(strsrch(arg,'/') || strsrch(arg,'.') || strsrch(arg,'1') || strsrch(arg,'2')
-            strsrch(arg,'#') || strsrch(arg,'@') || strsrch(arg,'3') || strsrch(arg,'0')
-            strsrch(arg,'$') || strsrch(arg,'%') || strsrch(arg,'9') || strsrch(arg,'8')
-            strsrch(arg,'^') || strsrch(arg,'!') || strsrch(arg,'"') || strsrch(arg,'&')
+            || strsrch(arg,'#') || strsrch(arg,'@') || strsrch(arg,'3') || strsrch(arg,'0')
+            || strsrch(arg,'$') || strsrch(arg,'%') || strsrch(arg,'9') || strsrch(arg,'8')
+            || strsrch(arg,'^') || strsrch(arg,'!') || strsrch(arg,'"') || strsrch(arg,'&')
             || strlen(arg)<2 || strlen(arg)>30 )
     {
         write("Invali display name. Please type it again: ");
