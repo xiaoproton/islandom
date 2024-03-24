@@ -39,5 +39,6 @@
 #define PRELOAD "/system/etc/preload"
 // 出生地
 #define START_ROOM "/world/world/worker_ant_hall"
+#define REBORN "/world/world/dead_end"
 
 #endif

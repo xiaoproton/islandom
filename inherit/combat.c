@@ -75,7 +75,7 @@ void die()
     msg("danger", "$ME is dead.", me);
     if (userp(me))
     {
-        me->move(START_ROOM);
+        me->move(REBORN);
         me->set("hp", 100);
     }
     else

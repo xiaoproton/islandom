@@ -46,6 +46,20 @@ string damage_msg(int damage, int type)
     }
 }
 
+string death_msg()
+{
+    switch (random(3))
+    {
+        case 1:
+            return "$YOU are dead during for fighting with $ME.";
+        case 2:
+            return "$YOU have sacrificed your life for the Queens colony and the Brood.";
+        default:
+            return "$YOU are killed by $ME. All your vision turns into darkness.";
+    }
+
+}
+
 void create()
 {
 }
@@ -60,7 +74,7 @@ void do_attack(object me, object victim)
 
     powerme = me->query("power");
     powervic = victim->query("power");
-    debug_message(sprintf("powerme %d powervic %d",powerme,powervic));
+    //debug_message(sprintf("powerme %d powervic %d",powerme,powervic));
     damage = log2(powerme - powervic);
 
     /**
@@ -72,7 +86,7 @@ void do_attack(object me, object victim)
         attack_type = TYPE_C;
     }
     // 伤害波动
-    random = damage / 16 + 1;
+    random = damage / 10 + 2;
     if (random(2))
     {
         damage += random;
@@ -82,14 +96,19 @@ void do_attack(object me, object victim)
         damage -= random;
     }
 
-    if (damage < 0)
+    if (damage <= 0)
     {
-        damage = 0;
+        damage = random(2);
     }
-    debug_message(sprintf("victim %O",victim));
-    debug_message(sprintf("damage %d",damage));
+    //debug_message(sprintf("victim %O",victim));
+    //debug_message(sprintf("damage %d",damage));
     victim->set("hp", victim->query("hp") - damage);
     msg("warning", damage_msg(damage, attack_type), me, victim);
+    if(to_int(victim->query("hp"))<=0)
+    {
+        msg("danger", death_msg(), me, victim);
+        victim->die();
+    }
 }
 
 // 战斗回合处理
@@ -106,6 +125,6 @@ void fight(object me, object victim)
         victim->fight(me);
     }
 
-    msg("danger", element_of(attack_msg), me, victim);
+    msg("info", element_of(attack_msg), me, victim);
     do_attack(me, victim);
 }

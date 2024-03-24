@@ -9,6 +9,8 @@ void heart_beat()
 
     rate = 1;
 
+    ::heart_beat();
+
     if(random(5)<1)  //trying this every 5 heart-beats
     {
         hp = to_int(query("hp"));
@@ -44,7 +46,7 @@ void heart_beat()
             if(hp==100)
                 write("You have fully recovered.");
             else
-                write("You are recovering by consuming food...");
+                write("You are recovering by consuming food...\n");
             save();
         }
     }
