@@ -5,7 +5,7 @@ void heart_beat()
 {
     int hp,power,food;
     int rate;
-    obj env;
+    mixed env;
 
     rate = 1;
 
