@@ -46,7 +46,7 @@ void heart_beat()
             if(hp==100)
                 write("You have fully recovered.");
             else
-                write("You are recovering by consuming food...\n");
+                write("Your body is recovering by consuming nutrition...\n");
             save();
         }
     }

@@ -40,7 +40,7 @@ string damage_msg(int damage, int type)
     switch (type)
     {
     case TYPE_C:
-        return YEL "$ME hit a weak point of $YOU, causing " + damage + " damage.";
+        return YEL "$ME hit a [WAEK POINT] of $YOU, causing " + damage + " damage.";
     default:
         return "$ME caused to $YOU  " + damage + " damage.";
     }
@@ -51,11 +51,11 @@ string death_msg()
     switch (random(3))
     {
         case 1:
-            return "$YOU are dead during for fighting with $ME.";
+            return "$YOU are almost dead during for fighting with $ME.";
         case 2:
-            return "$YOU have sacrificed your life for the Queens colony and the Brood.";
+            return "$YOU have sacrificed your health for the Queens colony and the Brood.";
         default:
-            return "$YOU are killed by $ME. All your vision turns into darkness.";
+            return "$YOU are almost killed by $ME. All your vision turns into darkness.";
     }
 
 }
@@ -75,7 +75,10 @@ void do_attack(object me, object victim)
     powerme = me->query("power");
     powervic = victim->query("power");
     //debug_message(sprintf("powerme %d powervic %d",powerme,powervic));
-    damage = log2(powerme - powervic);
+    if(powerme>=powervic)
+        damage = log2(powerme - powervic)+1;
+    else
+        damage = 1;
 
     /**
      * 会心伤害（暴击）无视防御
@@ -86,7 +89,7 @@ void do_attack(object me, object victim)
         attack_type = TYPE_C;
     }
     // 伤害波动
-    random = damage / 10 + 2;
+    random = damage / 3 + 2;
     if (random(2))
     {
         damage += random;

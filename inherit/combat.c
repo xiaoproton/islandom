@@ -72,7 +72,7 @@ void die()
 {
     object me = this_object();
     remove_all_enemy();
-    msg("danger", "$ME is dead.", me);
+    msg("danger", "$ME are almost dead and your body is moved here by others.", me);
     if (userp(me))
     {
         me->move(REBORN);
