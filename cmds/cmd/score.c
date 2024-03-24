@@ -1,7 +1,7 @@
 // score.c
 #include <ansi.h>
 
-string taskDescr(int power, int food)
+string taskDescr(int power)
 {
     if(power<=2)
     {
