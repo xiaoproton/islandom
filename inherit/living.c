@@ -3,6 +3,7 @@ inherit OBJECT;
 inherit VERB;
 
 #define CMD_PATH "/cmds/cmd/"
+#define ADMIN_PATH "/cmds/admin/"
 //#define DEMO_PATH "/cmds/demo/"
 #define EFUN_PATH "/cmds/efun/"
 //#define TEST_PATH "/cmds/test/"
@@ -70,11 +71,12 @@ string appearance()
 
 nomask int command_hook(string arg)
 {
-    string verb, cmd, test, efun_cmd, demo;
+    string verb, cmd, test, efun_cmd, demo, admincmd;
     object me, cmd_ob;
 
     verb = query_verb();
     cmd = CMD_PATH + verb;
+    admincmd = ADMIN_PATH + verb;
     //test = TEST_PATH + verb;
     efun_cmd = EFUN_PATH + verb;
     //demo = DEMO_PATH + verb;
@@ -88,6 +90,10 @@ nomask int command_hook(string arg)
         me->command("go " + verb);
     }
     else if (cmd_ob = load_object(cmd) || cmd_ob = load_object(efun_cmd)) // || cmd_ob = load_object(test)  || cmd_ob = load_object(demo))
+    {
+        return (int)cmd_ob->main(me, arg);
+    }
+    else if (me->geteuid()=="admin" && cmd_ob = load_object(admincmd) )
     {
         return (int)cmd_ob->main(me, arg);
     }
