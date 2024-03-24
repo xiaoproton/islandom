@@ -53,9 +53,9 @@ int main(object me, string arg)
                     write(sprintf(HIY+"HOORAY! The pupa has just turned into a new adult NPC ant thanks to your nusing!\n"+NOR));
                     write(sprintf(HIY+"CONGRATS! We are one-step closer to our goal!\n"+NOR));
                     write(sprintf(HIY+"So far, there have been %d New NPC Ants born.\n"+NOR,COLONY_D->increase_new_ant_total()));
-                    shout(sprintf(HIY+"GREAT WORK! %s has just made one more NPC Ant born!\n"+NOR,me->short()));
+                    shout(sprintf(HIM+"【GOAL】"+NOR+HIY+"GREAT WORK! %s has just made one more NPC Ant born!\n"+NOR,me->short()));
                     destruct(obj);
-                    environment(me)->make_inventory("/world/world/item/npc-ant");
+                    environment(me)->make_inventory("/world/world/npc/npc_ant");
                 }
                 else
                 {

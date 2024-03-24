@@ -33,11 +33,11 @@ int main(object me, string arg)
     }
 
     str = sprintf(YEL+"----------- "+title+" "+NOR+cl+"%s"+NOR+YEL+" -----------\n"+NOR
-                    +"[Life %s Nutrition %s Power %s ]\n"
+                    +"[ Life(HP) %s      Nutrition %s        Power %s ]\n"
                     +"\n"
                     ,
                     me->short(),
-                    HIG + me->query("hp") +"%%"+ NOR,HIG + me->query("food") +"%%"+ NOR,
+                    HIG + me->query("hp") +"\%"+ NOR,HIG + me->query("food") +"\%"+ NOR,
                     HIG + me->query("power") + NOR
                 );
     write(str);
