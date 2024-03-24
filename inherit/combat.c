@@ -70,18 +70,23 @@ void attack()
 // 死亡处理
 void die()
 {
+    int power;
     object me = this_object();
     remove_all_enemy();
     msg("danger", "$ME are almost dead and your body is moved here by others.", me);
+    msg("success", "$ME felt $ME became stronger and more powerful from the battle.", me);
     if (userp(me))
     {
         me->move(REBORN);
         me->set("hp", 1);
+        power = to_int(me->query("power"));
+        power += randome(3) + 1;
+        me->set("power",power);
+        me->save();
     }
     else
     {
-        // todo 战斗奖励
-        destruct(me);
+       destruct(me);
     }
 }
 

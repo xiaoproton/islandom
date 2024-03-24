@@ -72,8 +72,8 @@ void do_attack(object me, object victim)
  */
     int powerme, damage, powervic, random, attack_type = TYPE_N;
 
-    powerme = me->query("power");
-    powervic = victim->query("power");
+    powerme = to_int(me->query("power"));
+    powervic = to_int(victim->query("power"));
     //debug_message(sprintf("powerme %d powervic %d",powerme,powervic));
     if(powerme>=powervic)
         damage = log2(powerme - powervic)+1;
@@ -110,7 +110,21 @@ void do_attack(object me, object victim)
     if(to_int(victim->query("hp"))<=0)
     {
         msg("danger", death_msg(), me, victim);
-        victim->die();
+        msg("success", "Both $ME and $YOU felt stronger and more powerful. Although $ME won the battle.", me,victim);
+        if (userp(victim))
+        {
+            powervic += randome(3) + 1;
+            victim->set("power",powervic);
+            victim->save();
+            victim->die();
+        }
+        if (userp(me))
+        {
+            powerme += randome(6) + 2;
+            me->set("power",powerme);
+            me->save();
+        }
+
     }
 }
 
