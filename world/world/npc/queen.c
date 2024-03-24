@@ -30,19 +30,19 @@ void heart_beat()
         choice = random(4);
         if(choice==0)
         {
-            say("[Queen Islandom]: Food helps us to produce more eggs, more ants.\n");
+            say("[Newbie Tips]: Typing 'take egg' and 'drop egg' allows you to move eggs.\n");
         }
         if(choice==1)
         {
-            say("[Queen Islandom]: Hey, Worker Ant, Well done! Remember to type "+GRN+"sc"+NOR+" and "+GRN+"i"+NOR+" to check yourself.\n ");
+            say("[Newbie Tips]: Typing 'feed queen' may make you become stronger.\n ");
         }
         if(choice==2)
         {
-            say("[Queen Islandom]: The more power you have, the more things you can carry.\n");
+            say("[Newbie Tips]: The more power you have, the more things you can carry.\n");
         }
         if(choice==3)
         {
-            say(sprintf("[Queen Islandom]: We have achieved %d new NPC ants born.\n",COLONY_D->get_new_ant_total()));
+            say(sprintf("[Newbie Tips]: We have achieved %d new NPC ants born.\n",COLONY_D->get_new_ant_total()));
         }
     }
 

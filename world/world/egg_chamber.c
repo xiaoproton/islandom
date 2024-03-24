@@ -6,6 +6,8 @@ inherit ROOM;
 void create()
 {
     mixed egg = __DIR__ "item/egg";
+    mixed npc = __DIR__ "npc/npc_ant";
+    mixed food = __DIR__ "item/food";
 
     set("short", "Egg Chamber");
     set("long", @LONG
@@ -19,6 +21,8 @@ LONG );
     set("objects", ([
         egg:1,
         egg:1,
+        npc:1,
+        food:1,
     ]));
     setup();
 }

@@ -32,37 +32,64 @@ void heart_beat()
     string envname;
     if(random(30)<1)
     {
-        choice = random(3);
+        choice = random(4);
         envname = environment(this_object())->shortfilename();
         //debug_message("envname "+envname);
         if(envname=="worker_ant_hall")
         {
             if(choice==0)
             {
-                say("[NPC Ant]: Eggs, Larvae, Pupae... They need to be in right chambers.\n");
+                say("[Newbie Tips]: Eggs, Larvae, Pupae... They need to be in right chambers.\n");
             }
             if(choice==1)
             {
-                say("[NPC Ant]: We may go outside if we want to get more food for the colony.\n");
+                say("[Newbie Tips]: Typing 'look' allows you to see what exits you can go before type 'n', 's' etc. accordingly.\n");
             }
             if(choice==2)
             {
-                say("[NPC Ant]: Moving eggs and feeding larvae make us stronger!\n");
+                say("[Newbie Tips]: Typing 'take food' allows you to get them bfore typing 'eat'.\n");
+            }
+            if(choice==3)
+            {
+                say("[Newbie Tips]: Try to type 'help' to see how to play.\n");
             }
         }
         if(envname=="entrance_hall")
         {
             if(choice==0)
             {
-                say("[NPC Ant]: Be aware! Enemies may be wandering outside.\n");
+                say("[Newbie Tips]: Be aware! Enemies may be wandering outside.\n");
             }
             if(choice==1)
             {
-                say("[NPC Ant]: Knowing your power level is important.\n");
+                say("[Newbie Tips]: Typing 'score' and 'i' to know yourself better.\n");
             }
             if(choice==2)
             {
-                say("[NPC Ant]: Good luck! Happy hunting!\n");
+                say("[Newbie Tips]: Type 'take food' when you see food on floor.\n");
+            }
+            if(choice==3)
+            {
+                say("[Newbie Tips]: When enemies die, they turn into food.\n");
+            }
+        }
+        if(envname=="egg_chamber")
+        {
+            if(choice==0)
+            {
+                say("[Newbie Tips]: Typing 'nurse egg' may make you stronger while benefiting the colony.\n");
+            }
+            if(choice==1)
+            {
+                say("[Newbie Tips]: Typing 'score' and 'i' to know yourself better.\n");
+            }
+            if(choice==2)
+            {
+                say("[Newbie Tips]: Type 'take food' when you see food on floor.\n");
+            }
+            if(choice==3)
+            {
+                say("[Newbie Tips]: Typing 'take larva' allows you carry it.\n");
             }
         }
 

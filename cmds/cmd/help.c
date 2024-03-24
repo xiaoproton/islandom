@@ -4,7 +4,7 @@
 int main(object me, string arg)
 {
     string help = @HELP
-    $YEL$-------------------------------Peronmone Handbook----------------------------------$NOR$
+    $YEL$-------------------------------Alien Ant Handbook----------------------------------$NOR$
 
     User Your Keyboard to type the command：
         $CYN$north,south,east,west OR n,s,e,w$NOR$      move to different directions
@@ -18,13 +18,21 @@ int main(object me, string arg)
         $CYN$nurse$NOR$                                 take care of something/someone
         $CYN$inventory OR i$NOR$                        check what you are carrying
         $CYN$score OR s$NOR$                            check your status and power
-        $CYN$fight$NOR$                         try to kill someone
+        $CYN$fight$NOR$                                 try to kill someone
         $CYN$say$NOR$                                   say to everyone in the current room/place
         $CYN$chat$NOR$                                  talk to everyone online
         $CYN$who$NOR$                                   list all players online
-        $CYN$snoop$NOR$                                 monitor someone
         $CYN$quit$NOR$                                  quit this game
+    $YEL$-------------------------------- Newbies TO-DO ----------------------------------$NOR$
+        Type $CYN$ look $NOR$ to understand where you are and what exits there are
+        Type $CYN$ take food $NOR$ to get food if Type $CYN$ look $NOR$ allows you see it
+        Type $CYN$ north, south $NOR$ etc to go to Queens Chamber
+        Type $CYN$ feed queen $NOR$ to help queen
+        Type $CYN$ take egg $NOR$ to carry egg before move to Egg Chamber
+        Type $CYN$ drop egg $NOR$ when you arrive Egg Chamber
+        Type $CYN$ nurse egg $NOR$ in Egg Chamber
     $YEL$-----------------------------------------------------------------------------------$NOR$
+
 HELP;
     string file;
 
