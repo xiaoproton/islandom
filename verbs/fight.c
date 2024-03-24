@@ -14,9 +14,15 @@ protected void create()
 mixed can_fight_liv(mixed *data...)
 {
     int nutrition;
+    string arg;
     object me = this_player();
 
     debug_message(sprintf("can_fight_liv data %O",data));
+    if(sizeof(data)>=2) arg = data[1];
+    if(arg=="queen" || arg=="npc_ant" || arg=="egg" || arg=="larva" || arg=="pupa")
+    {
+        return RED "You are not allowed to do that." NOR;
+    }
     if(classp(me))
     {
         me->save();
