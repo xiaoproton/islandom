@@ -13,8 +13,8 @@ void create()
     A big chamber for Queen Ant Islandom to live.
     She is more than ten times of your size,
     carrying gene from far-far-away home planet.
-    She continues needing food (feed) to produce those eggs.
-    Eggs need to be moved the Egg Chamber for good tempareture to incubate.
+    She continues needing food (type 'feed') to produce those eggs.
+    Eggs need to be moved (type 'take') the Egg Chamber for good tempareture to incubate.
 LONG );
     set("exits", ([
         "south":__DIR__ "worker_ant_hall",

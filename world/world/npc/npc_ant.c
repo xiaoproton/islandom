@@ -28,18 +28,42 @@ int can_be_pickedup(int pwr)
 
 void heart_beat()
 {
-    object fd;
+    int choice;
+    string envname;
     if(random(50)<1)
     {
-        if(random(2)<1)
+        choice = random(3);
+        envname = environment(me)->shortfilename();
+        if(envname=="worker_ant_chamber")
         {
-            say("[NPC Ant]: Me should work harder...\n");
+            if(choice==0)
+            {
+                say("[NPC Ant]: Eggs, Larvae, Pupae... They need to be in right chambers.\n");
+            }
+            if(choice==1)
+            {
+                say("[NPC Ant]: We need to go outside to get more food.\n");
+            }
+            if(choice==2)
+            {
+                say("[NPC Ant]: Moving eggs and feeding larvae make us stronger!\n");
+            }
         }
-        else
+        if(envname=="entrance_hall")
         {
-            say("[NPC Ant]: Me need to fight outside to get more food.\n");
+            if(choice==0)
+            {
+                say("[NPC Ant]: Be aware! Monsters may be wandering outside.\n");
+            }
+            if(choice==1)
+            {
+                say("[NPC Ant]: Knowing your power level is important.\n");
+            }
+            if(choice==2)
+            {
+                say("[NPC Ant]: Good luck! Happy hunting!\n");
+            }
         }
-
 
     }
 }

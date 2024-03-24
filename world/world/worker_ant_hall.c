@@ -16,12 +16,13 @@ void create()
     which is part of the Queen Islandom underground ant colony.
     A few worker ants are busy walking in and out for the goal;
     raise more ants to conquer this island, then conquer the Earth.
-    A small rock (look rock) is in the middle of the hall.
+    A small rock (try to type 'look rock') is in the middle of the hall.
 LONG );
     set("exits", ([
         "north":__DIR__ "queens_chamber",
         "south":__DIR__ "egg_chamber",
         "east":__DIR__ "larva_chamber",
+        "west":__DIR__ "the_fork",
     ]));
     set("items", ([
         "rock" : (: look_rock :),
@@ -38,14 +39,6 @@ LONG );
 
 void init()
 {
-
-    add_action(function(string arg) {
-        object me = this_player();
-        write("You are listening...");
-        me->msp_oob("!!MUSIC(ocean-waves.mp3 L=1 V=100 U=http://islandom.space/storage/)");
-        return 1;
-        //return me->move("/world/area");
-    }, ({"listen", "hear"}));
 
 }
 

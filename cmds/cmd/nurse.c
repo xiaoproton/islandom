@@ -46,6 +46,25 @@ int main(object me, string arg)
                 }
 
             }
+            if(arg=="pupa" && random(10)<2)
+            {
+                if(random(3)<1)
+                {
+                    write(sprintf(HIY+"The pupa has just turned into a new adult NPC ant thanks to your nusing!\n"+NOR));
+                    write(sprintf(HIY+"We are one-step closer to our goal!\n"+NOR));
+                    write(sprintf(HIY+"So far, there have been %d New NPC Ants borned.\n"+NOR,COLONY_D->increase_new_ant_total()));
+                    destruct(obj);
+                    environment(me)->make_inventory("/world/world/item/npc-ant");
+                }
+                else
+                {
+                    write(sprintf(YEL+"You are feeling your power has increased by keeping nursing pupae.\n"+NOR));
+                    power = to_int(me->query("power"));
+                    me->set("power",(power+1));
+                    me->save();
+                }
+
+            }
             return 1;
         }
     }

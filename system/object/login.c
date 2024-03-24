@@ -134,14 +134,15 @@ void landing()
     write(YEL+"One second ago, you were a human being sitting in front a screen.\n"+NOR);
     write(YEL+"One second later, you are an Alien Ant, crawling in "+HBMAG+"Queen Islandom"+NOR+" "+YEL+"'s ant colony. \n"+NOR);
     write(WHT+"Hint: use your keyboard type "+GRN+" look "+NOR+"OR"+GRN+" l "+NOR+" "+WHT+"to look around. Or, type "+GRN+"help"+NOR+" "+WHT+" to get more command info. \n "+NOR);
-        loginuser->move_object(START_ROOM);
+    loginuser->move_object(START_ROOM);
     debug_message(ctime() + " " + query_ip_number(loginuser) + " " + START_ROOM);
-    loginuser->look_room();
+    //loginuser->look_room();
 }
 
 void logon()
 {
     color_cat(WELCOME);
+    write(sprintf(RED + " 🐜🐜🐜🐜🐜 SO FAR, THERE HAVE BEEN %d NEW NPC ANTS BORNED. 🐜🐜🐜🐜🐜 \n\n" + NOR),COLONY_D->get_new_ant_total());
     write("Please enter your login name (first-time ant please choose your own, purely English letters):");
     input_to("setup");
 }

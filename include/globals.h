@@ -21,6 +21,7 @@
 #define COMBAT_D "/system/daemons/combat_d"
 #define MONSTER_D "/system/daemons/monster_d"
 #define VIRTUAL_D "/system/daemons/virtual_d"
+#define COLONY_D "/system/daemons/colony_d"
 // 功能模块
 #define CLEAN_UP "/inherit/clean_up"
 #define COMBAT "/inherit/combat"
