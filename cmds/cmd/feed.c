@@ -50,9 +50,9 @@ int main(object me, string arg)
                     {
                         fd->move_object(VOID_OB);
                         destruct(fd);
-                        if(random(10)<2)
+                        if(random(3)<1)
                         {
-                            if(random(3)<1){
+                            if(random(2)<1){
                                 environment(me)->make_inventory("/world/world/item/egg");
                                 write(sprintf(YEL+"The Queen has just produce a new egg,\n"
                                                     +"thank to your feeding.\n"+NOR));
@@ -78,12 +78,22 @@ int main(object me, string arg)
                     {
                         fd->move_object(VOID_OB);
                         destruct(fd);
-                        if(random(10)<2)
+                        if(random(3)<1)
                         {
-                            write(sprintf(YEL+"You are feeling your power has increased by keeping feeding larvea.\n"+NOR));
-                            power = to_int(me->query("power"));
-                            me->set("power",(power+1));
-                            me->save();
+                            if(random(2)<1)
+                            {
+                                write(sprintf(HIY+"The larva has just turned into a pupa thanks to your feeding!\n"+NOR));
+                                destruct(obj);
+                                environment(me)->make_inventory("/world/world/item/pupa");
+                            }
+                            else
+                            {
+                                write(sprintf(YEL+"You are feeling your power has increased by keeping feeding larvea.\n"+NOR));
+                                power = to_int(me->query("power"));
+                                me->set("power",(power+1));
+                                me->save();
+                            }
+
                         }
                         else
                         {
