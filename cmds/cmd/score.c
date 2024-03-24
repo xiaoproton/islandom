@@ -40,10 +40,13 @@ string taskDescr(int power)
         return "Go to outside via 'Main Entrance' for more food\n"
                 + "Walk away from 'Main Entrance' to fight\n"
                 + "Walk further way the 'marking' places to fight\n";
+                + "Ask fields to join this game and help them\n";
+                + "help others\n";
     }
     else
     {
-        return "none\n";
+        return "Ask fields to join this game and help them\n";
+                + "help others\n";
     }
 }
 
