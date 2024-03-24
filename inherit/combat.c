@@ -97,6 +97,8 @@ void heart_beat()
     // 行动相关控制
     if (is_fighting())
     {
+        attack();
+        /*
         // 怪物HP少于1/3时有1/3机率变身暗天使
         if (!userp(me) && !shadow(me, 0) && !query_shadowing(me) && me->query("hp") < me->query("hp") / 3 && !random(3))
         {
@@ -109,5 +111,6 @@ void heart_beat()
             // 战斗吧，皮卡丘
             attack();
         }
+        */
     }
 }

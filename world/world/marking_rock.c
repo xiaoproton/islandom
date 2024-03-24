@@ -5,7 +5,7 @@ inherit ROOM;
 
 void create()
 {
-    mixed mob = __DIR__ "npc/mob";
+    mixed insect = __DIR__ "npc/insect";
 
     set("short", "Marking Rock");
     set("long", @LONG
@@ -18,7 +18,7 @@ LONG );
         "south":__DIR__ "main_entrance",
     ]));
     set("objects", ([
-        mob:1,
+        insect:1,
     ]));
     setup();
 }

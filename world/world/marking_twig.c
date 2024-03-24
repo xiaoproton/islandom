@@ -16,6 +16,7 @@ void create()
 LONG );
     set("exits", ([
         "north":__DIR__ "main_entrance",
+        "south":__DIR__ "sandy_beach",
     ]));
     set("objects", ([
         food:1,

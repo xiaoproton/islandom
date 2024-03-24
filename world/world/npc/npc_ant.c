@@ -4,7 +4,7 @@ inherit LIVING;
 void create()
 {
     ::create();
-    set_living("npc_ant");
+    set_living("rival");
     set("name", "NPC Ant");
     set("unit", " ");
     if (clonep())

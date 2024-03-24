@@ -120,7 +120,13 @@ void do_attack(object me, object victim)
             powerme += random(3) + 1;
             me->set("power",powerme);
             me->save();
+            //
+            environment(me)->make_inventory("/world/world/item/food");
+            environment(me)->make_inventory("/world/world/item/food");
+            environment(me)->make_inventory("/world/world/item/food");
+            environment(me)->make_inventory("/world/world/item/food");
         }
+
 
     }
 }
