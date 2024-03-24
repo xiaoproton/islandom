@@ -81,6 +81,7 @@ nomask int command_hook(string arg)
     efun_cmd = EFUN_PATH + verb;
     //demo = DEMO_PATH + verb;
     me = this_object();
+    debug_message(sprintf("me %O "+me));
     debug_message("me->geteuid(): "+me->geteuid());
     if ((verb = trim(verb)) == "")
         return 0;
