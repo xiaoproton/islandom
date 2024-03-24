@@ -15,7 +15,7 @@ void setup(string arg)
 {
 
     debug_message("regexp "+regexp(arg,"^[a-zA-Z]+$"));
-    debug_message(sprintf("len %d",strlen(arg));
+    debug_message(sprintf("len %d",strlen(arg)));
     if (!arg || arg == "")
     {
         write("User login name cannot be blank. Please enter again: ");
