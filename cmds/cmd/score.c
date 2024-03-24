@@ -80,14 +80,15 @@ int main(object me, string arg)
 
     str = sprintf(YEL+"----------- "+title+" "+NOR+cl+"%s"+NOR+YEL+" -----------\n"+NOR
                     +"[ Health %s      Nutrition %s        Power %s ]\n"
+                    +"------------------------------------------------------------\n"
                     +"---------- Tasks you could do at your power level---------  \n"
-                    +"%s \n"
-                    +"-------------------------------------------------------------\n"
+                    +"%s "
+                    +"------------------------------------------------------------\n"
                     ,
                     me->short(),
                     HIG + me->query("hp") +"%"+ NOR,HIG + me->query("food") +"%"+ NOR,
                     HIG + me->query("power") + NOR,
-                    taskDescr(me->query("power"))
+                    WHT+taskDescr(me->query("power")+NOR)
                 );
     write(str);
     return 1;
