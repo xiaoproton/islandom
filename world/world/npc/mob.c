@@ -21,7 +21,7 @@ varargs void create(int i, int power)
     {
         set("hp", 100);
 
-        set_heart_beat(1);
+        set_heart_beat(2);
     }
 }
 

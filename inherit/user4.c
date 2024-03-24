@@ -17,7 +17,7 @@ varargs void create(string arg)
         set("power", random(5));
         set("unit", " ");
         set("exp", 0);
-        set_heart_beat(1);
+        set_heart_beat(2);
     }
 }
 

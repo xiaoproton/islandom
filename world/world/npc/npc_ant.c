@@ -17,7 +17,7 @@ void create()
         set("power", random(10));
         set("unit", " ");
         set("colour", "g");
-        set_heart_beat(1);
+        set_heart_beat(2);
     }
 }
 
@@ -30,7 +30,7 @@ void heart_beat()
 {
     int choice;
     string envname;
-    if(random(50)<1)
+    if(random(30)<1)
     {
         choice = random(3);
         envname = environment(this_object())->shortfilename();
@@ -54,7 +54,7 @@ void heart_beat()
         {
             if(choice==0)
             {
-                say("[NPC Ant]: Be aware! Monsters may be wandering outside.\n");
+                say("[NPC Ant]: Be aware! Enemies may be wandering outside.\n");
             }
             if(choice==1)
             {

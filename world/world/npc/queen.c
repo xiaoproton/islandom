@@ -14,7 +14,7 @@ void create()
     set("food", random(20)+80);
     set("size",5);
     set("colour", "g");
-    set_heart_beat(1);
+    set_heart_beat(2);
 }
 
 int can_be_pickedup(int pwr)
@@ -25,7 +25,7 @@ int can_be_pickedup(int pwr)
 void heart_beat()
 {
     int choice;
-    if(random(50)<1)
+    if(random(30)<1)
     {
         choice = random(4);
         if(choice==0)

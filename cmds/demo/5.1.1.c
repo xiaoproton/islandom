@@ -23,7 +23,7 @@ int main(object me, string arg)
     else
     {
         write("stopping heart-beat\n");
-        set_heart_beat(1);
+        set_heart_beat(2);
     }
 
     return 1;
