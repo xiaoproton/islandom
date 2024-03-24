@@ -6,7 +6,7 @@ int main(object me, string arg)
     {
         if (ob == me)
         {
-            msg("emote", "$ME emotionally greeting $ME themselves.", me);
+            msg("emote", "$ME emotionally greeting $ME yourself.", me);
         }
         else
         {

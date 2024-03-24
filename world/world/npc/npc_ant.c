@@ -30,11 +30,11 @@ void heart_beat()
 {
     int choice;
     string envname;
-    if(random(40)<1)
+    if(random(50)<1)
     {
         choice = random(3);
         envname = environment(this_object())->shortfilename();
-        debug_message("envname "+envname);
+        //debug_message("envname "+envname);
         if(envname=="worker_ant_hall")
         {
             if(choice==0)
@@ -43,7 +43,7 @@ void heart_beat()
             }
             if(choice==1)
             {
-                say("[NPC Ant]: We need to go outside to get more food.\n");
+                say("[NPC Ant]: We may go outside if we want to get more food for the colony.\n");
             }
             if(choice==2)
             {

@@ -25,7 +25,7 @@ int can_be_pickedup(int pwr)
 void heart_beat()
 {
     int choice;
-    if(random(40)<1)
+    if(random(50)<1)
     {
         choice = random(4);
         if(choice==0)
@@ -34,8 +34,7 @@ void heart_beat()
         }
         if(choice==1)
         {
-            say("[Queen Islandom]: Hey, Worker Ant, Well done!\n"
-                    +" Remember to type "+GRN+"sc"+NOR+" and "+GRN+"i"+NOR+" to monitor your status and inventory.\n ");
+            say("[Queen Islandom]: Hey, Worker Ant, Well done! Remember to type "+GRN+"sc"+NOR+" and "+GRN+"i"+NOR+" to check yourself.\n ");
         }
         if(choice==2)
         {
