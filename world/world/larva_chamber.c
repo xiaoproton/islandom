@@ -6,6 +6,7 @@ inherit ROOM;
 void create()
 {
     mixed larva = __DIR__ "item/larva";
+    mixed food = __DIR__ "item/food";
 
     set("short", "Larva Chamber");
     set("long", @LONG
@@ -19,6 +20,7 @@ LONG );
     set("objects", ([
         larva:1,
         larva:1,
+        food:1,
     ]));
     setup();
 }

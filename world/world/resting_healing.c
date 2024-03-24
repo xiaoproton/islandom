@@ -10,7 +10,7 @@ void create()
     set("long", @LONG
     If you are sick or hurt, you may feel recovering faster here
     while costing less food than other places.
-    Some etible fungi can be seen even though ehry are not proper food.
+    Some edible fungi can be seen even though thry are not proper food.
 LONG );
     set("exits", ([
         "southeast":__DIR__ "the_fork",

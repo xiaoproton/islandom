@@ -6,6 +6,8 @@ inherit ROOM;
 void create()
 {
     mixed pupa = __DIR__ "item/pupa";
+    mixed food = __DIR__ "item/food";
+
     set("short", "Pupa Chamber");
     set("long", @LONG
     Lots of cacoon-like pupae are growing here if being nursed ('nurse') properly.
@@ -18,6 +20,7 @@ LONG );
     set("objects", ([
         pupa:1,
         pupa:1,
+        food:1,
     ]));
     setup();
 }

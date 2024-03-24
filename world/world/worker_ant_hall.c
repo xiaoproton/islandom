@@ -33,6 +33,7 @@ LONG );
     set("objects", ([
         npc:1,
         food:1,
+        food:1,
     ]));
     setup();
 }

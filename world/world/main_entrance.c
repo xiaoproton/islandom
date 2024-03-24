@@ -6,6 +6,7 @@ inherit ROOM;
 void create()
 {
 
+    mixed food = __DIR__ "item/food";
     set("short", "Main Entrance");
     set("long", @LONG
     This is the main entrance and exit of the whole colony.
@@ -19,6 +20,11 @@ LONG );
         "west":__DIR__ "marking_grass",
         "east":__DIR__ "marking_crack",
     ]));
+    set("objects", ([
+        food:1,
+        food:1,
+    ]));
+    setup();
 }
 
 void init()

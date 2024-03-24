@@ -7,6 +7,7 @@ void create()
 {
     mixed queen = __DIR__ "npc/queen";
     mixed egg = __DIR__ "item/egg";
+    mixed food = __DIR__ "item/food";
 
     set("short", "Queens Chamber");
     set("long", @LONG
@@ -24,6 +25,7 @@ LONG );
     set("objects", ([
         queen:1,
         egg:1,
+        food:1,
     ]));
     setup();
 }

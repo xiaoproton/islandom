@@ -28,7 +28,7 @@ void heart_beat()
             {
                 food += 1;
                 set("food", food);
-                write("You have recovered a bit of nutrition by eating the fungi around here.");
+                write("You have recovered a bit of nutrition by eating the fungi around here.\n");
                 save();
             }
         }
