@@ -13,7 +13,7 @@ void create()
     Ocean wave may be heard if you listen (type 'listen') properly (with MudLet client, instead of just browser).
 LONG );
     set("exits", ([
-        "down":__DIR__ "entrnace_hall",
+        "down":__DIR__ "entrance_hall",
     ]));
     set("objects", ([
         npc:1,
