@@ -47,8 +47,8 @@ mixed process_input(string verb)
         "sc":"score",
         "snoopee":"query_snoop",
         "snooper":"query_snooping"
-      // "ls":"get_dir",
-      // "sa":"area_set",
+       "ls":"get_dir",
+       //"sa":"area_set",
     ]);
 
     // verb = lower_case(verb);
