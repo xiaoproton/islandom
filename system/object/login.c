@@ -16,7 +16,23 @@ void setup(string arg)
 
     if (!arg || arg == "")
     {
-        write("User login name cannot be balnk. Please enter again: ");
+        write("User login name cannot be blank. Please enter again: ");
+        input_to("setup");
+    }
+    else if(strsrch(arg,'/') || strsrch(arg,'.') || strsrch(arg,'1') || strsrch(arg,'2')
+            strsrch(arg,'#') || strsrch(arg,'@') || strsrch(arg,'3') || strsrch(arg,'0')
+            strsrch(arg,'$') || strsrch(arg,'%') || strsrch(arg,'9') || strsrch(arg,'8')
+            strsrch(arg,'^') || strsrch(arg,'!') || strsrch(arg,'"') || strsrch(arg,' ')
+            || strlen(arg)<2 || strlen(arg)>30 )
+    {
+        write("Invalid login name. Please enter again: ");
+        input_to("setup");
+    }
+    else if(lower_case(arg)=="admin" || lower_case(arg)=="wiz"
+            || lower_case(arg)=="wizard" || lower_case(arg)=="islandom"
+            || lower_case(arg)=="root" )
+    {
+        write("login name cannot be reserved words. Please enter again: ");
         input_to("setup");
     }
     else
@@ -46,6 +62,11 @@ void password(string arg)
         write("Password cannot be blank. Please type it again: ");
         input_to("password");
     }
+    else if(strlen(arg)<3 || strlen(arg)>30 )
+    {
+        write("Password too long or too short. Please type it again: ");
+        input_to("password");
+    }
     else
     {
         if( sha1(arg)==loginuser->query("password") )
@@ -69,6 +90,14 @@ void setname(string arg)
         write("display name cannot be blank. Please type it again: ");
         input_to("setname");
     }
+    else if(strsrch(arg,'/') || strsrch(arg,'.') || strsrch(arg,'1') || strsrch(arg,'2')
+            strsrch(arg,'#') || strsrch(arg,'@') || strsrch(arg,'3') || strsrch(arg,'0')
+            strsrch(arg,'$') || strsrch(arg,'%') || strsrch(arg,'9') || strsrch(arg,'8')
+            strsrch(arg,'^') || strsrch(arg,'!') || strsrch(arg,'"') || strsrch(arg,'&')
+            || strlen(arg)<2 || strlen(arg)>30 )
+    {
+        write("Invali display name. Please type it again: ");
+        input_to("setname");
     else
     {
         loginuser->set("name", arg);
