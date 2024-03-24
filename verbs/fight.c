@@ -14,6 +14,7 @@ protected void create()
 mixed can_fight_liv(mixed *data...)
 {
     int nutrition;
+    object me = this_player();
 
     debug_message(sprintf("can_fight_liv data %O",data));
     if(classp(me))
