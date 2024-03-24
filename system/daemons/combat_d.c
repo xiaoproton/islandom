@@ -110,17 +110,14 @@ void do_attack(object me, object victim)
     if(to_int(victim->query("hp"))<=0)
     {
         msg("danger", death_msg(), me, victim);
-        msg("success", "Both $ME and $YOU felt stronger and more powerful. Although $ME won the battle.", me,victim);
+        msg("success", "$ME felt stronger and more powerful by winning the battle against $YOU.", me,victim);
         if (userp(victim))
         {
-            powervic += random(3) + 1;
-            victim->set("power",powervic);
-            victim->save();
             victim->die();
         }
         if (userp(me))
         {
-            powerme += random(6) + 2;
+            powerme += random(3) + 1;
             me->set("power",powerme);
             me->save();
         }

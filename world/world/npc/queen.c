@@ -9,7 +9,7 @@ void create()
     set_living("queen");
     set("name", "Queen Islandom");
     set("unit", " ");
-    set("power", 152);
+    set("power", 126);
     set("hp", 100);
     set("food", random(20)+80);
     set("size",5);

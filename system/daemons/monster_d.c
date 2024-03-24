@@ -7,16 +7,16 @@ Version: v1.0
 *****************************************************************************/
 
 nosave mixed mob_info = ({
-    ({"fly", "Mini Fly", 11,1}),
-    ({"worm", "Earth Worm", 23,2}),
-    ({"termite", "Gray Termite", 34,3}),
-    ({"beetle", "Golden Beetle", 45,4}),
-    ({"cricket", "Grass Cricket", 67,5}),
-    ({"butterfly", "Ghost Butterfly", 87,6}),
-    ({"frog", "Tree Frog", 113,7}),
-    ({"snake", "Brown Snake", 157,8}),
-    ({"rat", "Field Rat", 201,9}),
-    ({"cat", "Mountain Cat", 298,10}),
+    ({"fly", "Mini Fly", 5,1}),
+    ({"worm", "Earth Worm", 14,2}),
+    ({"termite", "Gray Termite", 21,3}),
+    ({"beetle", "Golden Beetle", 33,4}),
+    ({"cricket", "Grass Cricket", 54,5}),
+    ({"butterfly", "Ghost Butterfly", 69,6}),
+    ({"frog", "Tree Frog", 81,7}),
+    ({"snake", "Brown Snake", 121,8}),
+    ({"rat", "Field Rat", 195,9}),
+    ({"cat", "Mountain Cat", 212,10}),
 });
 
 // 超出范围则随机返回
