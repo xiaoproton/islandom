@@ -5,7 +5,7 @@ inherit ROOM;
 
 void create()
 {
-    mixed mob = __DIR__ "npc/npc_ant";
+    mixed mob = __DIR__ "npc/mob";
 
     set("short", "Main Entrance");
     set("long", @LONG
